@@ -7,8 +7,10 @@ defmodule ZoeyrinhaWeb.LandingHTML do
       <h1>Zoeyrinha</h1>
       <p>Blog pessoal e portfólio da Zoey</p>
       <p>Em breve, um espaço cheio de código funcional, reflexões econômicas e muito mais!</p>
-      <a href="https://bsky.app/" target="_blank" class="link">Me encontre no BlueSky</a>
-      <footer>&copy; 2024 Zoeyrinha. Todos os direitos reservados.</footer>
+      <a href="https://bsky.app/profile/zoedsoupe.zeetech.io" target="_blank" class="link">
+        Me encontre no BlueSky
+      </a>
+      <footer>&copy; 2024 ZEETECH. Todos os direitos reservados.</footer>
     </main>
     """
   end

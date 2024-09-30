@@ -18,5 +18,7 @@ defmodule ZoeyrinhaWeb.Router do
     pipe_through [:browser]
 
     get "/", LandingController, :show
+    get "/me", MeController, :show
+    get "/card", CardController, :show
   end
 end
