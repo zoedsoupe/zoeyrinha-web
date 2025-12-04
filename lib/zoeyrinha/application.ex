@@ -8,12 +8,7 @@ defmodule Zoeyrinha.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      ZoeyrinhaWeb.Telemetry,
-      {DNSCluster, query: Application.get_env(:zoeyrinha, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Zoeyrinha.PubSub},
-      # Start a worker by calling: Zoeyrinha.Worker.start_link(arg)
-      # {Zoeyrinha.Worker, arg},
-      # Start to serve requests, typically the last entry
       ZoeyrinhaWeb.Endpoint
     ]
 

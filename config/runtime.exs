@@ -15,8 +15,6 @@ if config_env() == :prod do
   host = System.get_env("PHX_HOST") || "example.com"
   port = String.to_integer(System.get_env("PORT") || "8080")
 
-  config :zoeyrinha, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
-
   config :zoeyrinha, ZoeyrinhaWeb.Endpoint,
     url: [host: host, port: 443, scheme: "https"],
     http: [

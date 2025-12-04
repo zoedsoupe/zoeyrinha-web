@@ -83,8 +83,19 @@ defmodule ZoeyrinhaWeb do
       # HTML escaping functionality
       import Phoenix.HTML
 
+      # Core UI components
+      import ZoeyrinhaWeb.Components
+
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
+
+      # Internationalization
+      use Gettext, backend: ZoeyrinhaWeb.Gettext
+
+      # Helper function to get current locale
+      def get_locale do
+        Gettext.get_locale(ZoeyrinhaWeb.Gettext)
+      end
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())

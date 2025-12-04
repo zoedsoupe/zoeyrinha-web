@@ -44,14 +44,13 @@ defmodule Zoeyrinha.MixProject do
       {:phoenix, "~> 1.7.14"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
-      {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
+      {:lucide_icons, "~> 2.0.12"},
+      {:phoenix_live_view, "~> 1.0"},
+      {:gettext, "~> 1.0"},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
-      {:telemetry_metrics, "~> 1.0"},
-      {:telemetry_poller, "~> 1.0"},
+      {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
       {:jason, "~> 1.2"},
-      {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:ex_doc, ">= 0.0.0", runtime: false, only: [:dev, :prod]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
@@ -71,6 +70,7 @@ defmodule Zoeyrinha.MixProject do
       "assets.setup": ["esbuild.install --if-missing"],
       "assets.build": ["esbuild zoeyrinha"],
       "assets.deploy": [
+        "tailwind myproject --minify",
         "esbuild zoeyrinha --minify",
         "phx.digest"
       ]

@@ -10,7 +10,6 @@ Este espaço é trans-inclusivo e acolhedor! Se você é uma pessoa trans, não-
 
 O **Zoeyrinha** é mais que um blog e portfólio; é praticamente um monólito de imutabilidade em um mundo de mudanças caóticas (exceto quando preciso dar uns _force pushes_). Aqui, você encontrará uma mistura de artigos técnicos, insights sobre projetos, e aquele toque de humor ácido.
 
-
 ## Funcionalidades
 
 - **Blog Pessoal:** Tudo sobre Elixir, Phoenix, programação funcional, e outras nerdices que gosto de dissecar. Spoiler: funções puras são o novo preto.

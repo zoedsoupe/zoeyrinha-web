@@ -31,6 +31,16 @@ config :esbuild,
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
+config :tailwind,
+  version: "4.1.10",
+  myproject: [
+    args: ~w(
+      --input=assets/css/app.css
+      --output=priv/static/assets/app.css
+    ),
+    cd: Path.expand("..", __DIR__)
+  ]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -38,6 +48,11 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# Configure Gettext for internationalization
+config :zoeyrinha, ZoeyrinhaWeb.Gettext,
+  default_locale: "en",
+  locales: ~w(en pt_BR)
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
