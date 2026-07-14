@@ -1,141 +1,276 @@
 @import "tailwindcss";
 
-/* Nyxvamp Veil Theme Configuration for Tailwind 4.x */
+/* Zeetech-derived, dark-mode-first. Kept the semantic color names so components
+   need no churn; collapsed the old rainbow down to: purple accent, a rare yellow,
+   and muted neutrals. */
 @theme {
-  /* Colors */
-  --color-background: #1e1e2e;
-  --color-foreground: #d9e0ee;
-  --color-cursorline: #2e2e3e;
-  --color-selection: #494d64;
+  /* Surfaces */
+  --color-background: #000a0f; /* preto dark mode */
+  --color-foreground: #f7f7ff; /* branco new doc */
+  --color-cursorline: #0a1119; /* elevated surface */
+  --color-selection: #211b3d; /* subtle purple border */
 
-  --color-pink: #f5c2e7;
-  --color-pink-soft: #f28fad;
+  /* Accent = roxo pixel */
+  --color-pink: #9655ff;
+  --color-pink-soft: #b98bff;
 
-  --color-blue: #96cdfb;
+  /* Rare secondary = amarelo led */
+  --color-blue: #fef5bc;
 
-  --color-green: #abe9b3;
-  --color-green-soft: #a6da95;
+  /* Everything else collapses to muted neutral (no rainbow) */
+  --color-green: #8f8caa;
+  --color-green-soft: #8f8caa;
+  --color-lavender: #8f8caa;
+  --color-peach: #8f8caa;
 
-  --color-lavender: #c9cbff;
+  --color-gray: #6b6a86;
+  --color-gray-light: #b0adc9;
+  --color-gray-dark: #12101a;
 
-  --color-peach: #f8bd96;
+  /* Glitch accents (cyber-lain chromatic aberration) */
+  --color-glitch-red: #ff2e6e;
+  --color-glitch-blue: #4d5cff;
 
-  --color-gray: #6e6a86;
-  --color-gray-light: #d9e0ee;
-  --color-gray-dark: #2a2a3c;
-
-  /* Fonts */
-  --font-family-sans: "Inter", sans-serif;
-  --font-family-mono: "JetBrains Mono", monospace;
+  /* Fonts (zeetech: Ubuntu Mono display, Ubuntu body) */
+  --font-family-sans: "Ubuntu", system-ui, -apple-system, sans-serif;
+  --font-family-mono: "Ubuntu Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-/* Custom base styles */
 @layer base {
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-family-sans);
+    font-weight: 300;
     line-height: 1.6;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--color-pink);
+  /* Headings: mono, lowercase, light. Purple is reserved for accents/links. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-foreground);
+    font-family: var(--font-family-mono);
     font-weight: 700;
-  }
-
-  h1 {
-    font-size: 2.25rem; /* 36px */
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem; /* 48px */
-    }
-  }
-
-  h2 {
-    font-size: 1.875rem; /* 30px */
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    h2 {
-      font-size: 2.25rem; /* 36px */
-    }
-  }
-
-  h3 {
-    font-size: 1.5rem; /* 24px */
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  @media (min-width: 768px) {
-    h3 {
-      font-size: 1.875rem; /* 30px */
-    }
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
   }
 
   a {
-    color: var(--color-blue);
+    color: var(--color-pink);
     transition: color 0.2s;
   }
 
   a:hover {
-    color: color-mix(in srgb, var(--color-blue) 80%, transparent);
+    color: var(--color-pink-soft);
   }
 
   p {
-    color: color-mix(in srgb, var(--color-foreground) 90%, transparent);
-    font-size: 1.125rem;
     line-height: 1.75;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-pink);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
   }
 }
 
-/* Custom scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background-color: var(--color-background);
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-pink);
+  background-color: var(--color-selection);
   border-radius: 0.25rem;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-pink-soft);
+  background-color: var(--color-pink);
 }
 
-/* Custom utilities */
 @layer utilities {
-  .text-gradient-pink {
-    background: linear-gradient(to right, var(--color-pink), var(--color-pink-soft));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+  /* subtle chromatic-aberration glitch for titles/logo on hover (page signature) */
+  .glitch-text:hover {
+    text-shadow:
+      2px 0 var(--color-glitch-red),
+      -2px 0 var(--color-glitch-blue);
   }
+}
 
-  .text-gradient-blue {
-    background: linear-gradient(to right, var(--color-blue), var(--color-lavender));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+/* Markdown post bodies (hand-rolled, no typography plugin) */
+.prose {
+  color: color-mix(in srgb, var(--color-foreground) 92%, transparent);
+  max-width: 68ch;
+}
+.prose > * + * {
+  margin-top: 1.25rem;
+}
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 2.5rem;
+}
+.prose a {
+  color: var(--color-pink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose strong {
+  color: var(--color-foreground);
+  font-weight: 500;
+}
+.prose code {
+  font-family: var(--font-family-mono);
+  background: var(--color-cursorline);
+  border: 1px solid var(--color-selection);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+.prose pre {
+  font-family: var(--font-family-mono);
+  background: #1e1e2e; /* nyxvamp-veil background */
+  color: #d9e0ee; /* nyxvamp-veil foreground */
+  border: 1px solid #2e2e3e;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-pink);
+  padding-left: 1rem;
+  color: var(--color-gray-light);
+  font-style: italic;
+}
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.prose ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+.prose li + li {
+  margin-top: 0.4rem;
+}
+.prose img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-selection);
+}
+
+/* Standalone highlighted code block (hero on the landing) */
+pre.highlight {
+  font-family: var(--font-family-mono);
+  background: #1e1e2e;
+  color: #d9e0ee;
+  border: 1px solid #2e2e3e;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* Syntax highlighting: Makeup tokens mapped to nyxvamp-veil.
+   github.com/zoedsoupe/nyxvamp (veil variant). */
+.makeup .c,
+.makeup .c1,
+.makeup .cm,
+.makeup .cp,
+.makeup .cs {
+  color: #6e6a86;
+  font-style: italic;
+} /* comments */
+.makeup .k,
+.makeup .kd,
+.makeup .kn,
+.makeup .kp,
+.makeup .kr {
+  color: #f5c2e7;
+} /* keywords */
+.makeup .kc,
+.makeup .no {
+  color: #f28fad;
+} /* constants, booleans, nil */
+.makeup .kt,
+.makeup .nc,
+.makeup .nn {
+  color: #c9cbff;
+} /* types, modules, namespaces */
+.makeup .nf,
+.makeup .nb,
+.makeup .fm {
+  color: #96cdfb;
+} /* functions */
+.makeup .s,
+.makeup .s1,
+.makeup .s2,
+.makeup .sb,
+.makeup .sd,
+.makeup .sh,
+.makeup .sx {
+  color: #abe9b3;
+} /* strings */
+.makeup .si,
+.makeup .se {
+  color: #f28fad;
+} /* interpolation, escapes */
+.makeup .ss {
+  color: #f28fad;
+} /* atoms / symbols */
+.makeup .m,
+.makeup .mi,
+.makeup .mf,
+.makeup .mh,
+.makeup .mo,
+.makeup .il {
+  color: #f8bd96;
+} /* numbers */
+.makeup .na,
+.makeup .py {
+  color: #f5c2e7;
+} /* attributes (@moduledoc, keys) */
+.makeup .o,
+.makeup .ow,
+.makeup .p,
+.makeup .pi {
+  color: #d9e0ee;
+} /* operators, punctuation */
+.makeup .n,
+.makeup .nv,
+.makeup .vc,
+.makeup .vg,
+.makeup .vi {
+  color: #d9e0ee;
+} /* names, variables */
+.makeup .gh {
+  color: #f5c2e7;
+} /* headings inside code */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
   }
-
-  .card-hover {
-    transition: all 0.3s;
-  }
-
-  .card-hover:hover {
-    transform: scale(1.05);
-    box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--color-pink) 20%, transparent);
+  .glitch-text:hover {
+    text-shadow: none;
   }
 }

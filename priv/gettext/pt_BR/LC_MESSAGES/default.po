@@ -11,464 +11,145 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:79
-#: lib/zoeyrinha_web/controllers/me_html.ex:67
+#: lib/zoeyrinha_web/controllers/landing_html.ex:103
 #, elixir-autogen, elixir-format
-msgid "44 stars · 195 commits"
-msgstr "44 estrelas · 195 commits"
+msgid "AT Protocol and Bluesky SDK, with a session that refreshes itself."
+msgstr "SDK de AT Protocol e Bluesky, com uma sessão que se renova sozinha."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:56
+#: lib/zoeyrinha_web/controllers/landing_html.ex:91
 #, elixir-autogen, elixir-format
-msgid "5+ years experience"
-msgstr "5+ anos de experiência"
+msgid "Model Context Protocol SDK in Elixir. transports, sessions, OTP all the way down."
+msgstr "SDK de Model Context Protocol em Elixir. transportes, sessões, OTP até o talo."
 
-#: lib/zoeyrinha_web/components.ex:173
-#: lib/zoeyrinha_web/components.ex:211
+#: lib/zoeyrinha_web/controllers/blog_html.ex:12
 #, elixir-autogen, elixir-format
-msgid "About"
-msgstr "Sobre"
+msgid "Notes on Elixir, distributed systems, and whatever else I am chewing on."
+msgstr "notas sobre Elixir, sistemas distribuídos e o que mais estiver me martelando a cabeça."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:21
+#: lib/zoeyrinha_web/controllers/blog_html.ex:17
 #, elixir-autogen, elixir-format
-msgid "About Me"
-msgstr "Sobre Mim"
+msgid "Nothing here yet. Soon."
+msgstr "ainda não tem nada aqui. em breve."
 
-#: lib/zoeyrinha_web/components.ex:238
+#: lib/zoeyrinha_web/controllers/blog_html.ex:50
 #, elixir-autogen, elixir-format
-msgid "All rights reserved"
-msgstr "Todos os direitos reservados"
+msgid "all posts"
+msgstr "todos os posts"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:62
+#: lib/zoeyrinha_web/components.ex:42
+#: lib/zoeyrinha_web/components.ex:82
 #, elixir-autogen, elixir-format
-msgid "Campos dos Goytacazes, RJ, Brazil"
-msgstr "Campos dos Goytacazes, RJ, Brasil"
+msgid "blog"
+msgstr "blog"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:166
+#: lib/zoeyrinha_web/controllers/landing_html.ex:73
 #, elixir-autogen, elixir-format
-msgid "Co-host of Brazil's first Elixir podcast, exploring web development, embedded systems, machine learning, and conversations with the Erlang, Gleam, and Clojure ecosystems. Supported by the Erlang Ecosystem Foundation."
-msgstr "Co-apresentadora do primeiro podcast de Elixir do Brasil, explorando desenvolvimento web, sistemas embarcados, aprendizado de máquina e conversas com os ecossistemas Erlang, Gleam e Clojure. Apoiado pela Erlang Ecosystem Foundation."
+msgid "building communities"
+msgstr "construindo comunidades"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:160
-#: lib/zoeyrinha_web/controllers/me_html.ex:198
+#: lib/zoeyrinha_web/controllers/landing_html.ex:68
 #, elixir-autogen, elixir-format
-msgid "Community Engagement"
-msgstr "Engajamento na Comunidade"
+msgid "deconstructing society"
+msgstr "desconstruindo a sociedade"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:96
-#: lib/zoeyrinha_web/controllers/me_html.ex:87
+#: lib/zoeyrinha_web/controllers/landing_html.ex:78
 #, elixir-autogen, elixir-format
-msgid "Complete Supabase SDK"
-msgstr "SDK Completo do Supabase"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:113
-#, elixir-autogen, elixir-format
-msgid "Composable Validation"
-msgstr "Validação Componível"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:117
-#, elixir-autogen, elixir-format
-msgid "Composable validation library with schema-based validation, type safety, and comprehensive error handling. Built for production Elixir applications."
-msgstr "Biblioteca de validação componível com validação baseada em esquema, segurança de tipos e tratamento abrangente de erros. Construída para aplicações Elixir em produção."
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:175
-#: lib/zoeyrinha_web/controllers/me_html.ex:210
-#, elixir-autogen, elixir-format
-msgid "EEF Supported"
-msgstr "Apoiado pela EEF"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:163
-#, elixir-autogen, elixir-format
-msgid "Elixir em Foco Podcast"
-msgstr "Podcast Elixir em Foco"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:74
-#, elixir-autogen, elixir-format
-msgid "Featured Open Source Projects"
-msgstr "Projetos Open Source em Destaque"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:192
-#, elixir-autogen, elixir-format
-msgid "Find me on social media or send me an email"
-msgstr "Me encontre nas redes sociais ou envie um email"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:100
-#, elixir-autogen, elixir-format
-msgid "Full Supabase integration for Elixir including storage-ex, gotrue-ex, and postgrest-ex. Comprehensive toolkit for building applications with Supabase backend."
-msgstr "Integração completa do Supabase para Elixir incluindo storage-ex, gotrue-ex e postgrest-ex. Kit de ferramentas abrangente para construir aplicações com backend Supabase."
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:44
-#, elixir-autogen, elixir-format
-msgid "Hi, I'm Zoey!"
-msgstr "Oi, eu sou a Zoey!"
-
-#: lib/zoeyrinha_web/controllers/landing_html.ex:83
-#, elixir-autogen, elixir-format
-msgid "High-performance Model Context Protocol SDK in Elixir. Fork of hermes-mcp with comprehensive client/server implementations for building AI-powered applications."
-msgstr "SDK de alto desempenho do Model Context Protocol em Elixir. Fork do hermes-mcp com implementações abrangentes de cliente/servidor para construir aplicações com IA."
-
-#: lib/zoeyrinha_web/components.ex:170
-#: lib/zoeyrinha_web/components.ex:208
-#: lib/zoeyrinha_web/controllers/card_html.ex:112
-#, elixir-autogen, elixir-format
-msgid "Home"
-msgstr "Início"
+msgid "elixir and math, made approachable"
+msgstr "elixir e matemática, de um jeito acessível"
 
 #: lib/zoeyrinha_web/controllers/landing_html.ex:134
 #, elixir-autogen, elixir-format
-msgid "Interactive Elixir learning tool inspired by rustlings. Hands-on exercises to master Elixir concepts through practice and immediate feedback."
-msgstr "Ferramenta interativa de aprendizado de Elixir inspirada no rustlings. Exercícios práticos para dominar conceitos de Elixir através de prática e feedback imediato."
+msgid "for the good conversations"
+msgstr "pras boas conversas"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:130
+#: lib/zoeyrinha_web/controllers/landing_html.ex:64
 #, elixir-autogen, elixir-format
-msgid "Interactive Learning"
-msgstr "Aprendizado Interativo"
+msgid "from industrial metal to dark psytrance to brazilian funk. music is how i process the world."
+msgstr "do metal industrial ao dark psytrance ao funk brasileiro. música é como eu processo o mundo."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:189
-#: lib/zoeyrinha_web/controllers/me_html.ex:331
+#: lib/zoeyrinha_web/controllers/landing_html.ex:33
 #, elixir-autogen, elixir-format
-msgid "Let's Connect"
-msgstr "Vamos Conectar"
+msgid "hey, i'm zoey(rinha)"
+msgstr "oi, eu sou a zoey(rinha)"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:178
+#: lib/zoeyrinha_web/components.ex:39
+#: lib/zoeyrinha_web/components.ex:79
 #, elixir-autogen, elixir-format
-msgid "Listen to the Podcast"
-msgstr "Ouça o Podcast"
+msgid "home"
+msgstr "início"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:60
-#: lib/zoeyrinha_web/controllers/me_html.ex:26
+#: lib/zoeyrinha_web/controllers/landing_html.ex:69
 #, elixir-autogen, elixir-format
-msgid "Location:"
-msgstr "Localização:"
+msgid "how we build and rebuild concepts like religion and gender, and the systems that shape us."
+msgstr "como a gente constrói e reconstrói conceitos como religião e gênero, e os sistemas que moldam a gente."
 
-#: lib/zoeyrinha_web/components.ex:241
+#: lib/zoeyrinha_web/controllers/landing_html.ex:48
 #, elixir-autogen, elixir-format
-msgid "Made with"
-msgstr "Feito com"
+msgid "i'm a travesty software engineer from brazil who fell in love with functional programming and never looked back. i spend my days crafting elegant abstractions, maintaining open source, and co-hosting Elixir em Foco, brazil's first elixir podcast."
+msgstr "sou uma engenheira de software travesti do brasil que se apaixonou por programação funcional e nunca mais olhou pra trás. passo meus dias criando abstrações elegantes, mantendo código aberto e co-apresentando o Elixir em Foco, o primeiro podcast de Elixir do brasil."
 
-#: lib/zoeyrinha_web/components.ex:180
-#: lib/zoeyrinha_web/components.ex:218
+#: lib/zoeyrinha_web/controllers/landing_html.ex:117
 #, elixir-autogen, elixir-format
-msgid "Projects"
-msgstr "Projetos"
+msgid "i'm not really into social networks anymore. i think we are heading the wrong way as a society under this economic system. but you can find me around:"
+msgstr "não curto mais muito rede social. acho que a gente tá indo pro lado errado como sociedade nesse sistema econômico. mas você me acha por aqui:"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:47
+#: lib/zoeyrinha_web/controllers/landing_html.ex:100
 #, elixir-autogen, elixir-format
-msgid "Senior Software Engineer specializing in functional programming, high-scale financial systems, and distributed architectures. Active open-source contributor with a passion for Elixir, Rust, and building robust, fault-tolerant systems."
-msgstr "Engenheira de Software Sênior especializada em programação funcional, sistemas financeiros de alta escala e arquiteturas distribuídas. Contribuidora ativa de código aberto com paixão por Elixir, Rust e construção de sistemas robustos e tolerantes a falhas."
+msgid "learn Elixir by fixing broken code, in the spirit of rustlings."
+msgstr "aprenda Elixir consertando código quebrado, no espírito do rustlings."
 
-#: lib/zoeyrinha_web/controllers/card_html.ex:25
-#: lib/zoeyrinha_web/controllers/landing_html.ex:14
+#: lib/zoeyrinha_web/controllers/blog_html.ex:34
+#: lib/zoeyrinha_web/controllers/blog_html.ex:56
 #, elixir-autogen, elixir-format
-msgid "Software Engineer | OSS Maintainer | Podcast Co-Host"
-msgstr "Engenheira de Software | Mantenedora OSS | Co-apresentadora de Podcast"
+msgid "min read"
+msgstr "min de leitura"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:17
+#: lib/zoeyrinha_web/controllers/landing_html.ex:108
 #, elixir-autogen, elixir-format
-msgid "Transforming coffee into functional code, one pattern match at a time"
-msgstr "Transformando café em código funcional, um pattern match por vez"
+msgid "more on github"
+msgstr "mais no github"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:24
+#: lib/zoeyrinha_web/controllers/landing_html.ex:63
 #, elixir-autogen, elixir-format
-msgid "View Projects"
-msgstr "Ver Projetos"
+msgid "music that moves me"
+msgstr "música que me move"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:148
+#: lib/zoeyrinha_web/controllers/landing_html.ex:53
 #, elixir-autogen, elixir-format
-msgid "View all projects on GitHub"
-msgstr "Ver todos os projetos no GitHub"
+msgid "my philosophy is simple: if it can be pure, make it pure. if it can be composable, make it composable. if it can help someone, make it open source."
+msgstr "minha filosofia é simples: se dá pra ser puro, faça puro. se dá pra ser componível, faça componível. se dá pra ajudar alguém, torne código aberto."
 
-#: lib/zoeyrinha_web/components.ex:241
+#: lib/zoeyrinha_web/controllers/landing_html.ex:140
 #, elixir-autogen, elixir-format
-msgid "in Elixir & Phoenix"
-msgstr "em Elixir & Phoenix"
+msgid "nyx says: embrace the darkness of imperative code, then transcend it with functional elegance."
+msgstr "nyx diz: abrace a escuridão do código imperativo, depois transcenda com elegância funcional."
 
-#: lib/zoeyrinha_web/controllers/me_html.ex:80
+#: lib/zoeyrinha_web/controllers/landing_html.ex:97
 #, elixir-autogen, elixir-format
-msgid "Active Maintenance"
-msgstr "Manutenção Ativa"
+msgid "schema validation by pattern matching, not macros."
+msgstr "validação de schema por pattern matching, não por macro."
 
-#: lib/zoeyrinha_web/controllers/me_html.ex:142
+#: lib/zoeyrinha_web/controllers/landing_html.ex:37
 #, elixir-autogen, elixir-format
-msgid "Additional projects include proto_rune (AT Protocol/Bluesky SDK), nexus (CLI builder), lucide_icons, and various other Elixir developer tools."
-msgstr "Projetos adicionais incluem proto_rune (AT Protocol/Bluesky SDK), nexus (construtor de CLI), lucide_icons e várias outras ferramentas de desenvolvimento Elixir."
+msgid "senior software engineer. oss maintainer. elixir em foco co-host."
+msgstr "engenheira de software sênior. mantenedora de oss. co-apresentadora do elixir em foco."
 
-#: lib/zoeyrinha_web/controllers/me_html.ex:245
+#: lib/zoeyrinha_web/controllers/landing_html.ex:74
 #, elixir-autogen, elixir-format
-msgid "Bachelor of Applied Science - Computer Science"
-msgstr "Bacharelado em Ciências Aplicadas - Ciência da Computação"
+msgid "tech is better when we build it together, from podcasts to open source to helping artisanal fishing communities go digital."
+msgstr "tecnologia é melhor quando a gente constrói junto, de podcasts a código aberto a ajudar comunidades de pesca artesanal a se digitalizar."
 
-#: lib/zoeyrinha_web/controllers/me_html.ex:252
+#: lib/zoeyrinha_web/controllers/landing_html.ex:94
 #, elixir-autogen, elixir-format
-msgid "Bachelor's Degree - Computer Science"
-msgstr "Bacharelado - Ciência da Computação"
+msgid "the Supabase ecosystem in Elixir: auth, storage, postgrest, realtime."
+msgstr "o ecossistema do Supabase em Elixir: auth, storage, postgrest, realtime."
 
-#: lib/zoeyrinha_web/controllers/me_html.ex:135
+#: lib/zoeyrinha_web/controllers/landing_html.ex:124
 #, elixir-autogen, elixir-format
-msgid "Beginner Friendly"
-msgstr "Amigável para Iniciantes"
+msgid "the podcast"
+msgstr "o podcast"
 
-#: lib/zoeyrinha_web/controllers/me_html.ex:203
+#: lib/zoeyrinha_web/controllers/landing_html.ex:79
 #, elixir-autogen, elixir-format
-msgid "Brazil's first podcast dedicated to the Elixir community. Explores Elixir applications across web development, embedded systems, machine learning, and more. Features discussions with professionals from complementary ecosystems (Erlang, Gleam, Clojure). Supported by the Erlang Ecosystem Foundation."
-msgstr "Primeiro podcast do Brasil dedicado à comunidade Elixir. Explora aplicações de Elixir em desenvolvimento web, sistemas embarcados, aprendizado de máquina e muito mais. Apresenta discussões com profissionais de ecossistemas complementares (Erlang, Gleam, Clojure). Apoiado pela Erlang Ecosystem Foundation."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:175
-#, elixir-autogen, elixir-format
-msgid "Brazilian Payment Methods"
-msgstr "Métodos de Pagamento Brasileiros"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:58
-#, elixir-autogen, elixir-format
-msgid "Building tools and libraries to empower the Elixir ecosystem and functional programming community"
-msgstr "Construindo ferramentas e bibliotecas para fortalecer o ecossistema Elixir e a comunidade de programação funcional"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:307
-#, elixir-autogen, elixir-format
-msgid "CS50x Certificate (Harvard's Introduction to Computer Science)"
-msgstr "Certificado CS50x (Introdução à Ciência da Computação de Harvard)"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:27
-#, elixir-autogen, elixir-format, fuzzy
-msgid "Campos dos Goytacazes, Rio de Janeiro, Brazil"
-msgstr "Campos dos Goytacazes, RJ, Brasil"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:186
-#, elixir-autogen, elixir-format
-msgid "Category Theory"
-msgstr "Teoria das Categorias"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:300
-#, elixir-autogen, elixir-format
-msgid "Certifications"
-msgstr "Certificações"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:201
-#, elixir-autogen, elixir-format
-msgid "Co-Host | Elixir em Foco"
-msgstr "Co-apresentadora | Elixir em Foco"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:211
-#, elixir-autogen, elixir-format, fuzzy
-msgid "Community"
-msgstr "Engajamento na Comunidade"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:92
-#, elixir-autogen, elixir-format
-msgid "Complete Supabase SDK for Elixir including storage-ex (Storage client), gotrue-ex (authentication), and postgrest-ex (database client). Enables full Supabase integration in Elixir applications with type-safe interfaces."
-msgstr "SDK completo do Supabase para Elixir incluindo storage-ex (cliente de armazenamento), gotrue-ex (autenticação) e postgrest-ex (cliente de banco de dados). Permite integração completa do Supabase em aplicações Elixir com interfaces type-safe."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:257
-#: lib/zoeyrinha_web/controllers/me_html.ex:268
-#, elixir-autogen, elixir-format
-msgid "Completed"
-msgstr "Concluído"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:106
-#, elixir-autogen, elixir-format, fuzzy
-msgid "Composable Validation Library"
-msgstr "Validação Componível"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:110
-#, elixir-autogen, elixir-format, fuzzy
-msgid "Composable validation library for Elixir with schema-based validation, type safety, and comprehensive error handling. Used across multiple production applications."
-msgstr "Biblioteca de validação componível com validação baseada em esquema, segurança de tipos e tratamento abrangente de erros. Construída para aplicações Elixir em produção."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:248
-#, elixir-autogen, elixir-format
-msgid "Currently pursuing"
-msgstr "Em andamento"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:246
-#, elixir-autogen, elixir-format
-msgid "Descomplica Faculdade Digital | April 2024 - October 2026"
-msgstr "Descomplica Faculdade Digital | Abril 2024 - Outubro 2026"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:176
-#, elixir-autogen, elixir-format
-msgid "Distributed Systems"
-msgstr "Sistemas Distribuídos"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:240
-#, elixir-autogen, elixir-format
-msgid "Education"
-msgstr "Educação"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:290
-#, elixir-autogen, elixir-format
-msgid "English"
-msgstr "Inglês"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:318
-#, elixir-autogen, elixir-format
-msgid "FRONTIN Elas Programam 2023"
-msgstr "FRONTIN Elas Programam 2023"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:185
-#, elixir-autogen, elixir-format
-msgid "Fault-Tolerant Architectures"
-msgstr "Arquiteturas Tolerantes a Falhas"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:182
-#, elixir-autogen, elixir-format
-msgid "Focus Areas"
-msgstr "Áreas de Foco"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:225
-#, elixir-autogen, elixir-format
-msgid "For detailed professional experience including roles at Dashbit, CloudWalk, Cumbuca, Nubank, and more, please visit my LinkedIn profile."
-msgstr "Para experiência profissional detalhada incluindo cargos na Dashbit, CloudWalk, Cumbuca, Nubank e outras, visite meu perfil no LinkedIn."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:291
-#, elixir-autogen, elixir-format
-msgid "Full Professional Proficiency"
-msgstr "Proficiência Profissional Completa"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:184
-#, elixir-autogen, elixir-format
-msgid "Functional Programming"
-msgstr "Programação Funcional"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:174
-#, elixir-autogen, elixir-format
-msgid "High-Scale Financial Systems"
-msgstr "Sistemas Financeiros de Alta Escala"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:72
-#, elixir-autogen, elixir-format
-msgid "High-performance Model Context Protocol SDK in Elixir. Actively maintained fork of hermes-mcp after CloudWalk discontinued maintenance. Comprehensive client/server implementations with multiple transport mechanisms (HTTP, SSE, WebSocket) and OTP-based architecture."
-msgstr "SDK de alto desempenho do Model Context Protocol em Elixir. Fork mantido ativamente do hermes-mcp após a CloudWalk descontinuar a manutenção. Implementações abrangentes de cliente/servidor com múltiplos mecanismos de transporte (HTTP, SSE, WebSocket) e arquitetura baseada em OTP."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:334
-#, elixir-autogen, elixir-format
-msgid "I'm always open to interesting conversations and collaboration opportunities"
-msgstr "Estou sempre aberta para conversas interessantes e oportunidades de colaboração"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:263
-#, elixir-autogen, elixir-format
-msgid "Instituto Federal de Educação, Ciência e Tecnologia Fluminense | March 2018 - March 2020"
-msgstr "Instituto Federal de Educação, Ciência e Tecnologia Fluminense | Março 2018 - Março 2020"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:124
-#, elixir-autogen, elixir-format, fuzzy
-msgid "Interactive Learning Tool"
-msgstr "Aprendizado Interativo"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:128
-#, elixir-autogen, elixir-format
-msgid "Interactive learning tool for Elixir inspired by rustlings. Self-contained exercises teaching Elixir through practice, helping beginners learn the language."
-msgstr "Ferramenta interativa de aprendizado de Elixir inspirada no rustlings. Exercícios autocontidos ensinando Elixir através da prática, ajudando iniciantes a aprender a linguagem."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:313
-#, elixir-autogen, elixir-format
-msgid "JavaScript (Basic) - HackerRank"
-msgstr "JavaScript (Básico) - HackerRank"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:281
-#, elixir-autogen, elixir-format
-msgid "Languages"
-msgstr "Idiomas"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:177
-#, elixir-autogen, elixir-format
-msgid "MCP Architecture"
-msgstr "Arquitetura MCP"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:287
-#, elixir-autogen, elixir-format
-msgid "Native"
-msgstr "Nativo"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:55
-#, elixir-autogen, elixir-format
-msgid "Open Source Contributions"
-msgstr "Contribuições Open Source"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:286
-#, elixir-autogen, elixir-format
-msgid "Portuguese"
-msgstr "Português"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:162
-#, elixir-autogen, elixir-format
-msgid "Primary Languages"
-msgstr "Linguagens Principais"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:117
-#, elixir-autogen, elixir-format
-msgid "Production Ready"
-msgstr "Pronto para Produção"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:222
-#, elixir-autogen, elixir-format
-msgid "Professional Experience"
-msgstr "Experiência Profissional"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:187
-#, elixir-autogen, elixir-format
-msgid "Protocol Design"
-msgstr "Design de Protocolos"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:43
-#, elixir-autogen, elixir-format
-msgid "Senior Software Engineer specializing in high-scale financial systems and distributed architectures using functional programming. Extensive experience with Brazilian payment methods (credit cards, PIX) and building resilient, fault-tolerant fintech platforms. Active open-source maintainer in the Elixir ecosystem, contributing developer tools and protocol implementations. Co-host of Brazil's first Elixir podcast, advocating for functional programming and community knowledge sharing."
-msgstr "Engenheira de Software Sênior especializada em sistemas financeiros de alta escala e arquiteturas distribuídas usando programação funcional. Ampla experiência com métodos de pagamento brasileiros (cartões de crédito, PIX) e construção de plataformas fintech resilientes e tolerantes a falhas. Mantenedora ativa de open-source no ecossistema Elixir, contribuindo ferramentas de desenvolvimento e implementações de protocolos. Co-apresentadora do primeiro podcast de Elixir do Brasil, defendendo programação funcional e compartilhamento de conhecimento com a comunidade."
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:23
-#, elixir-autogen, elixir-format
-msgid "Senior Software Engineer | OSS Maintainer | Elixir em Foco Co-Host"
-msgstr "Engenheira de Software Sênior | Mantenedora OSS | Co-apresentadora Elixir em Foco"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:172
-#, elixir-autogen, elixir-format
-msgid "Specializations"
-msgstr "Especializações"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:39
-#, elixir-autogen, elixir-format
-msgid "Summary"
-msgstr "Resumo"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:261
-#, elixir-autogen, elixir-format
-msgid "Technical Degree - Information Technology"
-msgstr "Técnico - Tecnologia da Informação"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:157
-#, elixir-autogen, elixir-format
-msgid "Technical Skills"
-msgstr "Habilidades Técnicas"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:99
-#, elixir-autogen, elixir-format
-msgid "Type-Safe"
-msgstr "Type-Safe"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:254
-#, elixir-autogen, elixir-format
-msgid "UENF - Universidade Estadual do Norte Fluminense | March 2019 - June 2022"
-msgstr "UENF - Universidade Estadual do Norte Fluminense | Março 2019 - Junho 2022"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:147
-#, elixir-autogen, elixir-format
-msgid "View Full Portfolio on GitHub"
-msgstr "Ver Portfólio Completo no GitHub"
-
-#: lib/zoeyrinha_web/controllers/me_html.ex:230
-#, elixir-autogen, elixir-format
-msgid "View LinkedIn Profile"
-msgstr "Ver Perfil no LinkedIn"
-
-#: lib/zoeyrinha_web/controllers/card_html.ex:109
-#, elixir-autogen, elixir-format
-msgid "Full Profile"
-msgstr "Perfil Completo"
-
-#: lib/zoeyrinha_web/controllers/card_html.ex:96
-#, elixir-autogen, elixir-format
-msgid "Tech Stack"
-msgstr "Stack Tecnológico"
-
-#: lib/zoeyrinha_web/controllers/card_html.ex:28
-#, elixir-autogen, elixir-format
-msgid "Transforming coffee into functional code since 2017"
-msgstr "Transformando café em código funcional desde 2017"
+msgid "there is poetry in patterns, even when the proofs still escape me."
+msgstr "tem poesia nos padrões, mesmo quando as provas ainda me escapam."

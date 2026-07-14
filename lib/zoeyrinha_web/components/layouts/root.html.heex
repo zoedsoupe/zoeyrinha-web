@@ -7,11 +7,12 @@
     <.live_title>
       {assigns[:page_title] || "Zoeyrinha"}
     </.live_title>
-    <%!-- Google Fonts --%>
+    <link rel="icon" href={~p"/favicon.ico"} sizes="any" />
+    <%!-- Brand fonts: Ubuntu (body) + Ubuntu Mono (display), matching zeetech --%>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />

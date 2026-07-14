@@ -47,6 +47,7 @@ defmodule Zoeyrinha.MixProject do
       {:lucide_icons, "~> 2.0.12"},
       {:phoenix_live_view, "~> 1.0"},
       {:gettext, "~> 1.0"},
+      {:nimble_publisher, "~> 1.1"},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
@@ -67,10 +68,10 @@ defmodule Zoeyrinha.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
-      "assets.setup": ["esbuild.install --if-missing"],
-      "assets.build": ["esbuild zoeyrinha"],
+      "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
+      "assets.build": ["tailwind zoeyrinha", "esbuild zoeyrinha"],
       "assets.deploy": [
-        "tailwind myproject --minify",
+        "tailwind zoeyrinha --minify",
         "esbuild zoeyrinha --minify",
         "phx.digest"
       ]

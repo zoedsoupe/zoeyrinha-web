@@ -16,7 +16,7 @@ config :zoeyrinha, ZoeyrinhaWeb.Endpoint,
   secret_key_base: "AU5lqznUBqXnZsFPq+pBzJ2cK3WYmB8S+ksd442eef++wo3PneqgZD+zaJKqwb3V",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:zoeyrinha, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:myproject, ~w(--watch)]}
+    tailwind: {Tailwind, :install_and_run, [:zoeyrinha, ~w(--watch)]}
   ]
 
 # ## SSL Support

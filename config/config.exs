@@ -33,7 +33,7 @@ config :esbuild,
 
 config :tailwind,
   version: "4.1.10",
-  myproject: [
+  zoeyrinha: [
     args: ~w(
       --input=assets/css/app.css
       --output=priv/static/assets/app.css

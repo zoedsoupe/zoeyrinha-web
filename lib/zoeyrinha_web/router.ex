@@ -11,15 +11,24 @@ defmodule ZoeyrinhaWeb.Router do
     plug ZoeyrinhaWeb.Plugs.SetLocale
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
+  pipeline :rss do
+    plug :accepts, ["xml"]
+    plug :put_root_layout, false
   end
 
   scope "/", ZoeyrinhaWeb do
     pipe_through [:browser]
 
     get "/", LandingController, :show
-    get "/me", MeController, :show
-    get "/card", CardController, :show
+
+    get "/posts", BlogController, :index
+    get "/posts/:id", BlogController, :show
+  end
+
+  scope "/", ZoeyrinhaWeb do
+    pipe_through [:rss]
+
+    get "/rss.xml", RssController, :index
+    get "/sitemap.xml", SitemapController, :index
   end
 end
