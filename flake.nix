@@ -19,9 +19,9 @@
         system,
         ...
       }: let
-        inherit (pkgs.beam.interpreters) erlang_27;
+        inherit (pkgs.beam.interpreters) erlang_28;
         inherit (pkgs.beam) packagesWith;
-        beam = packagesWith erlang_27;
+        beam = packagesWith erlang_28;
       in {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
@@ -31,7 +31,7 @@
           mkShell {
             name = "zoeyrinha";
             packages = with pkgs;
-              [beam.elixir_1_17 nodejs]
+              [beam.elixir_1_20 nodejs]
               ++ lib.optional stdenv.isLinux [inotify-tools]
               ++ lib.optional stdenv.isDarwin [
                 darwin.apple_sdk.frameworks.CoreServices
