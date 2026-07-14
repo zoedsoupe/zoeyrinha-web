@@ -48,6 +48,10 @@ defmodule Zoeyrinha.MixProject do
       {:phoenix_live_view, "~> 1.0"},
       {:gettext, "~> 1.0"},
       {:nimble_publisher, "~> 1.1"},
+      # syntax highlighting lexers for nimble_publisher code fences;
+      # needed in every env (ex_doc only pulls them in dev/prod)
+      {:makeup_elixir, "~> 1.0"},
+      {:makeup_erlang, "~> 1.0"},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},

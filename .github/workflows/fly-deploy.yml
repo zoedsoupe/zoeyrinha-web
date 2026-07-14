@@ -2,13 +2,19 @@
 
 name: Fly Deploy
 on:
-  push:
-    branches:
-      - main
+  # Manual trigger from the Actions tab.
+  workflow_dispatch:
+  # Auto-deploy after ci succeeds on main.
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
+    branches: [main]
 jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
+    # Skip when triggered by a failed ci run; always run on manual dispatch.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     concurrency: deploy-group # optional: ensure only one action runs at a time
     steps:
       - uses: actions/checkout@v4
