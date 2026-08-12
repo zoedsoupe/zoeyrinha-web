@@ -1,7 +1,8 @@
 %{
 title: "comments from the atmosphere",
 description: "I wanted comments on this blog without a database or a moderation queue. I shipped them on Bluesky threads through proto_rune, my own AT Protocol SDK, and found three bugs in it first.",
-tags: ~w(elixir bluesky oss)
+tags: ~w(elixir bluesky oss),
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msvafroz5e2o",
 }
 ---
 

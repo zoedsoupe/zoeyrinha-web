@@ -1,7 +1,8 @@
 %{
 title: "comentários da atmosfera",
 description: "Eu queria comentários neste blog sem banco de dados e sem fila de moderação. Acabei fazendo com threads do Bluesky através do proto_rune, meu próprio SDK de AT Protocol, e achei três bugs nele no caminho.",
-tags: ~w(elixir bluesky oss)
+tags: ~w(elixir bluesky oss),
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msvafroz5e2o",
 }
 ---
 

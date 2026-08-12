@@ -5,6 +5,7 @@ tags: ~w(elixir peri oss),
 bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msuf6xur522z",
 }
 ---
+
 peri passou de 650 mil downloads no Hex. É um número abstrato até você pensar
 no que ele realmente é: seiscentos e cinquenta mil pipelines de CI, deploys e
 `mix deps.get` baixando uma biblioteca de validação que eu escrevi no meu tempo
