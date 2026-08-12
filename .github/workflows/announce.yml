@@ -1,0 +1,65 @@
+name: announce
+
+on:
+  # Manual trigger from the Actions tab.
+  workflow_dispatch:
+  # Announce after a successful deploy on main, so the announced URL is live.
+  workflow_run:
+    workflows: ["Fly Deploy"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  # the task writes bsky_thread back into post frontmatter; the workflow
+  # commits those changes back to main
+  contents: write
+
+jobs:
+  announce:
+    name: Announce new posts on Bluesky
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    concurrency: announce-group
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Elixir
+        id: setup-beam
+        uses: erlef/setup-beam@v1
+        with:
+          version-type: strict
+          version-file: .tool-versions
+
+      - name: Restore deps and _build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-announce-${{ steps.setup-beam.outputs.otp-version }}-${{ steps.setup-beam.outputs.elixir-version }}-${{ hashFiles('**/mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-announce-${{ steps.setup-beam.outputs.otp-version }}-${{ steps.setup-beam.outputs.elixir-version }}-
+
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Announce posts
+        run: mix blog.announce
+        env:
+          BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
+          BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+          PHX_HOST: zoedsoupe.zeetech.io
+
+      - name: Commit frontmatter changes back
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add priv/posts
+          if git diff --cached --quiet; then
+            echo "no frontmatter changes to commit"
+          else
+            git commit -m "chore: backfill bsky_thread frontmatter"
+            git pull --rebase origin main
+            git push
+          fi

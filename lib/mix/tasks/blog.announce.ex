@@ -7,8 +7,10 @@ defmodule Mix.Tasks.Blog.Announce do
   Idempotent: posts that already have bsky_thread are skipped.
 
   Only the English file of a post is announced; `*.pt-br.md` translations are
-  skipped. After announcing, copy the bsky_thread line into the translation's
-  frontmatter by hand so both language versions render the same thread.
+  never announced themselves. After announcing, the bsky_thread line is copied
+  into the translation's frontmatter automatically, so both language versions
+  render the same thread. Translations added after their post was announced
+  are backfilled the same way on the next run.
 
   Requires BSKY_IDENTIFIER and BSKY_APP_PASSWORD env vars. PHX_HOST overrides
   the canonical host (default zoedsoupe.zeetech.io).
@@ -27,6 +29,7 @@ defmodule Mix.Tasks.Blog.Announce do
       posts = pending_posts()
       Mix.shell().info("#{length(posts)} post(s) to announce")
       announce_all(session, posts)
+      backfill_translations()
     else
       {:error, message} -> Mix.raise(to_string(message))
     end
@@ -94,6 +97,32 @@ defmodule Mix.Tasks.Blog.Announce do
       Mix.shell().info("announced #{post_id(path)} -> #{at_uri}")
       :ok
     end
+  end
+
+  # translations share the English thread: any `*.pt-br.md` missing
+  # bsky_thread whose English file already has one gets it copied over.
+  # covers both fresh announcements and translations added later
+  defp backfill_translations do
+    "priv/posts/**/*.pt-br.md"
+    |> Path.wildcard()
+    |> Enum.each(fn path ->
+      english = String.replace_suffix(path, ".pt-br.md", ".md")
+
+      with {:ok, translated} <- File.read(path),
+           {:ok, english_content} <- File.read(english),
+           {:ok, translated_attrs} <- Frontmatter.attrs(translated),
+           {:ok, english_attrs} <- Frontmatter.attrs(english_content),
+           false <- Map.has_key?(translated_attrs, :bsky_thread),
+           at_uri when is_binary(at_uri) <- english_attrs[:bsky_thread],
+           {:ok, updated} <- Frontmatter.insert_attr(translated, :bsky_thread, at_uri),
+           :ok <- File.write(path, updated) do
+        Mix.shell().info("backfilled #{path} -> #{at_uri}")
+      else
+        true -> :ok
+        nil -> :ok
+        {:error, reason} -> Mix.shell().error("skipping #{path}: #{inspect(reason)}")
+      end
+    end)
   end
 
   defp post_id(path) do
