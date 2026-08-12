@@ -1,65 +1,68 @@
-# Zoeyrinha
+# zoeyrinha-web
 
-Seja bem-vinde ao **Zoeyrinha**, o espaço onde a programação funcional encontra o existencialismo nerd! Este é o repositório de código fonte do meu blog pessoal e portfólio, onde compartilho meus projetos, reflexões e divagações sobre o mundo da tecnologia, sempre com uma dose de ironia e umas referências econômicas que só os iniciados vão entender.
+O código-fonte do meu blog. Arquivos markdown compilados em tempo de build pelo
+NimblePublisher, servidos por Phoenix, deploy no Fly.io. Nenhum banco de dados
+foi ferido na produção deste site, porque não existe nenhum.
 
-## ✨ Boas-Vindas a Todas as Pessoas Trans! 🏳️‍⚧️
+## o que tem aqui
 
-Este espaço é trans-inclusivo e acolhedor! Se você é uma pessoa trans, não-binárie, ou de qualquer identidade de gênero, saiba que você é bem-vinde. Aqui, celebro a diversidade e acredito que cada ume de nós traz uma perspectiva única para o mundo da tecnologia e além. Seja para compartilhar conhecimento, aprender algo novo, ou simplesmente encontrar um espaço onde você possa ser você mesme. 🌈💻
+- **Posts**: markdown com frontmatter em mapa de Elixir, em `priv/posts/`.
+  Quando o assunto pede, tem versão em pt-BR e em inglês, e eu escrevo as duas
+  porque máquina de traduzir ainda não pega o tom.
+- **Comentários**: uma thread do Bluesky usando um trench coat. Cada post
+  guarda o URI da thread no frontmatter, a página busca as respostas via
+  [proto_rune](https://github.com/zoedsoupe/proto_rune) (meu SDK de AT
+  Protocol) e cacheia na hora de renderizar. Sem banco, sem fila de moderação,
+  sem Tamagotchi. A história inteira está
+  [num post](https://zoedsoupe.zeetech.io/blog/comments-from-the-atmosphere).
+- **Blog**: Elixir, BEAM, sistemas distribuídos, e o que quer que eu esteja
+  debugando naquela semana. Ocasionalmente economia, cyberpunk e dívida
+  cognitiva.
 
-## Sobre o Projeto
+## bem-vindes
 
-O **Zoeyrinha** é mais que um blog e portfólio; é praticamente um monólito de imutabilidade em um mundo de mudanças caóticas (exceto quando preciso dar uns _force pushes_). Aqui, você encontrará uma mistura de artigos técnicos, insights sobre projetos, e aquele toque de humor ácido.
+Este espaço é trans-inclusivo. Se você é uma pessoa trans, não-binárie ou de
+qualquer identidade de gênero, você é bem-vinde aqui, no blog e nas issues.
+Escrito por uma travesti, mantido por uma travesti, e o código não liga pra
+como você se chama desde que ele compile.
 
-## Funcionalidades
+## stack
 
-- **Blog Pessoal:** Tudo sobre Elixir, Phoenix, programação funcional, e outras nerdices que gosto de dissecar. Spoiler: funções puras são o novo preto.
-- **Portfólio:** Meus projetos favoritos, de bibliotecas Elixir até integrações com Supabase, todos devidamente documentados e versionados (porque sem versão é só caos).
-- **Reflexões:** Algumas ideias sobre economia e sociedade, sempre temperadas com um pouquinho de teoria dos jogos e otimismo cauteloso. Afinal, o mercado é livre (até ter concorrência rs), mas meus pensamentos não são.
-- **Design Customizado:** Uma interface que mistura a elegância gótica com a praticidade funcional. Sim, eu sei que faz sentido.
+- **Elixir + Phoenix**: a base inteira. LiveView onde faz sentido, HTML de
+  servidor no resto.
+- **NimblePublisher**: transforma os markdowns em HTML em tempo de compilação.
+  O blog é, tecnicamente, um artefato de build.
+- **Tailwind CSS**: o visual gótico-funcional.
+- **Bandit**: o servidor HTTP.
+- **Nix flake**: o ambiente de dev, pra quem gosta de reprodutibilidade de
+  verdade.
 
-## Tecnologias Utilizadas
+## rodando local
 
-- **Elixir & Phoenix Framework:** A base sólida do site.
-- **Tailwind CSS:** Pra garantir que até os _breakpoints_ sejam declarados de forma pura.
-- **LiveView:** Uma SPA sem JavaScript pesado? Sim, por favor.
-- **Markdown:** Porque a vida é curta demais para HTML semântico.
+Com Nix:
 
-## Como Rodar o Projeto
+```sh
+nix develop
+mix deps.get && npm i --prefix assets
+iex -S mix phx.server
+```
 
-1. **Clone o Repositório:**
+Sem Nix, instale Elixir, Erlang e Node na mão e reze pra versão bater com o
+`.tool-versions`. Depois abra `http://localhost:4000`.
 
-   ```sh
-   git clone https://github.com/zoeyrinha/zoeyrinha.git
-   cd zoeyrinha
-   ```
+## estrutura
 
-2. **Instale as Dependências:**
+- `lib/zoeyrinha`: o núcleo, onde os posts viram dados.
+- `lib/zoeyrinha_web`: a casca Phoenix, controllers, componentes, a busca de
+  comentários.
+- `priv/posts`: os textos. A parte que importa, honestamente.
+- `assets`: CSS e o mínimo de JS que a dignidade permite.
 
-   ```sh
-   mix deps.get && npm i --prefix assets
-   ```
+## licença
 
-3. **Inicie o Servidor Phoenix:**
-
-   ```sh
-   iex -S mix phx.server
-   ```
-
-4. **Acesse o site localmente:**
-
-   Abra seu navegador e vá para `http://localhost:4000`.
-
-## Estrutura do Projeto
-
-- **lib/zoeyrinha:** Código principal do site, onde as funções são puras e as side effects são contidos.
-- **assets:** Estilos, scripts, e tudo que mantém o site bonito.
-- **config:** Porque até os maiores sistemas têm seus _configuration managers_.
-
-## Licença
-
-Este projeto é licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+MIT. Veja [LICENSE](./LICENSE).
 
 ---
 
-[@zoedsoupe](mailto:zoey.spessanha@zeetech.io)
-Desenvolvedora de Software, Funcionalista e Crítica de Sistemas Complexos (com uma pitada de humor econômico)
+[@zoedsoupe](https://github.com/zoedsoupe) ·
+[zoey.spessanha@zeetech.io](mailto:zoey.spessanha@zeetech.io)
