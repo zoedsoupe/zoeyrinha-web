@@ -63,8 +63,108 @@ defmodule ZoeyrinhaWeb.BlogHTML do
         <div class="prose">
           {raw(@post.body)}
         </div>
+
+        <section :if={@comments != :none} class="mt-16 pt-8 border-t border-selection">
+          <h2 class="text-2xl font-bold text-pink mb-4">{gettext("comments")}</h2>
+          <p class="font-mono text-sm mb-6">
+            <a
+              href={@thread_url}
+              target="_blank"
+              rel="noopener"
+              class="text-pink hover:text-pink-soft"
+            >
+              {gettext("reply on Bluesky")}
+            </a>
+          </p>
+
+          <div :if={@comments == :error} class="text-gray-light">
+            {gettext("Comments are unavailable right now.")}
+            <a href={@thread_url} target="_blank" rel="noopener" class="text-pink">
+              {gettext("Read the thread on Bluesky.")}
+            </a>
+          </div>
+
+          <p :if={@comments == []} class="text-gray-light font-mono text-sm">
+            {gettext("No comments yet.")}
+          </p>
+
+          <ol :if={is_list(@comments)} class="space-y-6">
+            <.comment :for={comment <- @comments} comment={comment} />
+          </ol>
+        </section>
       </article>
     </main>
+    """
+  end
+
+  attr :comment, Zoeyrinha.Blog.Comment, required: true
+
+  def comment(assigns) do
+    ~H"""
+    <li>
+      <article>
+        <header class="flex items-center gap-2 text-sm">
+          <img
+            :if={@comment.author_avatar}
+            src={@comment.author_avatar}
+            alt=""
+            class="h-6 w-6 rounded-full"
+          />
+          <span class="text-foreground">{@comment.author_display_name || @comment.author_handle}</span>
+          <a
+            :if={@comment.author_did}
+            href={"https://bsky.app/profile/#{@comment.author_did}"}
+            target="_blank"
+            rel="noopener"
+            class="font-mono text-gray-light"
+          >
+            @{@comment.author_handle}
+          </a>
+          <time :if={@comment.created_at} class="font-mono text-gray-light ml-auto">
+            {Calendar.strftime(@comment.created_at, "%Y-%m-%d %H:%M")}
+          </time>
+        </header>
+
+        <p class="whitespace-pre-wrap mt-2 text-foreground/90">
+          <.segment :for={segment <- @comment.segments} segment={segment} />
+        </p>
+
+        <footer class="flex gap-4 mt-2 font-mono text-xs text-gray-light">
+          <span>{@comment.like_count} likes</span>
+          <span>{@comment.reply_count} replies</span>
+          <a :if={@comment.url} href={@comment.url} target="_blank" rel="noopener" class="text-pink">
+            view on Bluesky
+          </a>
+        </footer>
+      </article>
+
+      <ol :if={@comment.replies != []} class="mt-4 ml-4 pl-4 border-l border-selection space-y-6">
+        <.comment :for={reply <- @comment.replies} comment={reply} />
+      </ol>
+    </li>
+    """
+  end
+
+  attr :segment, :any, required: true
+
+  defp segment(%{segment: {:text, _text}} = assigns) do
+    ~H"{elem(@segment, 1)}"
+  end
+
+  defp segment(%{segment: {:link, _text, _url}} = assigns) do
+    ~H"""
+    <a href={elem(@segment, 2)} target="_blank" rel="noopener" class="text-pink">{elem(@segment, 1)}</a>
+    """
+  end
+
+  defp segment(%{segment: {:mention, _text, _did}} = assigns) do
+    ~H"""
+    <a
+      href={"https://bsky.app/profile/#{elem(@segment, 2)}"}
+      target="_blank"
+      rel="noopener"
+      class="text-pink"
+    >{elem(@segment, 1)}</a>
     """
   end
 

@@ -1,12 +1,12 @@
 %{
-  title: "present day, present time",
-  description: "Sobre não conseguir mais escrever código na mão, dívida cognitiva, superdotação, e o que Serial Experiments Lain, Ghost in the Shell, Donna Haraway e Pierre Lévy têm a ver com isso.",
-  tags: ~w(meta ai elixir),
-  draft: true
+title: "present day, present time",
+description: "Sobre não conseguir mais escrever código na mão, dívida cognitiva, superdotação, e o que Serial Experiments Lain, Ghost in the Shell, Donna Haraway e Pierre Lévy têm a ver com isso.",
+tags: ~w(meta ai elixir),
+draft: true
 }
 ---
 
-*Present day... present time. Hahaha.*
+_Present day... present time. Hahaha._
 
 Tem uma coisa que eu venho evitando escrever em voz alta, então vou escrever
 aqui: ultimamente, escrever código na mão me parece contraprodutivo. Não no
@@ -67,7 +67,7 @@ Essa distância entre o sentido e o medido aparece em quase tudo que eu li:
 E tem o cansaço. A BCG cunhou ["AI brain fry"](https://www.bcg.com/news/5march2026-when-using-ai-leads-brain-fry)
 pra fadiga de quem passa o dia supervisionando agentes, e o achado que importa
 é que não é o uso que frita, é a carga de supervisão: terceirizar trabalho
-repetitivo *reduziu* burnout no estudo deles, enquanto vigiar saída de modelo
+repetitivo _reduziu_ burnout no estudo deles, enquanto vigiar saída de modelo
 aumentou fadiga de decisão e intenção de pedir demissão. A BetterUp e Stanford
 cunharam ["workslop"](https://www.betterup.com/blog/hidden-costs-workslop),
 aquela saída de IA polida e oca que empurra o custo cognitivo pra quem recebe,
@@ -187,7 +187,7 @@ computador, e sim um programa executável onipresente, um homúnculo da rede. No
 clímax, ela reescreve a realidade, apaga as memórias de todos sobre o que
 aconteceu, e escolhe existir invisível, em toda parte e em lugar nenhum. "Se
 você se lembrar de mim, eu existo." A frase de abertura de cada episódio é um
-narrador dizendo *present day, present time* e rindo, porque o presente, na
+narrador dizendo _present day, present time_ e rindo, porque o presente, na
 Wired, não é nem dia nem hora: é uma camada de protocolo. Minha foto de perfil
 é a Lain em todo lugar, inclusive aqui, e não é coincidência nem só estética.
 É que a pergunta dela é a minha: se a minha memória de ter escrito o código é
@@ -229,7 +229,7 @@ olhava?". É uma pergunta pior, porque não tem resposta limpa.
 E o Pierre Lévy me dá a peça que eu uso pra não desesperar, com a ressalva
 honesta de que eu ainda estou nos capítulos iniciais de _O que é o virtual?_,
 então o que eu tiro dele aqui é quase só o conceito central, mas já rende: o
-virtual não é o oposto do real, é o oposto do *atual*. A árvore está atualizada
+virtual não é o oposto do real, é o oposto do _atual_. A árvore está atualizada
 na madeira, mas está virtual na semente. Virtualizar não é falsificar, é mover
 algo pra um campo de potências, de onde ele pode ser atualizado de muitas
 formas. Quando eu coloco o que eu sei de engenharia num schema, num AGENTS.md,

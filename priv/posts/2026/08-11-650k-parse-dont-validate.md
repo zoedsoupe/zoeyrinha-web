@@ -1,11 +1,12 @@
 %{
-  title: "650k downloads: parse, don't validate",
-  description: "peri passed 650k downloads on Hex. A thank-you, and the idea the whole library is built on: parse, don't validate. In English and in Portuguese.",
-  tags: ~w(elixir peri oss)
+title: "650k downloads: parse, don't validate",
+description: "peri passed 650k downloads on Hex. A thank-you, and the idea the whole library is built on: parse, don't validate. In English and in Portuguese.",
+tags: ~w(elixir peri oss),
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msuf6xur522z",
 }
 ---
 
-*This post is bilingual: English first, [português embaixo](#obrigada).*
+_This post is bilingual: English first, [português embaixo](#obrigada)._
 
 peri passed 650,000 downloads on Hex. That number is abstract until you think
 about what it actually is: six hundred and fifty thousand CI runs, deploys, and
@@ -36,7 +37,7 @@ term, from a raw integer or a `DateTime` up to a deeply nested map, and peri
 turns untrusted input, like HTTP params or a JSON payload, into data the rest
 of your app can trust, or into an error you can show to a human. It depends on
 nothing and doesn't care whether you use Ecto, Phoenix, or neither. The rest of
-this post is about *why* that shape-checking step matters.
+this post is about _why_ that shape-checking step matters.
 
 ## The idea
 
@@ -89,7 +90,7 @@ runtime instead, in structs, tagged tuples, and pattern matching. That is less
 true now, and delightfully so. Since Elixir 1.18 the language has been growing
 a [gradual set-theoretic type system](https://elixir.hexdocs.pm/main/gradual-set-theoretic-types.html)
 into the compiler itself, and it is worth being precise about what that means,
-because it makes the case for parsing *stronger*, not weaker.
+because it makes the case for parsing _stronger_, not weaker.
 
 Set-theoretic means types compose like sets: unions (`integer() or nil`),
 intersections (`and`), negations (`not`). The compiler already understands
@@ -156,7 +157,7 @@ right at the controller boundary, exactly where King says the parse belongs.
 So, 650k. Thank you to everyone who filed an issue, sent a PR, argued with me
 about coercion semantics (you were right), or just quietly added `{:peri, ...}`
 to a `mix.exs` somewhere. Parse at the boundary, pattern match on the proof,
-and go validate something. Sorry, go *parse* something.
+and go validate something. Sorry, go _parse_ something.
 
 ---
 
@@ -196,7 +197,7 @@ de um inteiro cru ou um `DateTime` até um mapa profundamente aninhado, e peri
 transforma entrada não confiável, como parâmetros HTTP ou um payload de JSON,
 em dados nos quais o resto da aplicação pode confiar, ou num erro que você pode
 mostrar pra um humano. Não depende de nada e não liga se você usa Ecto, Phoenix
-ou nenhum dos dois. O resto deste post é sobre *por que* essa etapa de conferir
+ou nenhum dos dois. O resto deste post é sobre _por que_ essa etapa de conferir
 o formato importa.
 
 ### A ideia
@@ -252,7 +253,7 @@ pattern matching. Isso ficou menos verdade, e que bom! Desde o Elixir 1.18 a
 linguagem vem embutindo no próprio compilador um
 [sistema de tipos gradual e teórico-conjuntista](https://elixir.hexdocs.pm/main/gradual-set-theoretic-types.html)
 (_gradual set-theoretic type system_), e vale ser precisa sobre o que isso
-significa, porque ele deixa o argumento do parsing *mais forte*, não mais
+significa, porque ele deixa o argumento do parsing _mais forte_, não mais
 fraco.
 
 Teórico-conjuntista quer dizer que tipos combinam como conjuntos: uniões
@@ -318,5 +319,5 @@ controller, exatamente onde a King diz que o parsing deve acontecer.
 Então, 650 mil. Obrigada a todo mundo que abriu issue, mandou PR, discutiu
 comigo sobre semântica de coerção (vocês estavam certos), ou só silenciosamente
 adicionou `{:peri, ...}` num `mix.exs` por aí. Faça parsing na fronteira, dê
-pattern match na prova, e vá validar alguma coisa. Ops, vá *parsear* alguma
+pattern match na prova, e vá validar alguma coisa. Ops, vá _parsear_ alguma
 coisa!

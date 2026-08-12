@@ -10,7 +10,7 @@ kill_signal = 'SIGTERM'
 [build]
 
 [env]
-  PHX_HOST = 'zoeyrinha-web.fly.dev'
+  PHX_HOST = 'zoedsoupe.zeetech.io'
   PORT = '8080'
 
 [http_service]

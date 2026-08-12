@@ -57,6 +57,7 @@ defmodule Zoeyrinha.MixProject do
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
       {:jason, "~> 1.2"},
       {:bandit, "~> 1.5"},
+      {:proto_rune, "~> 0.3"},
       {:ex_doc, ">= 0.0.0", runtime: false, only: [:dev, :prod]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.3", only: [:dev], runtime: false}

@@ -1,7 +1,8 @@
 %{
 title: "hello, world",
 description: "Why this blog exists and what to expect: Elixir, distributed systems, and field notes from building things that are not supposed to fall over.",
-tags: ~w(meta elixir)
+tags: ~w(meta elixir),
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msuf6xpq3f2q",
 }
 ---
 

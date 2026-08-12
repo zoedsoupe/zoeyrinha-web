@@ -9,6 +9,7 @@ defmodule Zoeyrinha.Application do
   def start(_type, _args) do
     children = [
       {Phoenix.PubSub, name: Zoeyrinha.PubSub},
+      Zoeyrinha.Blog.Comments.Cache,
       ZoeyrinhaWeb.Endpoint
     ]
 

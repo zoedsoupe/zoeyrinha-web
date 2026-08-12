@@ -2,7 +2,7 @@ defmodule Zoeyrinha.Blog.Post do
   @moduledoc "A single blog post, built from a markdown file by NimblePublisher."
 
   @enforce_keys [:id, :title, :body, :description, :tags, :date]
-  defstruct [:id, :title, :body, :description, :tags, :date]
+  defstruct [:id, :title, :body, :description, :tags, :date, :bsky_thread, draft: false]
 
   @doc """
   Builds a post from its path and frontmatter.
