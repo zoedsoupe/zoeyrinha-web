@@ -9,14 +9,34 @@
 
 peri passed 650,000 downloads on Hex. That number is abstract until you think
 about what it actually is: six hundred and fifty thousand CI runs, deploys, and
-`mix deps.get` calls pulling a validation library I wrote in my spare time
-because Ecto changesets annoyed me one too many times. So: thank you. Genuinely.
+`mix deps.get` calls pulling a validation library I wrote in my spare time. So:
+thank you. Genuinely.
+
+peri diverges from Ecto changesets on purpose, and lives alongside them
+happily. Ecto is a composable relational mapper I have a lot of love for; peri
+is the piece I wanted after good times elsewhere, parsing at the boundary in
+Haskell and working with plumatic schema, and later malli, in Clojure. Elixir
+felt like it was missing that friend, so I wrote one. If Ecto itself ever grows
+something in this direction, that would be a win too.
 
 It feels like the right moment to write down the idea peri is built on, because
 the idea is not mine. It comes from Alexis King's 2019 post
 [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/),
 which is the best eleven paragraphs ever written about data integrity, and which
 you should read instead of this post if you only have time for one.
+
+## What is peri?
+
+For anyone landing here without context: peri is a small Elixir library for
+describing the shape your data should have, and then checking real data against
+that shape. The schema language is plain Elixir data: maps, tuples, keyword
+lists, and atoms. No special syntax to learn. And schemas compose, so a shape
+you defined once can be reused inside bigger ones. You can parse any Elixir
+term, from a raw integer or a `DateTime` up to a deeply nested map, and peri
+turns untrusted input, like HTTP params or a JSON payload, into data the rest
+of your app can trust, or into an error you can show to a human. It depends on
+nothing and doesn't care whether you use Ecto, Phoenix, or neither. The rest of
+this post is about *why* that shape-checking step matters.
 
 ## The idea
 
@@ -144,18 +164,40 @@ and go validate something. Sorry, go *parse* something.
 
 ## 650 mil downloads: faça parsing, não validação
 
-O peri passou de 650 mil downloads no Hex. É um número abstrato até você pensar
+peri passou de 650 mil downloads no Hex. É um número abstrato até você pensar
 no que ele realmente é: seiscentos e cinquenta mil pipelines de CI, deploys e
 `mix deps.get` baixando uma biblioteca de validação que eu escrevi no meu tempo
-livre porque o changeset do Ecto me irritou uma vez demais. Então: obrigada. De
-verdade!
+livre. Então: obrigada. De verdade!
 
-Acho que é o momento certo pra escrever sobre a ideia por trás do peri, porque
+peri diverge dos changesets do Ecto de propósito, e convive com eles
+feliz da vida. O Ecto é um mapeador relacional componível pelo qual eu tenho
+muito carinho; peri é a peça que eu quis depois de bons tempos em outras
+terras, fazendo parsing na fronteira em Haskell e trabalhando com plumatic
+schema, e depois malli, em Clojure. O Elixir parecia estar sentindo falta
+desse amigo, então eu escrevi um. Se o próprio Ecto um dia crescer algo nessa
+direção, também é vitória.
+
+Acho que é o momento certo pra escrever sobre a ideia por trás de peri, porque
 a ideia não é minha. Ela vem do artigo de 2019 da Alexis King,
 [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 (_"faça parsing, não validação"_), que são os melhores onze parágrafos já
 escritos sobre integridade de dados. Se você só tiver tempo de ler uma coisa
 hoje, leia ele, não este post.
+
+### O que é peri?
+
+Pra quem chegou aqui sem contexto: peri é uma biblioteca pequena de Elixir pra
+descrever o formato que seus dados deveriam ter, e então conferir dados reais
+contra esse formato. A linguagem de schemas é dado puro de Elixir: mapas,
+tuplas, keyword lists e átomos. Sem sintaxe nova pra aprender. E schemas são
+componíveis, então um formato que você definiu uma vez pode ser reutilizado
+dentro de formatos maiores. Dá pra fazer parsing de qualquer termo de Elixir,
+de um inteiro cru ou um `DateTime` até um mapa profundamente aninhado, e peri
+transforma entrada não confiável, como parâmetros HTTP ou um payload de JSON,
+em dados nos quais o resto da aplicação pode confiar, ou num erro que você pode
+mostrar pra um humano. Não depende de nada e não liga se você usa Ecto, Phoenix
+ou nenhum dos dois. O resto deste post é sobre *por que* essa etapa de conferir
+o formato importa.
 
 ### A ideia
 
@@ -247,7 +289,7 @@ prometer o quê. Mesmo num futuro de Elixir completamente tipado, o parsing de
 fronteira não desaparece. Ele é o momento em que `dynamic()` vira um tipo em
 que o compilador pode confiar.
 
-### O peri é essa fronteira
+### peri é essa fronteira
 
 Que é exatamente a razão de existir da biblioteca:
 
