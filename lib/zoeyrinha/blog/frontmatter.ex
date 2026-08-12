@@ -40,10 +40,22 @@ defmodule Zoeyrinha.Blog.Frontmatter do
          rest <- Enum.drop(lines, sep),
          rev_idx when is_integer(rev_idx) <- Enum.find_index(Enum.reverse(header), &(&1 == "}")) do
       close_idx = length(header) - 1 - rev_idx
-      line = ",  #{key}: #{inspect(value)},"
-      {:ok, (List.insert_at(header, close_idx, line) ++ rest) |> Enum.join("\n")}
+      line = "  #{key}: #{inspect(value)},"
+
+      header =
+        header
+        |> List.update_at(close_idx - 1, &ensure_trailing_comma/1)
+        |> List.insert_at(close_idx, line)
+
+      {:ok, (header ++ rest) |> Enum.join("\n")}
     else
       nil -> {:error, :no_frontmatter}
     end
+  end
+
+  # the attr before the insertion point needs a trailing comma for the
+  # resulting map to still parse
+  defp ensure_trailing_comma(line) do
+    if String.ends_with?(line, ","), do: line, else: line <> ","
   end
 end

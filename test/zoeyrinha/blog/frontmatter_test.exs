@@ -39,12 +39,20 @@ defmodule Zoeyrinha.Blog.FrontmatterTest do
 
       assert {:ok, updated} = Frontmatter.insert_attr(@content, :bsky_thread, at_uri)
 
+      # the previous attr line gains a trailing comma and the new line
+      # carries its own, so the resulting map still parses
       assert updated =~ """
-               tags: ~w(meta elixir)
+               tags: ~w(meta elixir),
                bsky_thread: "at://did:plc:x/app.bsky.feed.post/abc",
              }
              ---
              """
+    end
+
+    test "produces frontmatter that still evaluates as a map" do
+      assert {:ok, updated} = Frontmatter.insert_attr(@content, :bsky_thread, "at://x/y/z")
+      assert {:ok, attrs} = Frontmatter.attrs(updated)
+      assert attrs[:bsky_thread] == "at://x/y/z"
     end
 
     test "leaves the body byte-identical" do

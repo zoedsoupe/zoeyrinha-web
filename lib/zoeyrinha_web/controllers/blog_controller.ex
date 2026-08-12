@@ -6,17 +6,18 @@ defmodule ZoeyrinhaWeb.BlogController do
   alias Zoeyrinha.Blog.Comments.Cache
 
   def index(conn, _params) do
-    render(conn, :index, posts: Blog.all_posts(), page_title: "blog")
+    render(conn, :index, posts: Blog.all_posts(conn.assigns.locale), page_title: "blog")
   end
 
   def show(conn, %{"id" => id}) do
-    post = Blog.get_post_by_id!(id)
+    post = Blog.get_post_by_id!(id, conn.assigns.locale)
     {comments, thread_url} = load_comments(post)
 
     render(conn, :show,
       post: post,
       comments: comments,
       thread_url: thread_url,
+      locale: conn.assigns.locale,
       page_title: post.title
     )
   end

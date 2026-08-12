@@ -58,6 +58,11 @@ defmodule ZoeyrinhaWeb.BlogHTML do
           <div class="flex flex-wrap gap-2 mt-4">
             <.badge :for={tag <- @post.tags}>{tag}</.badge>
           </div>
+          <p :if={@post.lang != @locale} class="font-mono text-xs text-gray-light mt-4">
+            {if @post.lang == "en",
+              do: gettext("this post is only available in english"),
+              else: gettext("this post is only available in português")}
+          </p>
         </header>
 
         <div class="prose">

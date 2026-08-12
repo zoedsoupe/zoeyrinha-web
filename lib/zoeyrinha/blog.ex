@@ -27,19 +27,44 @@ defmodule Zoeyrinha.Blog do
   @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
   @tags @posts |> Enum.flat_map(& &1.tags) |> Enum.uniq() |> Enum.sort()
 
-  @doc "All posts, newest first."
-  def all_posts, do: Enum.reject(@posts, & &1.draft)
+  @doc """
+  All posts, newest first, localized.
+
+  A post may exist in more than one language (same id, different `lang`).
+  Returns one version per id: the requested locale when available, the
+  English version otherwise.
+  """
+  def all_posts(locale \\ "en") do
+    @posts |> Enum.reject(& &1.draft) |> localize(locale)
+  end
 
   @doc "All tags across posts, sorted."
   def all_tags, do: @tags
 
-  @doc "The N most recent posts."
-  def recent_posts(limit \\ 5), do: Enum.take(@posts, limit)
+  @doc """
+  Fetch a post by slug, preferring the given locale and falling back to
+  English. Drafts are invisible here too: a draft slug raises a 404 even
+  on a direct URL.
+  """
+  def get_post_by_id!(id, locale \\ "en") do
+    @posts
+    |> Enum.reject(& &1.draft)
+    |> Enum.filter(&(&1.id == id))
+    |> prefer(locale)
+    |> Kernel.||(raise(Zoeyrinha.Blog.NotFoundError, "post with id=#{id} not found"))
+  end
 
-  @doc "Fetch a post by slug, raising a 404 if missing."
-  def get_post_by_id!(id) do
-    Enum.find(@posts, &(&1.id == id)) ||
-      raise Zoeyrinha.Blog.NotFoundError, "post with id=#{id} not found"
+  defp localize(posts, locale) do
+    posts
+    |> Enum.group_by(& &1.id)
+    |> Enum.map(fn {_id, versions} -> prefer(versions, locale) end)
+    |> Enum.sort_by(& &1.date, {:desc, Date})
+  end
+
+  defp prefer(versions, locale) do
+    Enum.find(versions, &(&1.lang == locale)) ||
+      Enum.find(versions, &(&1.lang == "en")) ||
+      List.first(versions)
   end
 end
 

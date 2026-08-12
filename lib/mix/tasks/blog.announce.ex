@@ -6,6 +6,10 @@ defmodule Mix.Tasks.Blog.Announce do
   a link facet), and writes the resulting AT-URI back into the frontmatter.
   Idempotent: posts that already have bsky_thread are skipped.
 
+  Only the English file of a post is announced; `*.pt-br.md` translations are
+  skipped. After announcing, copy the bsky_thread line into the translation's
+  frontmatter by hand so both language versions render the same thread.
+
   Requires BSKY_IDENTIFIER and BSKY_APP_PASSWORD env vars. PHX_HOST overrides
   the canonical host (default zoedsoupe.zeetech.io).
   """
@@ -42,6 +46,7 @@ defmodule Mix.Tasks.Blog.Announce do
   defp pending_posts do
     "priv/posts/**/*.md"
     |> Path.wildcard()
+    |> Enum.reject(&String.ends_with?(&1, ".pt-br.md"))
     |> Enum.flat_map(fn path ->
       with {:ok, content} <- File.read(path),
            {:ok, attrs} <- Frontmatter.attrs(content),

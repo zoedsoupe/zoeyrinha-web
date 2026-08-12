@@ -19,7 +19,32 @@ defmodule ZoeyrinhaWeb.BlogHTMLTest do
   end
 
   defp render_show(assigns) do
-    render_to_string(ZoeyrinhaWeb.BlogHTML, "show", "html", [post: post()] ++ assigns)
+    render_to_string(
+      ZoeyrinhaWeb.BlogHTML,
+      "show",
+      "html",
+      [post: post(), locale: "en"] ++ assigns
+    )
+  end
+
+  test "shows the language badge when the post language differs from the locale" do
+    pt_post = %{post() | lang: "pt_BR"}
+
+    html =
+      render_to_string(ZoeyrinhaWeb.BlogHTML, "show", "html",
+        post: pt_post,
+        locale: "en",
+        comments: :none,
+        thread_url: nil
+      )
+
+    assert html =~ "this post is only available in português"
+  end
+
+  test "hides the language badge when the post language matches the locale" do
+    html = render_show(comments: :none, thread_url: nil)
+
+    refute html =~ "only available"
   end
 
   test "renders the comments section with a nested comment tree" do
