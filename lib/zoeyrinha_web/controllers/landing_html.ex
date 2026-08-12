@@ -41,12 +41,19 @@ defmodule ZoeyrinhaWeb.LandingHTML do
 
       <div class="makeup mb-16 text-sm">{raw(zoey_code())}</div>
 
-      <%!-- About --%>
+      <%!-- This place --%>
       <section class="space-y-4 mb-16">
-        <h2 class="font-mono text-sm text-pink mb-2 glitch-text">// sobre</h2>
+        <h2 class="font-mono text-sm text-pink mb-2 glitch-text">
+          {gettext("// this place")}
+        </h2>
         <p>
           {gettext(
-            "i'm a travesty software engineer from brazil who fell in love with functional programming and never looked back. i spend my days crafting elegant abstractions, maintaining open source, and co-hosting Elixir em Foco, brazil's first elixir podcast."
+            "this site is my corner of the internet. no feed, no algorithm, no engagement metrics. just words i wanted to write and code i wanted to share, served straight from a little elixir app."
+          )}
+        </p>
+        <p>
+          {gettext(
+            "i'm a travesty engineer from campos dos goytacazes, brazil. i fell in love with functional programming years ago and never looked back. these days i build knowledge systems by day, maintain open source by night, and co-host Elixir em Foco, brazil's first elixir podcast."
           )}
         </p>
         <p>
@@ -56,9 +63,22 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         </p>
       </section>
 
+      <%!-- Blog --%>
+      <section class="mb-16">
+        <h2 class="font-mono text-sm text-pink mb-2 glitch-text">{gettext("// the blog")}</h2>
+        <p>
+          {gettext(
+            "the main dish of this place. long-form notes on elixir, OTP and distributed systems, plus the occasional rant about software, society and everything in between. no schedule, no content strategy, no growth hacking."
+          )}
+        </p>
+        <p class="font-mono text-sm mt-3">
+          <a href={~p"/posts"}>{gettext("read the blog")} &rarr;</a>
+        </p>
+      </section>
+
       <%!-- What i'm into --%>
       <section class="mb-16">
-        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">// no que eu tô</h2>
+        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">{gettext("// what i'm into")}</h2>
         <div class="space-y-4">
           <.into label={gettext("music that moves me")}>
             {gettext(
@@ -81,9 +101,14 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         </div>
       </section>
 
-      <%!-- Open source --%>
+      <%!-- Things i maintain --%>
       <section class="mb-16">
-        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">// open source</h2>
+        <h2 class="font-mono text-sm text-pink mb-2 glitch-text">
+          {gettext("// things i maintain")}
+        </h2>
+        <p class="mb-5">
+          {gettext("open source is how i pay rent to the commons. a few of my kids:")}
+        </p>
         <ul class="space-y-4">
           <.project name="anubis-mcp" href="https://github.com/zoedsoupe/anubis-mcp">
             {gettext(
@@ -112,7 +137,7 @@ defmodule ZoeyrinhaWeb.LandingHTML do
 
       <%!-- Elsewhere --%>
       <section>
-        <h2 class="font-mono text-sm text-pink mb-4 glitch-text">// me encontra por aí</h2>
+        <h2 class="font-mono text-sm text-pink mb-4 glitch-text">{gettext("// elsewhere")}</h2>
         <p class="text-gray-light mb-4">
           {gettext(
             "i'm not really into social networks anymore. i think we are heading the wrong way as a society under this economic system. but you can find me around:"
