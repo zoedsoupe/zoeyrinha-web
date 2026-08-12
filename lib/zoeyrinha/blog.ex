@@ -28,7 +28,7 @@ defmodule Zoeyrinha.Blog do
   @tags @posts |> Enum.flat_map(& &1.tags) |> Enum.uniq() |> Enum.sort()
 
   @doc "All posts, newest first."
-  def all_posts, do: @posts
+  def all_posts, do: Enum.reject(@posts, & &1.draft)
 
   @doc "All tags across posts, sorted."
   def all_tags, do: @tags
