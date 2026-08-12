@@ -65,15 +65,7 @@ defmodule Zoeyrinha.Blog.Comments do
     facets
     |> Enum.flat_map(&facet_span(&1, size))
     |> Enum.sort_by(fn {start, _end, _kind, _target} -> start end)
-    |> Enum.reduce({0, []}, fn {s, e, kind, target}, {cursor, acc} ->
-      if s < cursor do
-        # overlapping span: drop it
-        {cursor, acc}
-      else
-        gap = if s > cursor, do: [{:text, binary_part(text, cursor, s - cursor), nil}], else: []
-        {e, acc ++ gap ++ [{kind, binary_part(text, s, e - s), target}]}
-      end
-    end)
+    |> Enum.reduce({0, []}, &append_span(&1, &2, text))
     |> then(fn {cursor, acc} ->
       if cursor < size,
         do: acc ++ [{:text, binary_part(text, cursor, size - cursor), nil}],
@@ -84,6 +76,15 @@ defmodule Zoeyrinha.Blog.Comments do
       {:text, text, nil} -> {:text, text}
       segment -> segment
     end)
+  end
+
+  # overlapping spans (start before the cursor) are dropped
+  defp append_span({s, _e, _kind, _target}, {cursor, acc}, _text) when s < cursor,
+    do: {cursor, acc}
+
+  defp append_span({s, e, kind, target}, {cursor, acc}, text) do
+    gap = if s > cursor, do: [{:text, binary_part(text, cursor, s - cursor), nil}], else: []
+    {e, acc ++ gap ++ [{kind, binary_part(text, s, e - s), target}]}
   end
 
   # returns {byte_start, byte_end, :link | :mention, target} or []
