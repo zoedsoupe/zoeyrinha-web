@@ -18,9 +18,16 @@ defmodule ZoeyrinhaWeb.BlogController do
       comments: comments,
       thread_url: thread_url,
       locale: conn.assigns.locale,
-      page_title: post.title
+      page_title: post.title,
+      og_type: "article",
+      og_title: post.title,
+      og_description: post.description,
+      og_image: og_image(conn, post)
     )
   end
+
+  defp og_image(_conn, %{image: nil}), do: nil
+  defp og_image(conn, %{image: path}), do: unverified_url(conn, path)
 
   defp load_comments(%{bsky_thread: nil}), do: {:none, nil}
 

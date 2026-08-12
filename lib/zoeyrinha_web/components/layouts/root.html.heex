@@ -7,6 +7,24 @@
     <.live_title>
       {assigns[:page_title] || "Zoeyrinha"}
     </.live_title>
+    <%!-- Link preview metadata (WhatsApp, Twitter/X, etc). Controllers may
+         override via :og_* assigns; defaults cover the landing page. --%>
+    <meta property="og:type" content={assigns[:og_type] || "website"} />
+    <meta property="og:site_name" content="Zoeyrinha" />
+    <meta property="og:title" content={assigns[:og_title] || assigns[:page_title] || "Zoeyrinha"} />
+    <meta
+      property="og:description"
+      content={
+        assigns[:og_description] ||
+          "Zoey de Souza Pessanha: Elixir, open source and other ramblings."
+      }
+    />
+    <meta property="og:url" content={Phoenix.Controller.current_url(@conn)} />
+    <meta
+      property="og:image"
+      content={assigns[:og_image] || url(@conn, ~p"/images/profile.jpeg")}
+    />
+    <meta name="twitter:card" content="summary" />
     <link rel="icon" href={~p"/favicon.ico"} sizes="any" />
     <%!-- Brand fonts: Ubuntu (body) + Ubuntu Mono (display), matching zeetech --%>
     <link rel="preconnect" href="https://fonts.googleapis.com" />

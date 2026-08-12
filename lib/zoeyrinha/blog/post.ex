@@ -10,6 +10,7 @@ defmodule Zoeyrinha.Blog.Post do
     :tags,
     :date,
     :bsky_thread,
+    :image,
     draft: false,
     lang: "en"
   ]
