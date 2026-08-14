@@ -57,7 +57,7 @@ msgstr "desconstruindo a sociedade"
 msgid "elixir and math, made approachable"
 msgstr "elixir e matemática, de um jeito acessível"
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:159
+#: lib/zoeyrinha_web/controllers/landing_html.ex:167
 #, elixir-autogen, elixir-format
 msgid "for the good conversations"
 msgstr "pras boas conversas"
@@ -83,7 +83,7 @@ msgstr "início"
 msgid "how we build and rebuild concepts like religion and gender, and the systems that shape us."
 msgstr "como a gente constrói e reconstrói conceitos como religião e gênero, e os sistemas que moldam a gente."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:142
+#: lib/zoeyrinha_web/controllers/landing_html.ex:150
 #, elixir-autogen, elixir-format
 msgid "i'm not really into social networks anymore. i think we are heading the wrong way as a society under this economic system. but you can find me around:"
 msgstr "não curto mais muito rede social. acho que a gente tá indo pro lado errado como sociedade nesse sistema econômico. mas você me acha por aqui:"
@@ -114,11 +114,6 @@ msgstr "música que me move"
 msgid "my philosophy is simple: if it can be pure, make it pure. if it can be composable, make it composable. if it can help someone, make it open source."
 msgstr "minha filosofia é simples: se dá pra ser puro, faça puro. se dá pra ser componível, faça componível. se dá pra ajudar alguém, torne código aberto."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:165
-#, elixir-autogen, elixir-format
-msgid "nyx says: embrace the darkness of imperative code, then transcend it with functional elegance."
-msgstr "nyx diz: abrace a escuridão do código imperativo, depois transcenda com elegância funcional."
-
 #: lib/zoeyrinha_web/controllers/landing_html.ex:122
 #, elixir-autogen, elixir-format
 msgid "schema validation by pattern matching, not macros."
@@ -139,7 +134,7 @@ msgstr "tecnologia é melhor quando a gente constrói junto, de podcasts a códi
 msgid "the Supabase ecosystem in Elixir: auth, storage, postgrest, realtime."
 msgstr "o ecossistema do Supabase em Elixir: auth, storage, postgrest, realtime."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:149
+#: lib/zoeyrinha_web/controllers/landing_html.ex:157
 #, elixir-autogen, elixir-format
 msgid "the podcast"
 msgstr "o podcast"
@@ -149,7 +144,7 @@ msgstr "o podcast"
 msgid "there is poetry in patterns, even when the proofs still escape me."
 msgstr "tem poesia nos padrões, mesmo quando as provas ainda me escapam."
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:140
+#: lib/zoeyrinha_web/controllers/landing_html.ex:148
 #, elixir-autogen, elixir-format
 msgid "// elsewhere"
 msgstr "// me encontra por aí"
@@ -174,22 +169,22 @@ msgstr "// esse lugar"
 msgid "// what i'm into"
 msgstr "// no que eu tô"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:86
+#: lib/zoeyrinha_web/controllers/blog_html.ex:88
 #, elixir-autogen, elixir-format
 msgid "Comments are unavailable right now."
 msgstr "comentários indisponíveis no momento."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:93
+#: lib/zoeyrinha_web/controllers/blog_html.ex:95
 #, elixir-autogen, elixir-format
 msgid "No comments yet."
 msgstr "ainda sem comentários."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:88
+#: lib/zoeyrinha_web/controllers/blog_html.ex:90
 #, elixir-autogen, elixir-format
 msgid "Read the thread on Bluesky."
 msgstr "lê a thread no Bluesky."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:73
+#: lib/zoeyrinha_web/controllers/blog_html.ex:75
 #, elixir-autogen, elixir-format
 msgid "comments"
 msgstr "comentários"
@@ -209,7 +204,7 @@ msgstr "código aberto é como eu pago aluguel pros bens comuns. algumas das min
 msgid "read the blog"
 msgstr "lê o blog"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:81
+#: lib/zoeyrinha_web/controllers/blog_html.ex:83
 #, elixir-autogen, elixir-format
 msgid "reply on Bluesky"
 msgstr "responde no Bluesky"
@@ -233,3 +228,13 @@ msgstr "este post só está disponível em inglês"
 #, elixir-autogen, elixir-format
 msgid "this post is only available in português"
 msgstr "este post só está disponível em português"
+
+#: lib/zoeyrinha_web/controllers/landing_html.ex:141
+#, elixir-autogen, elixir-format
+msgid "// support this corner"
+msgstr "// apoie este cantinho"
+
+#: lib/zoeyrinha_web/components.ex:105
+#, elixir-autogen, elixir-format
+msgid "no ads, no sponsors, no metrics. if this helped you, here's the tip jar."
+msgstr "sem anúncios, sem patrocínio, sem métricas. se isso te ajudou, aqui tá o pote de gorjetas."

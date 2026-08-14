@@ -69,6 +69,8 @@ defmodule ZoeyrinhaWeb.BlogHTML do
           {raw(@post.body)}
         </div>
 
+        <.support class="mt-16" />
+
         <section :if={@comments != :none} class="mt-16 pt-8 border-t border-selection">
           <h2 class="text-2xl font-bold text-pink mb-4">{gettext("comments")}</h2>
           <p class="font-mono text-sm mb-6">

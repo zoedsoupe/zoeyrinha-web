@@ -135,6 +135,14 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         </p>
       </section>
 
+      <%!-- Support --%>
+      <section class="mb-16">
+        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">
+          {gettext("// support this corner")}
+        </h2>
+        <.support />
+      </section>
+
       <%!-- Elsewhere --%>
       <section>
         <h2 class="font-mono text-sm text-pink mb-4 glitch-text">{gettext("// elsewhere")}</h2>
@@ -160,12 +168,6 @@ defmodule ZoeyrinhaWeb.LandingHTML do
           </li>
         </ul>
       </section>
-
-      <p class="font-mono text-xs text-gray mt-16 border-t border-selection pt-6">
-        {gettext(
-          "nyx says: embrace the darkness of imperative code, then transcend it with functional elegance."
-        )}
-      </p>
     </main>
     """
   end

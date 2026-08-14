@@ -95,12 +95,43 @@ defmodule ZoeyrinhaWeb.Components do
     """
   end
 
+  @doc "Small tip-jar card linking GitHub Sponsors and Buy Me a Coffee."
+  attr :class, :string, default: ""
+
+  def support(assigns) do
+    ~H"""
+    <aside class={["rounded border border-selection p-5", @class]}>
+      <p class="text-gray-light text-sm mb-4">
+        {gettext("no ads, no sponsors, no metrics. if this helped you, here's the tip jar.")}
+      </p>
+      <div class="flex flex-wrap gap-5 font-mono text-sm">
+        <a
+          href="https://github.com/sponsors/zoedsoupe"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 text-gray-light hover:text-pink transition-colors"
+        >
+          <Lucideicons.heart class="w-4 h-4" /> github sponsors
+        </a>
+        <a
+          href="https://buymeacoffee.com/zoedsoupe"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 text-gray-light hover:text-pink transition-colors"
+        >
+          <Lucideicons.coffee class="w-4 h-4" /> buy me a coffee
+        </a>
+      </div>
+    </aside>
+    """
+  end
+
   @doc "Minimal site footer."
   attr :class, :string, default: ""
 
   def footer(assigns) do
     ~H"""
-    <footer class={["border-t border-selection mt-24 py-10", @class]}>
+    <footer class={["border-t border-selection mt-12 py-8", @class]}>
       <div class="mx-auto max-w-2xl px-5 flex flex-col items-start gap-4">
         <.social_links />
         <p class="font-mono text-xs text-gray">
