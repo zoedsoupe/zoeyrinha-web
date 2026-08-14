@@ -2,8 +2,9 @@ defmodule Mix.Tasks.Blog.Announce do
   @shortdoc "Announces blog posts missing a bsky_thread on Bluesky"
   @moduledoc """
   Scans priv/posts/**/*.md for posts whose frontmatter has no bsky_thread key,
-  publishes an announcement per post ("New post: {title}" + canonical URL with
-  a link facet), and writes the resulting AT-URI back into the frontmatter.
+  publishes an announcement per post ("New post: {title}" + description +
+  canonical URL with a link facet), and writes the resulting AT-URI back into
+  the frontmatter.
   Idempotent: posts that already have bsky_thread are skipped.
 
   Only the English file of a post is announced; `*.pt-br.md` translations are
@@ -56,7 +57,7 @@ defmodule Mix.Tasks.Blog.Announce do
            false <- attrs[:draft] || false,
            false <- Map.has_key?(attrs, :bsky_thread),
            title when is_binary(title) <- Map.get(attrs, :title) do
-        [{path, title, post_url(path)}]
+        [{path, title, Map.get(attrs, :description, ""), post_url(path)}]
       else
         true ->
           []
@@ -70,8 +71,8 @@ defmodule Mix.Tasks.Blog.Announce do
 
   defp announce_all(session, posts) do
     failures =
-      Enum.flat_map(posts, fn {path, title, url} ->
-        case announce_one(session, path, title, url) do
+      Enum.flat_map(posts, fn {path, title, description, url} ->
+        case announce_one(session, path, title, description, url) do
           :ok -> []
           {:error, reason} -> [{path, reason}]
         end
@@ -89,8 +90,8 @@ defmodule Mix.Tasks.Blog.Announce do
     end
   end
 
-  defp announce_one(session, path, title, url) do
-    with {:ok, at_uri} <- Client.create_post(session, title, url),
+  defp announce_one(session, path, title, description, url) do
+    with {:ok, at_uri} <- Client.create_post(session, title, description, url),
          {:ok, content} <- File.read(path),
          {:ok, updated} <- Frontmatter.insert_attr(content, :bsky_thread, at_uri),
          :ok <- File.write(path, updated) do

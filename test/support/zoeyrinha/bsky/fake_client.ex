@@ -19,7 +19,7 @@ defmodule Zoeyrinha.Bsky.FakeClient do
     do: respond(:login, {:ok, %{did: "did:fake:test", access_jwt: "fake-jwt"}})
 
   @impl true
-  def create_post(_session, _title, _url),
+  def create_post(_session, _title, _description, _url),
     do: respond(:create_post, {:ok, "at://did:fake:test/app.bsky.feed.post/fake-rkey"})
 
   @impl true

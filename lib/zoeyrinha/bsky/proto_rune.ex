@@ -14,10 +14,10 @@ defmodule Zoeyrinha.Bsky.ProtoRune do
   end
 
   @impl true
-  def create_post(session, title, url) do
+  def create_post(session, title, description, url) do
     rich_text =
       RichText.new()
-      |> RichText.text("New post: #{title}\n\n")
+      |> RichText.text("New post: #{title}\n\n#{description}\n\n")
       |> RichText.link(url, url)
 
     with {:ok, post_data} <- RichText.build(rich_text),
