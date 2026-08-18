@@ -2,6 +2,7 @@
 title: "650 mil downloads: faça parsing, não validação",
 description: "peri passou de 650 mil downloads no Hex. Um obrigada, e a ideia na qual a biblioteca inteira se apoia: parse, don't validate.",
 tags: ~w(elixir peri oss),
+series: "peri",
 bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msuf6xur522z",
 }
 ---

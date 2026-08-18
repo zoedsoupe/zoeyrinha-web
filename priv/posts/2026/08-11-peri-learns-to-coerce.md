@@ -2,6 +2,7 @@
 title: "peri learns to coerce",
 description: "peri 0.10.0: string params become typed data, errors become maps you can actually render, schemas compose, and Phoenix forms no longer need Ecto.",
 tags: ~w(elixir peri oss),
+series: "peri",
 bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msuf6y3c752q",
 }
 ---

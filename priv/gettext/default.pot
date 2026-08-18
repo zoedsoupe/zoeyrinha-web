@@ -11,12 +11,12 @@
 msgid ""
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:128
+#: lib/zoeyrinha_web/controllers/landing_html.ex:141
 #, elixir-autogen, elixir-format
 msgid "AT Protocol and Bluesky SDK, with a session that refreshes itself."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:114
+#: lib/zoeyrinha_web/controllers/landing_html.ex:127
 #, elixir-autogen, elixir-format
 msgid "Model Context Protocol SDK in Elixir. transports, sessions, OTP all the way down."
 msgstr ""
@@ -42,27 +42,27 @@ msgstr ""
 msgid "blog"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:93
+#: lib/zoeyrinha_web/controllers/landing_html.ex:106
 #, elixir-autogen, elixir-format
 msgid "building communities"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:88
+#: lib/zoeyrinha_web/controllers/landing_html.ex:101
 #, elixir-autogen, elixir-format
 msgid "deconstructing society"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:98
+#: lib/zoeyrinha_web/controllers/landing_html.ex:111
 #, elixir-autogen, elixir-format
 msgid "elixir and math, made approachable"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:167
+#: lib/zoeyrinha_web/controllers/landing_html.ex:180
 #, elixir-autogen, elixir-format
 msgid "for the good conversations"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:84
+#: lib/zoeyrinha_web/controllers/landing_html.ex:97
 #, elixir-autogen, elixir-format
 msgid "from industrial metal to dark psytrance to brazilian funk. music is how i process the world."
 msgstr ""
@@ -78,17 +78,17 @@ msgstr ""
 msgid "home"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:89
+#: lib/zoeyrinha_web/controllers/landing_html.ex:102
 #, elixir-autogen, elixir-format
 msgid "how we build and rebuild concepts like religion and gender, and the systems that shape us."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:150
+#: lib/zoeyrinha_web/controllers/landing_html.ex:163
 #, elixir-autogen, elixir-format
 msgid "i'm not really into social networks anymore. i think we are heading the wrong way as a society under this economic system. but you can find me around:"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:125
+#: lib/zoeyrinha_web/controllers/landing_html.ex:138
 #, elixir-autogen, elixir-format
 msgid "learn Elixir by fixing broken code, in the spirit of rustlings."
 msgstr ""
@@ -99,12 +99,12 @@ msgstr ""
 msgid "min read"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:133
+#: lib/zoeyrinha_web/controllers/landing_html.ex:146
 #, elixir-autogen, elixir-format
 msgid "more on github"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:83
+#: lib/zoeyrinha_web/controllers/landing_html.ex:96
 #, elixir-autogen, elixir-format
 msgid "music that moves me"
 msgstr ""
@@ -114,7 +114,7 @@ msgstr ""
 msgid "my philosophy is simple: if it can be pure, make it pure. if it can be composable, make it composable. if it can help someone, make it open source."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:122
+#: lib/zoeyrinha_web/controllers/landing_html.ex:135
 #, elixir-autogen, elixir-format
 msgid "schema validation by pattern matching, not macros."
 msgstr ""
@@ -124,27 +124,27 @@ msgstr ""
 msgid "senior software engineer. oss maintainer. elixir em foco co-host."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:94
+#: lib/zoeyrinha_web/controllers/landing_html.ex:107
 #, elixir-autogen, elixir-format
 msgid "tech is better when we build it together, from podcasts to open source to helping artisanal fishing communities go digital."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:119
+#: lib/zoeyrinha_web/controllers/landing_html.ex:132
 #, elixir-autogen, elixir-format
 msgid "the Supabase ecosystem in Elixir: auth, storage, postgrest, realtime."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:157
+#: lib/zoeyrinha_web/controllers/landing_html.ex:170
 #, elixir-autogen, elixir-format
 msgid "the podcast"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:99
+#: lib/zoeyrinha_web/controllers/landing_html.ex:112
 #, elixir-autogen, elixir-format
 msgid "there is poetry in patterns, even when the proofs still escape me."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:148
+#: lib/zoeyrinha_web/controllers/landing_html.ex:161
 #, elixir-autogen, elixir-format
 msgid "// elsewhere"
 msgstr ""
@@ -154,7 +154,7 @@ msgstr ""
 msgid "// the blog"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:107
+#: lib/zoeyrinha_web/controllers/landing_html.ex:120
 #, elixir-autogen, elixir-format
 msgid "// things i maintain"
 msgstr ""
@@ -164,27 +164,27 @@ msgstr ""
 msgid "// this place"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:81
+#: lib/zoeyrinha_web/controllers/landing_html.ex:94
 #, elixir-autogen, elixir-format
 msgid "// what i'm into"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:88
+#: lib/zoeyrinha_web/controllers/blog_html.ex:90
 #, elixir-autogen, elixir-format
 msgid "Comments are unavailable right now."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:95
+#: lib/zoeyrinha_web/controllers/blog_html.ex:97
 #, elixir-autogen, elixir-format
 msgid "No comments yet."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:90
+#: lib/zoeyrinha_web/controllers/blog_html.ex:92
 #, elixir-autogen, elixir-format
 msgid "Read the thread on Bluesky."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:75
+#: lib/zoeyrinha_web/controllers/blog_html.ex:77
 #, elixir-autogen, elixir-format
 msgid "comments"
 msgstr ""
@@ -194,17 +194,17 @@ msgstr ""
 msgid "i'm a travesty engineer from campos dos goytacazes, brazil. i fell in love with functional programming years ago and never looked back. these days i build knowledge systems by day, maintain open source by night, and co-host Elixir em Foco, brazil's first elixir podcast."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:110
+#: lib/zoeyrinha_web/controllers/landing_html.ex:123
 #, elixir-autogen, elixir-format
 msgid "open source is how i pay rent to the commons. a few of my kids:"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:75
+#: lib/zoeyrinha_web/controllers/landing_html.ex:88
 #, elixir-autogen, elixir-format
 msgid "read the blog"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:83
+#: lib/zoeyrinha_web/controllers/blog_html.ex:85
 #, elixir-autogen, elixir-format
 msgid "reply on Bluesky"
 msgstr ""
@@ -229,7 +229,7 @@ msgstr ""
 msgid "this post is only available in português"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/landing_html.ex:141
+#: lib/zoeyrinha_web/controllers/landing_html.ex:154
 #, elixir-autogen, elixir-format
 msgid "// support this corner"
 msgstr ""
@@ -237,4 +237,19 @@ msgstr ""
 #: lib/zoeyrinha_web/components.ex:105
 #, elixir-autogen, elixir-format
 msgid "no ads, no sponsors, no metrics. if this helped you, here's the tip jar."
+msgstr ""
+
+#: lib/zoeyrinha_web/controllers/landing_html.ex:74
+#, elixir-autogen, elixir-format
+msgid "// what i've been writing"
+msgstr ""
+
+#: lib/zoeyrinha_web/controllers/blog_html.ex:193
+#, elixir-autogen, elixir-format
+msgid "part %{n} of %{total}"
+msgstr ""
+
+#: lib/zoeyrinha_web/controllers/blog_html.ex:191
+#, elixir-autogen, elixir-format
+msgid "series"
 msgstr ""

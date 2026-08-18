@@ -39,4 +39,25 @@ defmodule Zoeyrinha.BlogTest do
       assert post.lang == "pt_BR"
     end
   end
+
+  describe "series_for/2" do
+    test "returns nil for posts not in a series" do
+      assert Blog.series_for(Blog.get_post_by_id!("hello-world")) == nil
+    end
+
+    test "orders parts by date with a slug tiebreak and localizes titles" do
+      post = Blog.get_post_by_id!("peri-learns-to-coerce")
+      series = Blog.series_for(post, "pt_BR")
+
+      assert series.name == "peri"
+
+      assert Enum.map(series.posts, & &1.id) == [
+               "650k-parse-dont-validate",
+               "peri-learns-to-coerce"
+             ]
+
+      assert series.index == 1
+      assert hd(series.posts).lang == "pt_BR"
+    end
+  end
 end

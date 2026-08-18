@@ -2,6 +2,7 @@
 title: "650k downloads: parse, don't validate",
 description: "peri passed 650k downloads on Hex. A thank-you, and the idea the whole library is built on: parse, don't validate.",
 tags: ~w(elixir peri oss),
+series: "peri",
 bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3msuf6xur522z",
 }
 ---

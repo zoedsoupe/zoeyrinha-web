@@ -71,6 +71,19 @@ defmodule ZoeyrinhaWeb.LandingHTML do
             "the main dish of this place. long-form notes on elixir, OTP and distributed systems, plus the occasional rant about software, society and everything in between. no schedule, no content strategy, no growth hacking."
           )}
         </p>
+        <h3 class="font-mono text-sm text-pink mt-5">{gettext("// what i've been writing")}</h3>
+        <ul :if={@recent_posts != []} class="space-y-3 mt-3">
+          <li :for={post <- @recent_posts}>
+            <a href={~p"/posts/#{post.id}"} class="group block">
+              <time class="font-mono text-xs text-gray-light">
+                {Calendar.strftime(post.date, "%Y-%m-%d")}
+              </time>
+              <p class="text-foreground group-hover:text-pink transition-colors">
+                {post.title}
+              </p>
+            </a>
+          </li>
+        </ul>
         <p class="font-mono text-sm mt-3">
           <a href={~p"/posts"}>{gettext("read the blog")} &rarr;</a>
         </p>

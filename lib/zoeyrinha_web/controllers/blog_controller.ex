@@ -6,7 +6,14 @@ defmodule ZoeyrinhaWeb.BlogController do
   alias Zoeyrinha.Blog.Comments.Cache
 
   def index(conn, _params) do
-    render(conn, :index, posts: Blog.all_posts(conn.assigns.locale), page_title: "blog")
+    posts = Blog.all_posts(conn.assigns.locale)
+
+    series_first =
+      Map.new(posts, fn post ->
+        {post.id, post.series && hd(Blog.series_for(post, conn.assigns.locale).posts).id}
+      end)
+
+    render(conn, :index, posts: posts, series_first: series_first, page_title: "blog")
   end
 
   def show(conn, %{"id" => id}) do
@@ -15,6 +22,7 @@ defmodule ZoeyrinhaWeb.BlogController do
 
     render(conn, :show,
       post: post,
+      series: Blog.series_for(post, conn.assigns.locale),
       comments: comments,
       thread_url: thread_url,
       locale: conn.assigns.locale,

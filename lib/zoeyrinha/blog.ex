@@ -42,6 +42,30 @@ defmodule Zoeyrinha.Blog do
   def all_tags, do: @tags
 
   @doc """
+  Series context for a post: its sibling posts in publication order and the
+  post's own position (0-based). Returns `nil` for posts not in a series.
+  """
+  def series_for(post, locale \\ "en")
+  def series_for(%Post{series: nil}, _locale), do: nil
+
+  def series_for(%Post{series: name} = post, locale) do
+    posts =
+      @posts
+      |> Enum.reject(& &1.draft)
+      |> Enum.filter(&(&1.series == name))
+      |> localize(locale)
+      # ponytail: same-day parts ordered by slug; split dates if order matters
+      |> Enum.sort(fn a, b ->
+        case Date.compare(a.date, b.date) do
+          :eq -> a.id <= b.id
+          ord -> ord == :lt
+        end
+      end)
+
+    %{name: name, posts: posts, index: Enum.find_index(posts, &(&1.id == post.id))}
+  end
+
+  @doc """
   Fetch a post by slug, preferring the given locale and falling back to
   English. Drafts are invisible here too: a draft slug raises a 404 even
   on a direct URL.

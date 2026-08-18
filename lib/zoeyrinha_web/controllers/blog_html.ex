@@ -29,6 +29,13 @@ defmodule ZoeyrinhaWeb.BlogHTML do
               <p class="text-foreground/90 mt-2">{post.description}</p>
             </a>
             <div class="flex flex-wrap items-center gap-2 mt-3">
+              <a
+                :if={first = @series_first[post.id]}
+                href={~p"/posts/#{first}"}
+                class="font-mono text-xs text-pink hover:text-pink-soft"
+              >
+                {gettext("series")}: {post.series} &rarr;
+              </a>
               <.badge :for={tag <- post.tags}>{tag}</.badge>
               <span class="font-mono text-xs text-gray ml-auto">
                 {reading_time(post.body)} {gettext("min read")}
@@ -64,6 +71,8 @@ defmodule ZoeyrinhaWeb.BlogHTML do
               else: gettext("this post is only available in português")}
           </p>
         </header>
+
+        <.series_nav :if={@series} series={@series} current_id={@post.id} class="mb-10" />
 
         <div class="prose">
           {raw(@post.body)}
@@ -172,6 +181,43 @@ defmodule ZoeyrinhaWeb.BlogHTML do
       rel="noopener"
       class="text-pink"
     >{elem(@segment, 1)}</a>
+    """
+  end
+
+  attr :series, :map, required: true
+  attr :current_id, :string, required: true
+  attr :class, :string, default: nil
+
+  def series_nav(assigns) do
+    ~H"""
+    <nav class={[
+      "border border-selection rounded font-mono text-sm",
+      @class
+    ]}>
+      <header class="px-4 py-2 border-b border-selection text-pink">
+        {gettext("series")}: {@series.name}
+        <span class="text-gray-light">
+          - {gettext("part %{n} of %{total}",
+            n: @series.index + 1,
+            total: length(@series.posts)
+          )}
+        </span>
+      </header>
+      <ol class="px-4 py-3 space-y-1.5">
+        <li :for={{part, i} <- Enum.with_index(@series.posts, 1)}>
+          <a
+            :if={part.id != @current_id}
+            href={~p"/posts/#{part.id}"}
+            class="text-gray-light hover:text-pink transition-colors"
+          >
+            <span class="text-gray">{i}.</span> {part.title}
+          </a>
+          <span :if={part.id == @current_id} class="text-pink">
+            <span class="text-gray">{i}.</span> {part.title} <span aria-hidden="true">&larr;</span>
+          </span>
+        </li>
+      </ol>
+    </nav>
     """
   end
 

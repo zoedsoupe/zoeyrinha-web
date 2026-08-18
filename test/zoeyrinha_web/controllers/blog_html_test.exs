@@ -23,7 +23,7 @@ defmodule ZoeyrinhaWeb.BlogHTMLTest do
       ZoeyrinhaWeb.BlogHTML,
       "show",
       "html",
-      [post: post(), locale: "en"] ++ assigns
+      [post: post(), locale: "en", series: nil] ++ assigns
     )
   end
 
@@ -34,6 +34,7 @@ defmodule ZoeyrinhaWeb.BlogHTMLTest do
       render_to_string(ZoeyrinhaWeb.BlogHTML, "show", "html",
         post: pt_post,
         locale: "en",
+        series: nil,
         comments: :none,
         thread_url: nil
       )
