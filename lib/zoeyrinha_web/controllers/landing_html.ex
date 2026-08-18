@@ -85,7 +85,7 @@ defmodule ZoeyrinhaWeb.LandingHTML do
           </li>
         </ul>
         <p class="font-mono text-sm mt-3">
-          <a href={~p"/posts"}>{gettext("read the blog")} &rarr;</a>
+          <a href={~p"/posts"}>{gettext("read the blog")} -&gt;</a>
         </p>
       </section>
 
@@ -143,7 +143,7 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         </ul>
         <p class="mt-5 font-mono text-sm">
           <a href="https://github.com/zoedsoupe" target="_blank" rel="noopener">
-            {gettext("more on github")} &rarr;
+            {gettext("more on github")} -&gt;
           </a>
         </p>
       </section>

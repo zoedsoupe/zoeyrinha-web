@@ -34,7 +34,7 @@ defmodule ZoeyrinhaWeb.BlogHTML do
                 href={~p"/posts/#{first}"}
                 class="font-mono text-xs text-pink hover:text-pink-soft"
               >
-                {gettext("series")}: {post.series} &rarr;
+                {gettext("series")}: {post.series} -&gt;
               </a>
               <.badge :for={tag <- post.tags}>{tag}</.badge>
               <span class="font-mono text-xs text-gray ml-auto">
@@ -54,7 +54,7 @@ defmodule ZoeyrinhaWeb.BlogHTML do
       <article class="max-w-3xl mx-auto">
         <header class="mb-8 pb-8 border-b border-selection">
           <a href={~p"/posts"} class="font-mono text-sm text-pink hover:text-pink-soft">
-            &larr; {gettext("all posts")}
+            -&gt; {gettext("all posts")}
           </a>
           <h1 class="text-3xl md:text-4xl font-bold text-pink mt-4">{@post.title}</h1>
           <div class="flex flex-wrap items-center gap-3 mt-4 font-mono text-sm text-gray-light">
@@ -213,7 +213,8 @@ defmodule ZoeyrinhaWeb.BlogHTML do
             <span class="text-gray">{i}.</span> {part.title}
           </a>
           <span :if={part.id == @current_id} class="text-pink">
-            <span class="text-gray">{i}.</span> {part.title} <span aria-hidden="true">&larr;</span>
+            <span class="text-gray">{i}.</span> {part.title}
+            <span aria-hidden="true">&lt- cê tá aqui oh</span>
           </span>
         </li>
       </ol>
