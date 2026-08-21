@@ -183,8 +183,8 @@
   /* subtle chromatic-aberration glitch for titles/logo on hover (page signature) */
   .glitch-text:hover {
     text-shadow:
-      2px 0 var(--color-glitch-red),
-      -2px 0 var(--color-glitch-blue);
+      1px 0 color-mix(in srgb, var(--color-glitch-red) 40%, transparent),
+      -1px 0 color-mix(in srgb, var(--color-glitch-blue) 40%, transparent);
   }
 }
 
