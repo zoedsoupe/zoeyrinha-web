@@ -73,14 +73,7 @@ defmodule Mix.Tasks.Blog.New do
     unless lang in ~w(en pt-br both), do: Mix.raise("--lang must be en, pt-br, or both")
 
     date = Date.utc_today()
-
-    posts =
-      for l <- lang_versions(lang) do
-        # with --lang both the positional title is the English one, so only
-        # hand it to the pt-br prompt path when pt-br is the sole language
-        title_args = if l == "en" or lang == "pt-br", do: args, else: []
-        {l, title_and_description(l, title_args, opts)}
-      end
+    posts = collect_posts(lang, args, opts)
 
     # both language files share one slug (the pt-br file is the translation
     # of the same post); prefer the English title as the slug source
@@ -94,14 +87,29 @@ defmodule Mix.Tasks.Blog.New do
         path
       end
 
-    unless opts[:no_open] do
+    open_editor(files, opts)
+
+    Mix.shell().info("\nCreated #{Enum.join(files, ", ")}")
+  end
+
+  defp collect_posts(lang, args, opts) do
+    for l <- lang_versions(lang) do
+      # with --lang both the positional title is the English one, so only
+      # hand it to the pt-br prompt path when pt-br is the sole language
+      title_args = if l == "en" or lang == "pt-br", do: args, else: []
+      {l, title_and_description(l, title_args, opts)}
+    end
+  end
+
+  defp open_editor(files, opts) do
+    if opts[:no_open] do
+      :ok
+    else
       editor = System.get_env("EDITOR") || "vim"
       # System.cmd pipes stdio, which full-screen editors (helix) reject;
       # hand the editor the real terminal via /dev/tty
       System.cmd("sh", ["-c", "#{editor} #{Enum.join(files, " ")} < /dev/tty > /dev/tty"])
     end
-
-    Mix.shell().info("\nCreated #{Enum.join(files, ", ")}")
   end
 
   defp lang_versions("en"), do: ["en"]
