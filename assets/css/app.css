@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
-/* Zeetech-derived, dark-mode-first. Kept the semantic color names so components
-   need no churn; collapsed the old rainbow down to: purple accent, a rare yellow,
-   and muted neutrals. */
+/* nyxvamp-veil derived, both schemes. Dark: the veil surface family itself,
+   page bg one step below the code bg so code cards read as elevated surfaces.
+   Light: same hues, luminance flipped, saturation tamed. Semantic names are
+   stable so components need no churn; code blocks stay dark veil in both. */
 @theme {
-  /* Surfaces */
-  --color-background: #000a0f; /* preto dark mode */
-  --color-foreground: #f7f7ff; /* branco new doc */
-  --color-cursorline: #0a1119; /* elevated surface */
-  --color-selection: #211b3d; /* subtle purple border */
+  /* Surfaces (dark = veil) */
+  --color-background: #181825; /* one step below veil bg */
+  --color-foreground: #d9e0ee; /* veil fg */
+  --color-cursorline: #232334; /* elevated surface */
+  --color-selection: #2e2e3e; /* veil cursorline, borders */
 
-  /* Accent = roxo pixel */
-  --color-pink: #9655ff;
-  --color-pink-soft: #b98bff;
+  /* Accent = veil keyword pink */
+  --color-pink: #f5c2e7;
+  --color-pink-soft: #f28fad; /* deeper pink on hover */
 
-  /* Rare secondary = amarelo led */
-  --color-blue: #fef5bc;
+  /* Rare secondary = veil yellow */
+  --color-blue: #e5c890;
 
   /* Everything else collapses to muted neutral (no rainbow) */
-  --color-green: #8f8caa;
-  --color-green-soft: #8f8caa;
-  --color-lavender: #8f8caa;
-  --color-peach: #8f8caa;
+  --color-green: #8e8aa8;
+  --color-green-soft: #8e8aa8;
+  --color-lavender: #8e8aa8;
+  --color-peach: #8e8aa8;
 
-  --color-gray: #6b6a86;
-  --color-gray-light: #b0adc9;
-  --color-gray-dark: #12101a;
+  --color-gray: #8e8aa8;
+  --color-gray-light: #b7b3cc;
+  --color-gray-dark: #101018;
 
   /* Glitch accents (cyber-lain chromatic aberration) */
   --color-glitch-red: #ff2e6e;
@@ -34,6 +35,39 @@
   /* Fonts (zeetech: Ubuntu Mono display, Ubuntu body) */
   --font-family-sans: "Ubuntu", system-ui, -apple-system, sans-serif;
   --font-family-mono: "Ubuntu Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Light scheme: veil hues, luminance flipped. Accents are the veil pastels
+   darkened ~40 lightness points so they hold 4.5:1+ on the light bg. Note the
+   role inversion vs dark: hover goes darker, and gray-light is darker than gray. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #f6f4fb;
+    --color-foreground: #38344a;
+    --color-cursorline: #ece8f5;
+    --color-selection: #dad4ea;
+
+    --color-pink: #a0437c;
+    --color-pink-soft: #7e3160;
+
+    --color-blue: #8a6215;
+
+    --color-green: #6e6a86;
+    --color-green-soft: #6e6a86;
+    --color-lavender: #6e6a86;
+    --color-peach: #6e6a86;
+
+    --color-gray: #6e6a86;
+    --color-gray-light: #55516b;
+    --color-gray-dark: #2e2b40;
+
+    --color-glitch-red: #d6336c;
+    --color-glitch-blue: #4451e8;
+  }
 }
 
 @layer base {
