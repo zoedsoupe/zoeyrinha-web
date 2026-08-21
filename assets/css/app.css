@@ -1,5 +1,53 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "IBM Plex Serif";
+  src: url("/fonts/ibm-plex-serif-var-Roman.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Serif";
+  src: url("/fonts/ibm-plex-serif-var-Italic.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "mononoki";
+  src: url("/fonts/mononoki-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "mononoki";
+  src: url("/fonts/mononoki-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "mononoki";
+  src: url("/fonts/mononoki-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "mononoki";
+  src: url("/fonts/mononoki-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* nyxvamp-veil derived, both schemes. Dark: the veil surface family itself,
    page bg one step below the code bg so code cards read as elevated surfaces.
    Light: same hues, luminance flipped, saturation tamed. Semantic names are
@@ -32,9 +80,9 @@
   --color-glitch-red: #ff2e6e;
   --color-glitch-blue: #4d5cff;
 
-  /* Fonts (zeetech: Ubuntu Mono display, Ubuntu body) */
-  --font-family-sans: "Ubuntu", system-ui, -apple-system, sans-serif;
-  --font-family-mono: "Ubuntu Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Fonts (self-hosted: IBM Plex Serif body, mononoki code/display) */
+  --font-family-sans: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-family-mono: "mononoki", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 :root {
@@ -75,7 +123,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-family-sans);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
   }
 
