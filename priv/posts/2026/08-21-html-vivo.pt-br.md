@@ -2,7 +2,8 @@
 title: "html vivo finalmente",
 description: "post 5 da série fuba web: estático se mexe. o que é um template, eex, uma caixinha que guarda a coelhinha.",
 tags: ~w(elixir web tutorial),
-series: "fuba-web"
+series: "fuba-web",
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtrxmkpt2y2y",
 }
 ---
 
