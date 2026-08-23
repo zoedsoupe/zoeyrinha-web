@@ -50,7 +50,9 @@ defmodule Mix.Tasks.Blog.Announce do
   defp pending_posts do
     "priv/posts/**/*.md"
     |> Path.wildcard()
-    |> Enum.reject(&String.ends_with?(&1, ".pt-br.md"))
+    |> Enum.uniq_by(fn name ->
+      name |> Path.rootname() |> Path.rootname()
+    end)
     |> Enum.flat_map(fn path ->
       with {:ok, content} <- File.read(path),
            {:ok, attrs} <- Frontmatter.attrs(content),
