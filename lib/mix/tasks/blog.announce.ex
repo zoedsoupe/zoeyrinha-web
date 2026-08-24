@@ -121,6 +121,8 @@ defmodule Mix.Tasks.Blog.Announce do
       else
         true -> :ok
         nil -> :ok
+        # pt-br-only post, no English sibling to backfill from
+        {:error, :enoent} -> :ok
         {:error, reason} -> Mix.shell().error("skipping #{path}: #{inspect(reason)}")
       end
     end)
