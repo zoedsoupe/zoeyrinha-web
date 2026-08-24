@@ -7,14 +7,12 @@ defmodule Mix.Tasks.Blog.Announce do
   the frontmatter.
   Idempotent: posts that already have bsky_thread are skipped.
 
-  Only the English file of a post is announced; `*.pt-br.md` translations are
-  never announced themselves. After announcing, the bsky_thread line is copied
+  After announcing, the bsky_thread line is copied
   into the translation's frontmatter automatically, so both language versions
   render the same thread. Translations added after their post was announced
   are backfilled the same way on the next run.
 
-  Requires BSKY_IDENTIFIER and BSKY_APP_PASSWORD env vars. PHX_HOST overrides
-  the canonical host (default zoedsoupe.zeetech.io).
+  Requires BSKY_IDENTIFIER and BSKY_APP_PASSWORD env vars.
   """
   use Mix.Task
 
@@ -129,11 +127,15 @@ defmodule Mix.Tasks.Blog.Announce do
   end
 
   defp post_id(path) do
-    path |> Path.basename(".md") |> String.split("-", parts: 3) |> List.last()
+    path
+    |> Path.basename(".md")
+    |> Path.rootname()
+    |> String.split("-", parts: 3)
+    |> List.last()
   end
 
   defp post_url(path) do
-    host = System.get_env("PHX_HOST") || "zoedsoupe.zeetech.io"
+    host = ZoeyrinhaWeb.Endpoint.host()
     "https://#{host}/posts/#{post_id(path)}"
   end
 end
