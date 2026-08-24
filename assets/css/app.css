@@ -217,6 +217,7 @@
   padding: 0.1rem 0.35rem;
   border-radius: 0.25rem;
   font-size: 0.9em;
+  overflow-wrap: anywhere;
 }
 .prose pre {
   font-family: var(--font-family-mono);
@@ -226,6 +227,18 @@
   border-radius: 0.5rem;
   padding: 1rem;
   overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #45455e transparent;
+}
+.prose pre::-webkit-scrollbar {
+  height: 6px;
+}
+.prose pre::-webkit-scrollbar-thumb {
+  background: #45455e;
+  border-radius: 3px;
+}
+.prose pre::-webkit-scrollbar-track {
+  background: transparent;
 }
 .prose pre code {
   background: none;
@@ -269,6 +282,18 @@ pre.highlight {
   overflow-x: auto;
   line-height: 1.6;
   white-space: pre;
+  scrollbar-width: thin;
+  scrollbar-color: #45455e transparent;
+}
+pre.highlight::-webkit-scrollbar {
+  height: 6px;
+}
+pre.highlight::-webkit-scrollbar-thumb {
+  background: #45455e;
+  border-radius: 3px;
+}
+pre.highlight::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Syntax highlighting: Makeup tokens mapped to nyxvamp-veil.
