@@ -71,27 +71,69 @@ defmodule ZoeyrinhaWeb.Components do
           </button>
         </div>
       </div>
+    </nav>
+    """
+  end
 
-      <%!-- Mobile links row --%>
-      <div class="sm:hidden border-t border-selection">
-        <div class="mx-auto max-w-2xl px-5 py-3 flex gap-5 font-mono text-sm">
-          <a href="/" class="text-gray-light hover:text-pink transition-colors">
-            {gettext("home")}
-          </a>
-          <a href="/posts" class="text-gray-light hover:text-pink transition-colors">
-            {gettext("blog")}
-          </a>
-          <a
-            href="https://zeetech.io"
-            target="_blank"
-            rel="noopener"
-            class="text-gray-light hover:text-pink transition-colors"
-          >
-            zeetech
-          </a>
-        </div>
+  @doc """
+  Fixed bottom button bar, mobile only. Desktop keeps links in the top nav.
+  """
+  attr :current_path, :string, required: true
+
+  def bottom_nav(assigns) do
+    ~H"""
+    <nav class="sm:hidden fixed bottom-0 inset-x-0 z-50 border-t border-selection bg-background">
+      <div class="flex justify-around items-stretch font-mono text-xs pb-[env(safe-area-inset-bottom)]">
+        <.bottom_nav_link href="/" icon="home" label={gettext("home")} current_path={@current_path} />
+        <.bottom_nav_link
+          href="/posts"
+          icon="book-open"
+          label={gettext("blog")}
+          current_path={@current_path}
+        />
+        <a
+          href="https://zeetech.io"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center gap-1 py-2 px-4 text-gray-light"
+        >
+          <Lucideicons.external_link class="w-5 h-5" /> zeetech
+        </a>
       </div>
     </nav>
+    """
+  end
+
+  attr :href, :string, required: true
+  attr :icon, :string, required: true
+  attr :label, :string, required: true
+  attr :current_path, :string, required: true
+
+  defp bottom_nav_link(assigns) do
+    active =
+      if assigns.href == "/",
+        do: assigns.current_path == "/",
+        else: String.starts_with?(assigns.current_path, assigns.href)
+
+    assigns = assign(assigns, :active, active)
+
+    ~H"""
+    <a
+      href={@href}
+      aria-current={@active && "page"}
+      class={[
+        "flex flex-col items-center gap-1 py-2 px-4",
+        if(@active, do: "text-pink", else: "text-gray-light")
+      ]}
+    >
+      <%= case @icon do %>
+        <% "home" -> %>
+          <Lucideicons.home class="w-5 h-5" />
+        <% "book-open" -> %>
+          <Lucideicons.book_open class="w-5 h-5" />
+      <% end %>
+      {@label}
+    </a>
     """
   end
 

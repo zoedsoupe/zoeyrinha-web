@@ -2,8 +2,17 @@
 <html lang={if @locale == "pt_BR", do: "pt-BR", else: @locale} class="[scrollbar-gutter:stable]">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="csrf-token" content={get_csrf_token()} />
+    <%!-- PWA --%>
+    <link rel="manifest" href={~p"/site.webmanifest"} />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181825" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f4fb" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="zoeyrinha" />
+    <link rel="apple-touch-icon" href={~p"/apple-touch-icon.png"} />
+    <link rel="alternate" type="application/rss+xml" title="Zoeyrinha" href={~p"/rss.xml"} />
     <.live_title>
       {assigns[:page_title] || "Zoeyrinha"}
     </.live_title>
@@ -37,9 +46,10 @@
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
   </head>
-  <body class="antialiased">
+  <body class="antialiased pb-20 sm:pb-0">
     <.navigation />
     {@inner_content}
     <.footer />
+    <.bottom_nav current_path={@conn.request_path} />
   </body>
 </html>
