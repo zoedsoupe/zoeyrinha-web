@@ -2,8 +2,7 @@
 title: "http na unha",
 description: "post 3 da série fuba web: a fubá sai do terminal. o que é um servidor, o que é http, um plug escrito na mão e o curl como voz da coelhinha.",
 tags: ~w(elixir web tutorial),
-series: "fuba-web",
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu3n7shid2f",
+series: "fuba-web"
 }
 ---
 

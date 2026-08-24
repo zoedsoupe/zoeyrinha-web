@@ -2,8 +2,7 @@
 title: "amor, como faz telinha bonita?",
 description: "post de abertura de uma série de introdução à programação web com elixir + html/css, surge enquanto ensino elixir para minha noiva (jhujubinha)",
 tags: ~w(elixir web tutorial),
-series: "fuba-web",
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu3n7l45v27",
+series: "fuba-web"
 }
 ---
 
