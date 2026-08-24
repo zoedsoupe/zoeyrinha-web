@@ -137,7 +137,7 @@ defmodule Mix.Tasks.Blog.Announce do
   end
 
   defp post_url(path) do
-    host = ZoeyrinhaWeb.Endpoint.host()
+    host = System.fetch_env!("PHX_HOST")
     "https://#{host}/posts/#{post_id(path)}"
   end
 end
