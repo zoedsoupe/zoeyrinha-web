@@ -2,7 +2,7 @@
 title: "exlings: learn elixir by breaking it",
 description: "exlings is rustlings for Elixir: a series of small broken programs you fix one at a time. Looking for people to try it.",
 tags: ~w(elixir exlings oss learning),
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mt2hshwybv22",
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mt2hshwybv22",
 }
 ---
 

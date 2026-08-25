@@ -9,7 +9,7 @@ series: "fuba-web",
 
 Bastou essa pergunta, feita pela [jhujuba](https://jhene.zeetech.io/) numa tarde comum e minha cabeça iniciou uma ramificação de possibilidades de como responder isso. Uma infinidade de conceitos e palavras chaves inundou meu pensamento numa fração de segundo: **web**, **SSR**, **HTTP**, **REST**, **API**, **phoenix**, **client/server**;
 
-nossa... Como que eu explico de forma simples como servir uma página *HTML+CSS* via Elixir, para alguém que recentemente teve contato com Elixir via [exlings](https://zoedsoupe.zeetech.io/posts/exlings-learn-elixir-by-breaking-it), mas que facilmente cria "telinhas bonitas" e que até ontem não tinha a dimensão de como a internet funcionava debaixo dos panos???
+nossa... Como que eu explico de forma simples como servir uma página _HTML+CSS_ via Elixir, para alguém que recentemente teve contato com Elixir via [exlings](https://zoedsoupe.zeetech.io/posts/exlings-learn-elixir-by-breaking-it), mas que facilmente cria "telinhas bonitas" e que até ontem não tinha a dimensão de como a internet funcionava debaixo dos panos???
 
 Foi então que pensei, vou selecionar alguns conteúdos, artigos e vídeos sobre os assuntos, direcionando pro mundo Elixir e... Ah, tem a barreira da linguagem também. Os conteúdos em sua maioria são em inglês e o que existe em português - considerando traduções - já pressumem um contexto de conhecimento muito amplo, ou então só introduzem tudo de uma vez só sem explicar os detalhes. Com isso tudo eu pensei:
 
@@ -19,7 +19,7 @@ E se, em vez de uma pilha de links, eu escrevesse a resposta inteira? Uma série
 
 ## a pergunta é um iceberg
 
-"quero fazer uma coisa com elixir, mas eu preciso de uma tela bonitinha" - essa foi a mensagem. Parece pedido pequeno. Só que embaixo d'água: pra telinha existir, alguém precisa *servir* o HTML (servidor), alguém precisa *pedir* (o navegador), os dois conversam num *protocolo* (HTTP). O HTML fixo vira HTML gerado a partir de um estado, o estado precisa morar em algum lugar, o clique precisa avisar o servidor, a página pisca, o estado some quando o servidor reinicia... A telinha bonita é só a pontinha.
+"quero fazer uma coisa com elixir, mas eu preciso de uma tela bonitinha" - essa foi a mensagem. Parece pedido pequeno. Só que embaixo d'água: pra telinha existir, alguém precisa _servir_ o HTML (servidor), alguém precisa _pedir_ (o navegador), os dois conversam num _protocolo_ (HTTP). O HTML fixo vira HTML gerado a partir de um estado, o estado precisa morar em algum lugar, o clique precisa avisar o servidor, a página pisca, o estado some quando o servidor reinicia... A telinha bonita é só a pontinha.
 
 ## o que a gente vai construir
 

@@ -194,6 +194,7 @@ end
 ```
 
 O `describe` agrupa testes da mesma função - organização, quando criarmos mais testes vai fazer bem mais sentido. Um teste eu te dou. Os outros são seus, onde:
+
 - `humor/1` pros quatro casos
   - devolver `:desregulada` com 2 medidores em 0
   - devolver `:go_queen` quando todos os medidos >= 4
@@ -203,7 +204,6 @@ O `describe` agrupa testes da mesma função - organização, quando criarmos ma
 - `limita/1` não passando de 5 nem descendo de 0.
 
 Escreve eles antes de me dar razão - depois confere os seus com os do [repositório](https://github.com/zoedsoupe/fuba/tree/main/test).
-
 
 ## fechou?
 

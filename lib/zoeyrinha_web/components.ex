@@ -41,6 +41,9 @@ defmodule ZoeyrinhaWeb.Components do
             <a href="/posts" class="text-gray-light hover:text-pink transition-colors">
               {gettext("blog")}
             </a>
+            <a href="/cv" class="text-gray-light hover:text-pink transition-colors">
+              cv
+            </a>
             <a
               href="https://zeetech.io"
               target="_blank"
@@ -91,6 +94,7 @@ defmodule ZoeyrinhaWeb.Components do
           label={gettext("blog")}
           current_path={@current_path}
         />
+        <.bottom_nav_link href="/cv" icon="file-text" label="cv" current_path={@current_path} />
         <a
           href="https://zeetech.io"
           target="_blank"
@@ -131,6 +135,8 @@ defmodule ZoeyrinhaWeb.Components do
           <Lucideicons.home class="w-5 h-5" />
         <% "book-open" -> %>
           <Lucideicons.book_open class="w-5 h-5" />
+        <% "file-text" -> %>
+          <Lucideicons.file_text class="w-5 h-5" />
       <% end %>
       {@label}
     </a>

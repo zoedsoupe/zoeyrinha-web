@@ -12,15 +12,18 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
-      )
+        Promise.all(
+          keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)),
+        ),
+      ),
   );
   self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
-  if (request.method !== "GET" || !request.url.startsWith(self.location.origin)) return;
+  if (request.method !== "GET" || !request.url.startsWith(self.location.origin))
+    return;
   // never touch LiveView transport (longpoll is a GET and must not be cached)
   if (new URL(request.url).pathname.startsWith("/live")) return;
 
@@ -33,7 +36,7 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE).then((cache) => cache.put(request, copy));
           return response;
         })
-        .catch(() => caches.match(request))
+        .catch(() => caches.match(request)),
     );
     return;
   }
@@ -49,7 +52,7 @@ self.addEventListener("fetch", (event) => {
             caches.open(CACHE).then((cache) => cache.put(request, copy));
           }
           return response;
-        })
-    )
+        }),
+    ),
   );
 });

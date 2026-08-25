@@ -22,10 +22,18 @@ Primeiro, a telinha. Cria a pasta `priv/static/` e salva esse HTML+CSS no arquiv
     <p class="humor">tá chatinha… cadê o café?</p>
 
     <div class="medidores">
-      <div class="medidor"><span>biscoito</span><span class="barra">■■■□□</span></div>
-      <div class="medidor"><span>cafeína</span><span class="barra baixa">■□□□□</span></div>
-      <div class="medidor"><span>carinho</span><span class="barra">■■□□□</span></div>
-      <div class="medidor"><span>energia</span><span class="barra">■■■■■</span></div>
+      <div class="medidor">
+        <span>biscoito</span><span class="barra">■■■□□</span>
+      </div>
+      <div class="medidor">
+        <span>cafeína</span><span class="barra baixa">■□□□□</span>
+      </div>
+      <div class="medidor">
+        <span>carinho</span><span class="barra">■■□□□</span>
+      </div>
+      <div class="medidor">
+        <span>energia</span><span class="barra">■■■■■</span>
+      </div>
     </div>
 
     <div class="acoes">

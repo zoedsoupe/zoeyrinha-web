@@ -21,6 +21,8 @@ defmodule ZoeyrinhaWeb.Router do
 
     get "/", LandingController, :show
 
+    get "/cv", CVController, :show
+
     get "/posts", BlogController, :index
     get "/posts/:id", BlogController, :show
   end

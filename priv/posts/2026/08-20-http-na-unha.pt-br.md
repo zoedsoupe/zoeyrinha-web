@@ -44,7 +44,7 @@ Sem mágica nenhuma. Texto indo, texto voltando. O navegador faz isso por você 
 
 ## a primeira dependência
 
-Escrever o lado que responde *do zero* significaria escrever centenas de linhas de código, basicamente "escovar bit" - uma série inteira de posts só sobre isso, e não é aqui que mora o aprendizado de hoje. Então a gente adota a primeira dependência (a tal da "biblioteca" que falo o tempo todo) do projeto:
+Escrever o lado que responde _do zero_ significaria escrever centenas de linhas de código, basicamente "escovar bit" - uma série inteira de posts só sobre isso, e não é aqui que mora o aprendizado de hoje. Então a gente adota a primeira dependência (a tal da "biblioteca" que falo o tempo todo) do projeto:
 
 ```elixir
 # mix.exs

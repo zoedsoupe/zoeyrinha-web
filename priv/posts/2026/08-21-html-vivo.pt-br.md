@@ -7,11 +7,11 @@ series: "fuba-web",
 }
 ---
 
-No fim do [post passado](https://zoedsoupe.zeetech.io/posts/a-pagina-morta) ficou a pergunta: se a página mostrasse a Fubá de verdade, o que precisaria acontecer entre o pedido chegar e o HTML sair? A jhujuba pensou um pouco e respondeu: "tá... alguém precisa *montar* o HTML na hora, né? mas... onde a coelhinha fica guardada entre um pedido e outro?".
+No fim do [post passado](https://zoedsoupe.zeetech.io/posts/a-pagina-morta) ficou a pergunta: se a página mostrasse a Fubá de verdade, o que precisaria acontecer entre o pedido chegar e o HTML sair? A jhujuba pensou um pouco e respondeu: "tá... alguém precisa _montar_ o HTML na hora, né? mas... onde a coelhinha fica guardada entre um pedido e outro?".
 
 > Licensa poética aqui, ela não pensou mas tá mó legal escrever como se fosse uma conversa com ela
 
-As duas respostas dela são o post de hoje. E no meio do caminho ela soltou a pergunta oficial: "tá, mas que diacho é *template*?".
+As duas respostas dela são o post de hoje. E no meio do caminho ela soltou a pergunta oficial: "tá, mas que diacho é _template_?".
 
 ## html com buracos
 
@@ -120,7 +120,7 @@ Um **roteador** é o recepcionista do servidor: olha o método e o caminho do pe
 
 E a rota da raiz é uma linha que conta o post inteiro: **espia a coelhinha na caixinha, renderiza a tela com ela, devolve o HTML**.
 
-Tem nome bonito pra isso, aliás: *server-side rendering*, SSR, ou "renderização do lado do servidor". O HTML nasce no servidor, fresco, a cada pedido. O navegador continua só desenhando - mas agora cada desenho é feito na hora.
+Tem nome bonito pra isso, aliás: _server-side rendering_, SSR, ou "renderização do lado do servidor". O HTML nasce no servidor, fresco, a cada pedido. O navegador continua só desenhando - mas agora cada desenho é feito na hora.
 
 ## subindo a caixinha
 
@@ -151,7 +151,7 @@ Volta no navegador e atualiza a página (`ctrl+r` ou `cmd+r` no Mac).
 
 `( ￣^￣)` - "tá chatinha… cadê o café?", e a barrinha de cafeína vermelha em um quadradinho. A página mudou porque **a coelhinha mudou**. Cada F5 é o servidor espiando a caixinha e montando o HTML daquele instante. Dá dois biscoitos nela (`Fuba.Guarda.atualizar(&Fuba.Cuidado.dar_biscoito/1)`), atualiza de novo, vê a barrinha encher.
 
-Os botões, claro, continuam mortos - a página agora *mostra* a coelhinha, mas clicar ainda não *fala* com ela. Falta o botão avisar o servidor. Esse aviso tem nome (formulário, `POST`) e consequência (a página pisca). Próximo post.
+Os botões, claro, continuam mortos - a página agora _mostra_ a coelhinha, mas clicar ainda não _fala_ com ela. Falta o botão avisar o servidor. Esse aviso tem nome (formulário, `POST`) e consequência (a página pisca). Próximo post.
 
 ## fechou?
 
@@ -161,4 +161,4 @@ Três critérios:
 2. Mudar a coelhinha no `iex` com `Fuba.Guarda.atualizar/1` muda a página no próximo F5 - testa zerar a cafeína e depois dar café.
 3. Você consegue explicar, em voz alta, o caminho: pedido chega → roteador → espiar a caixinha → render preenche os buracos → HTML sai.
 
-Fechou? A Fubá agora tem rosto *e* o rosto é dela de verdade. Só falta ele reagir ao clique do botão - e é pra isso que servem formulários.
+Fechou? A Fubá agora tem rosto _e_ o rosto é dela de verdade. Só falta ele reagir ao clique do botão - e é pra isso que servem formulários.

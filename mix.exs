@@ -48,6 +48,7 @@ defmodule Zoeyrinha.MixProject do
       {:phoenix_live_view, "~> 1.0"},
       {:gettext, "~> 1.0"},
       {:nimble_publisher, "~> 1.1"},
+      {:mdex, "~> 0.13.5"},
       # syntax highlighting lexers for nimble_publisher code fences;
       # needed in every env (ex_doc only pulls them in dev/prod)
       {:makeup_elixir, "~> 1.0"},
