@@ -3,7 +3,7 @@ defmodule ZoeyrinhaWeb.SitemapController do
 
   alias Zoeyrinha.Blog
 
-  @static_paths ["/", "/posts"]
+  @static_paths ["/", "/posts", "/talks"]
 
   def index(conn, _params) do
     conn

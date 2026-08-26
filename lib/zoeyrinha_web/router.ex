@@ -23,6 +23,8 @@ defmodule ZoeyrinhaWeb.Router do
 
     get "/cv", CVController, :show
 
+    get "/talks", TalkController, :show
+
     get "/posts", BlogController, :index
     get "/posts/:id", BlogController, :show
   end

@@ -259,3 +259,9 @@ msgstr "série"
 #, elixir-autogen, elixir-format
 msgid "download pdf"
 msgstr "baixar pdf"
+
+msgid "talks"
+msgstr "talks"
+
+msgid "Talks, workshops and podcast appearances."
+msgstr "palestras, workshops e participações em podcasts."
