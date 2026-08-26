@@ -31,13 +31,13 @@ msgstr ""
 msgid "Nothing here yet. Soon."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:50
+#: lib/zoeyrinha_web/controllers/blog_html.ex:57
 #, elixir-autogen, elixir-format
 msgid "all posts"
 msgstr ""
 
 #: lib/zoeyrinha_web/components.ex:42
-#: lib/zoeyrinha_web/components.ex:82
+#: lib/zoeyrinha_web/components.ex:94
 #, elixir-autogen, elixir-format
 msgid "blog"
 msgstr ""
@@ -73,7 +73,7 @@ msgid "hey, i'm zoey(rinha)"
 msgstr ""
 
 #: lib/zoeyrinha_web/components.ex:39
-#: lib/zoeyrinha_web/components.ex:79
+#: lib/zoeyrinha_web/components.ex:90
 #, elixir-autogen, elixir-format, fuzzy
 msgid "home"
 msgstr "Home"
@@ -93,8 +93,8 @@ msgstr ""
 msgid "learn Elixir by fixing broken code, in the spirit of rustlings."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:34
-#: lib/zoeyrinha_web/controllers/blog_html.ex:56
+#: lib/zoeyrinha_web/controllers/blog_html.ex:41
+#: lib/zoeyrinha_web/controllers/blog_html.ex:63
 #, elixir-autogen, elixir-format
 msgid "min read"
 msgstr ""
@@ -169,22 +169,22 @@ msgstr ""
 msgid "// what i'm into"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:90
+#: lib/zoeyrinha_web/controllers/blog_html.ex:97
 #, elixir-autogen, elixir-format
 msgid "Comments are unavailable right now."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:97
+#: lib/zoeyrinha_web/controllers/blog_html.ex:104
 #, elixir-autogen, elixir-format
 msgid "No comments yet."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:92
+#: lib/zoeyrinha_web/controllers/blog_html.ex:99
 #, elixir-autogen, elixir-format
 msgid "Read the thread on Bluesky."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:77
+#: lib/zoeyrinha_web/controllers/blog_html.ex:84
 #, elixir-autogen, elixir-format
 msgid "comments"
 msgstr ""
@@ -204,7 +204,7 @@ msgstr ""
 msgid "read the blog"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:85
+#: lib/zoeyrinha_web/controllers/blog_html.ex:92
 #, elixir-autogen, elixir-format
 msgid "reply on Bluesky"
 msgstr ""
@@ -219,12 +219,12 @@ msgstr ""
 msgid "this site is my corner of the internet. no feed, no algorithm, no engagement metrics. just words i wanted to write and code i wanted to share, served straight from a little elixir app."
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:63
+#: lib/zoeyrinha_web/controllers/blog_html.ex:70
 #, elixir-autogen, elixir-format
 msgid "this post is only available in english"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:64
+#: lib/zoeyrinha_web/controllers/blog_html.ex:71
 #, elixir-autogen, elixir-format
 msgid "this post is only available in português"
 msgstr ""
@@ -234,7 +234,7 @@ msgstr ""
 msgid "// support this corner"
 msgstr ""
 
-#: lib/zoeyrinha_web/components.ex:105
+#: lib/zoeyrinha_web/components.ex:153
 #, elixir-autogen, elixir-format
 msgid "no ads, no sponsors, no metrics. if this helped you, here's the tip jar."
 msgstr ""
@@ -244,12 +244,18 @@ msgstr ""
 msgid "// what i've been writing"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:193
+#: lib/zoeyrinha_web/controllers/blog_html.ex:200
 #, elixir-autogen, elixir-format
 msgid "part %{n} of %{total}"
 msgstr ""
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:191
+#: lib/zoeyrinha_web/controllers/blog_html.ex:37
+#: lib/zoeyrinha_web/controllers/blog_html.ex:198
 #, elixir-autogen, elixir-format
 msgid "series"
+msgstr ""
+
+#: lib/zoeyrinha_web/controllers/cv_html.ex:16
+#, elixir-autogen, elixir-format
+msgid "download pdf"
 msgstr ""

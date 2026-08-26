@@ -31,13 +31,13 @@ msgstr "notas sobre Elixir, sistemas distribuídos e o que mais estiver me marte
 msgid "Nothing here yet. Soon."
 msgstr "ainda não tem nada aqui. em breve."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:50
+#: lib/zoeyrinha_web/controllers/blog_html.ex:57
 #, elixir-autogen, elixir-format
 msgid "all posts"
 msgstr "todos os posts"
 
 #: lib/zoeyrinha_web/components.ex:42
-#: lib/zoeyrinha_web/components.ex:82
+#: lib/zoeyrinha_web/components.ex:94
 #, elixir-autogen, elixir-format
 msgid "blog"
 msgstr "blog"
@@ -73,7 +73,7 @@ msgid "hey, i'm zoey(rinha)"
 msgstr "oi, eu sou a zoey(rinha)"
 
 #: lib/zoeyrinha_web/components.ex:39
-#: lib/zoeyrinha_web/components.ex:79
+#: lib/zoeyrinha_web/components.ex:90
 #, elixir-autogen, elixir-format
 msgid "home"
 msgstr "início"
@@ -93,8 +93,8 @@ msgstr "não curto mais muito rede social. acho que a gente tá indo pro lado er
 msgid "learn Elixir by fixing broken code, in the spirit of rustlings."
 msgstr "aprenda Elixir consertando código quebrado, no espírito do rustlings."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:34
-#: lib/zoeyrinha_web/controllers/blog_html.ex:56
+#: lib/zoeyrinha_web/controllers/blog_html.ex:41
+#: lib/zoeyrinha_web/controllers/blog_html.ex:63
 #, elixir-autogen, elixir-format
 msgid "min read"
 msgstr "min de leitura"
@@ -169,22 +169,22 @@ msgstr "// esse lugar"
 msgid "// what i'm into"
 msgstr "// no que eu tô"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:90
+#: lib/zoeyrinha_web/controllers/blog_html.ex:97
 #, elixir-autogen, elixir-format
 msgid "Comments are unavailable right now."
 msgstr "comentários indisponíveis no momento."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:97
+#: lib/zoeyrinha_web/controllers/blog_html.ex:104
 #, elixir-autogen, elixir-format
 msgid "No comments yet."
 msgstr "ainda sem comentários."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:92
+#: lib/zoeyrinha_web/controllers/blog_html.ex:99
 #, elixir-autogen, elixir-format
 msgid "Read the thread on Bluesky."
 msgstr "lê a thread no Bluesky."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:77
+#: lib/zoeyrinha_web/controllers/blog_html.ex:84
 #, elixir-autogen, elixir-format
 msgid "comments"
 msgstr "comentários"
@@ -204,7 +204,7 @@ msgstr "código aberto é como eu pago aluguel pros bens comuns. algumas das min
 msgid "read the blog"
 msgstr "lê o blog"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:85
+#: lib/zoeyrinha_web/controllers/blog_html.ex:92
 #, elixir-autogen, elixir-format
 msgid "reply on Bluesky"
 msgstr "responde no Bluesky"
@@ -219,12 +219,12 @@ msgstr "o prato principal daqui. notas longas sobre elixir, OTP e sistemas distr
 msgid "this site is my corner of the internet. no feed, no algorithm, no engagement metrics. just words i wanted to write and code i wanted to share, served straight from a little elixir app."
 msgstr "esse site é meu cantinho na internet. sem feed, sem algoritmo, sem métricas de engajamento. só palavras que eu quis escrever e código que eu quis compartilhar, servidos direto de um appzinho em elixir."
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:63
+#: lib/zoeyrinha_web/controllers/blog_html.ex:70
 #, elixir-autogen, elixir-format
 msgid "this post is only available in english"
 msgstr "este post só está disponível em inglês"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:64
+#: lib/zoeyrinha_web/controllers/blog_html.ex:71
 #, elixir-autogen, elixir-format
 msgid "this post is only available in português"
 msgstr "este post só está disponível em português"
@@ -234,7 +234,7 @@ msgstr "este post só está disponível em português"
 msgid "// support this corner"
 msgstr "// apoie este cantinho"
 
-#: lib/zoeyrinha_web/components.ex:105
+#: lib/zoeyrinha_web/components.ex:153
 #, elixir-autogen, elixir-format
 msgid "no ads, no sponsors, no metrics. if this helped you, here's the tip jar."
 msgstr "sem anúncios, sem patrocínio, sem métricas. se isso te ajudou, aqui tá o pote de gorjetas."
@@ -244,12 +244,18 @@ msgstr "sem anúncios, sem patrocínio, sem métricas. se isso te ajudou, aqui t
 msgid "// what i've been writing"
 msgstr "// oq ando escrevendo"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:193
+#: lib/zoeyrinha_web/controllers/blog_html.ex:200
 #, elixir-autogen, elixir-format
 msgid "part %{n} of %{total}"
 msgstr "parte %{n} de %{total}"
 
-#: lib/zoeyrinha_web/controllers/blog_html.ex:191
+#: lib/zoeyrinha_web/controllers/blog_html.ex:37
+#: lib/zoeyrinha_web/controllers/blog_html.ex:198
 #, elixir-autogen, elixir-format
 msgid "series"
 msgstr "série"
+
+#: lib/zoeyrinha_web/controllers/cv_html.ex:16
+#, elixir-autogen, elixir-format
+msgid "download pdf"
+msgstr "baixar pdf"

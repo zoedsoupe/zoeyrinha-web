@@ -381,3 +381,34 @@ pre.highlight::-webkit-scrollbar-track {
     text-shadow: none;
   }
 }
+
+/* Print: force light palette on white (browsers skip dark backgrounds by
+   default, light text would print unreadable), drop chrome, keep cv content */
+@media print {
+  :root {
+    --color-background: #ffffff;
+    --color-foreground: #1c1a26;
+    --color-cursorline: #ece8f5;
+    --color-selection: #dad4ea;
+    --color-pink: #a0437c;
+    --color-pink-soft: #7e3160;
+    --color-blue: #8a6215;
+    --color-gray: #6e6a86;
+    --color-gray-light: #55516b;
+    --color-gray-dark: #2e2b40;
+  }
+
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .prose {
+    max-width: none;
+  }
+}

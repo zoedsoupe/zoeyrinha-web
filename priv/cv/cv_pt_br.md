@@ -10,9 +10,7 @@ Campos dos Goytacazes, Rio de Janeiro, Brasil
 
 - **Email:** zoey.spessanha@zeetech.io
 - **Telefone:** +55 22 93619-2983
-- **GitHub:** [github.com/zoedsoupe](https://github.com/zoedsoupe)
 - **LinkedIn:** [linkedin.com/in/zoedsoupe](https://www.linkedin.com/in/zoedsoupe)
-- **Website:** [zoedsoupe.zeetech.io](https://zoedsoupe.zeetech.io)
 
 ---
 
@@ -36,7 +34,7 @@ Engenheira de Software Sênior especializada em sistemas financeiros de alta esc
 
 **Maio 2026 - Junho 2026** | Remoto
 
-Atuei na plataforma de RAG, base de conhecimento e avaliação da empresa, construída com Elixir, Phoenix LiveView, Ash, Oban e PostgreSQL/pgvector. Projetei e entreguei de ponta a ponta a funcionalidade de geração de base de conhecimento com IA: o domínio Ash e as fundações de banco de dados, um workflow Oban orquestrando os estágios de outline, pesquisa, escrita, citação e finalização, um pipeline de ingestão de fontes com busca de URLs, upload de arquivos, normalização, chunking e embedding paralelo, e a interface administrativa em LiveView integrando tudo. Melhorei a precisão da recuperação com busca híbrida combinando correspondência lexical pg_trgm e resultados vetoriais via reciprocal rank fusion, e construí a experiência de revisão de rascunhos com refinamento por seção via IA, histórico de revisões, citações numeradas e linhagem completa rastreando cada artigo gerado de volta aos seus chunks de origem. Esse trabalho deu à empresa sua primeira capacidade automatizada de geração de base de conhecimento, com as camadas de revisão, refinamento e linhagem tornando a saída da IA auditável e segura para uso em produção.
+Atuou na plataforma de RAG, base de conhecimento e avaliação da empresa, construída com Elixir, Phoenix LiveView, Ash, Oban e PostgreSQL/pgvector. Projetou e entregou de ponta a ponta a funcionalidade de geração de base de conhecimento com IA: o domínio Ash e as fundações de banco de dados, um workflow Oban orquestrando os estágios de outline, pesquisa, escrita, citação e finalização, um pipeline de ingestão de fontes com busca de URLs, upload de arquivos, normalização, chunking e embedding paralelo, e a interface administrativa em LiveView integrando tudo. Melhorou a precisão da recuperação com busca híbrida combinando correspondência lexical pg_trgm e resultados vetoriais via reciprocal rank fusion, e construiu a experiência de revisão de rascunhos com refinamento por seção via IA, histórico de revisões, citações numeradas e linhagem completa rastreando cada artigo gerado de volta aos seus chunks de origem. Esse trabalho deu à empresa sua primeira capacidade automatizada de geração de base de conhecimento, com as camadas de revisão, refinamento e linhagem tornando a saída da IA auditável e segura para uso em produção.
 
 ---
 
@@ -44,7 +42,7 @@ Atuei na plataforma de RAG, base de conhecimento e avaliação da empresa, const
 
 **Agosto 2025 - Dezembro 2025** | Remoto, Polônia
 
-Desenvolvi e mantive o [tidewave.ai](https://tidewave.ai), um agente de codificação com IA que ajuda desenvolvedores a construir aplicações full-stack mais rápido. Liderei a implementação em múltiplas integrações de frameworks incluindo os ecossistemas Phoenix, Rails e JavaScript/Next.js. Construí implementações de servidores MCP (Model Context Protocol) e arquitetei suporte multi-framework para aplicações Rails e Next.js. Mantive a infraestrutura backend central em Elixir/Phoenix servindo o ecossistema tidewave, e contribuí para as ferramentas open-source da Dashbit para a comunidade Elixir.
+Desenvolveu e manteve o [tidewave.ai](https://tidewave.ai), um agente de codificação com IA que ajuda desenvolvedores a construir aplicações full-stack mais rápido. Liderou a implementação em múltiplas integrações de frameworks incluindo os ecossistemas Phoenix, Rails e JavaScript/Next.js. Construiu implementações de servidores MCP (Model Context Protocol) e arquitetou suporte multi-framework para aplicações Rails e Next.js. Manteve a infraestrutura backend central em Elixir/Phoenix servindo o ecossistema tidewave, e contribuiu para as ferramentas open-source da Dashbit para a comunidade Elixir.
 
 ---
 

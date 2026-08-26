@@ -9,9 +9,7 @@ Campos dos Goytacazes, Rio de Janeiro, Brazil
 ## Contact
 
 - **Email:** zoey.spessanha@zeetech.io
-- **GitHub:** [github.com/zoedsoupe](https://github.com/zoedsoupe)
 - **LinkedIn:** [linkedin.com/in/zoedsoupe](https://www.linkedin.com/in/zoedsoupe)
-- **Website:** [zoedsoupe.zeetech.io](https://zoedsoupe.zeetech.io)
 
 ---
 
