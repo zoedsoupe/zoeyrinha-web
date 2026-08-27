@@ -48,30 +48,31 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         </h2>
         <p>
           {gettext(
-            "this site is my corner of the internet. no feed, no algorithm, no engagement metrics. just words i wanted to write and code i wanted to share, served straight from a little elixir app."
+            "my corner of the internet. no feed, no algorithm, no metrics. just a little elixir app serving words i wanted to write."
           )}
         </p>
         <p>
           {gettext(
-            "i'm a travesty engineer from campos dos goytacazes, brazil. i fell in love with functional programming years ago and never looked back. these days i build knowledge systems by day, maintain open source by night, and co-host Elixir em Foco, brazil's first elixir podcast."
+            "travesty programmer from campos dos goytacazes, brazil. i fell in love with functional programming years ago and never looked back. these days i build knowledge systems by day, maintain open source by night, and co-host Elixir em Foco, brazil's first elixir podcast."
           )}
         </p>
         <p>
           {gettext(
-            "my philosophy is simple: if it can be pure, make it pure. if it can be composable, make it composable. if it can help someone, make it open source."
+            "when i'm not in front of a screen, i'm probably in the kitchen. cooking for the people i love is how i say what words can't."
           )}
         </p>
       </section>
 
-      <%!-- Blog --%>
+      <%!-- Writing --%>
       <section class="mb-16">
-        <h2 class="font-mono text-sm text-pink mb-2 glitch-text">{gettext("// the blog")}</h2>
+        <h2 class="font-mono text-sm text-pink mb-2 glitch-text">{gettext("// writing")}</h2>
         <p>
           {gettext(
-            "the main dish of this place. long-form notes on elixir, OTP and distributed systems, plus the occasional rant about software, society and everything in between. no schedule, no content strategy, no growth hacking."
+            "the main dish of this place. long-form notes on elixir and the BEAM, plus the occasional rant about software, society and everything in between. no schedule, no content strategy."
           )}
         </p>
-        <h3 class="font-mono text-sm text-pink mt-5">{gettext("// what i've been writing")}</h3>
+
+        <h3 class="font-mono text-sm text-pink mt-6">{gettext("// latest")}</h3>
         <ul :if={@recent_posts != []} class="space-y-3 mt-3">
           <li :for={post <- @recent_posts}>
             <a href={~p"/posts/#{post.id}"} class="group block">
@@ -87,31 +88,38 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         <p class="font-mono text-sm mt-3">
           <a href={~p"/posts"}>{gettext("read the blog")} -&gt;</a>
         </p>
+
+        <h3 class="font-mono text-sm text-pink mt-6">{gettext("// on stages")}</h3>
+        <p class="text-gray-light mt-2">
+          {gettext("things i've said with a microphone. slides and notes.")}
+        </p>
+        <ul :if={@recent_talks != []} class="space-y-3 mt-3">
+          <li :for={talk <- @recent_talks}>
+            <a href={~p"/talks"} class="group block">
+              <time class="font-mono text-xs text-gray-light">
+                {Calendar.strftime(talk.date, "%Y-%m-%d")}
+              </time>
+              <p class="text-foreground group-hover:text-pink transition-colors">
+                {talk.title} <span class="text-gray-light">@ {talk.event}</span>
+              </p>
+            </a>
+          </li>
+        </ul>
+        <p class="font-mono text-sm mt-3">
+          <a href={~p"/talks"}>{gettext("all talks")} -&gt;</a>
+        </p>
       </section>
 
-      <%!-- What i'm into --%>
+      <%!-- Rules --%>
       <section class="mb-16">
-        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">{gettext("// what i'm into")}</h2>
-        <div class="space-y-4">
-          <.into label={gettext("music that moves me")}>
-            {gettext(
-              "from industrial metal to dark psytrance to brazilian funk. music is how i process the world."
-            )}
-          </.into>
-          <.into label={gettext("deconstructing society")}>
-            {gettext(
-              "how we build and rebuild concepts like religion and gender, and the systems that shape us."
-            )}
-          </.into>
-          <.into label={gettext("building communities")}>
-            {gettext(
-              "tech is better when we build it together, from podcasts to open source to helping artisanal fishing communities go digital."
-            )}
-          </.into>
-          <.into label={gettext("elixir and math, made approachable")}>
-            {gettext("there is poetry in patterns, even when the proofs still escape me.")}
-          </.into>
-        </div>
+        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">{gettext("// rules")}</h2>
+        <ol class="list-decimal list-inside space-y-2 text-foreground">
+          <li>{gettext("if it can be simple, make it simple")}</li>
+          <li>{gettext("if it can help someone, make it open source")}</li>
+          <li>{gettext("software is political. pretending it isn't is also political")}</li>
+          <li>{gettext("feed the people you love!")}</li>
+          <li>{gettext("typos stay. polish is a lie")}</li>
+        </ol>
       </section>
 
       <%!-- Things i maintain --%>
@@ -120,7 +128,7 @@ defmodule ZoeyrinhaWeb.LandingHTML do
           {gettext("// things i maintain")}
         </h2>
         <p class="mb-5">
-          {gettext("open source is how i pay rent to the commons. a few of my kids:")}
+          {gettext("open source is how i trade knowledge and grow community. a few of my kids:")}
         </p>
         <ul class="space-y-4">
           <.project name="anubis-mcp" href="https://github.com/zoedsoupe/anubis-mcp">
@@ -148,14 +156,6 @@ defmodule ZoeyrinhaWeb.LandingHTML do
         </p>
       </section>
 
-      <%!-- Support --%>
-      <section class="mb-16">
-        <h2 class="font-mono text-sm text-pink mb-5 glitch-text">
-          {gettext("// support this corner")}
-        </h2>
-        <.support />
-      </section>
-
       <%!-- Elsewhere --%>
       <section>
         <h2 class="font-mono text-sm text-pink mb-4 glitch-text">{gettext("// elsewhere")}</h2>
@@ -164,7 +164,7 @@ defmodule ZoeyrinhaWeb.LandingHTML do
             "i'm not really into social networks anymore. i think we are heading the wrong way as a society under this economic system. but you can find me around:"
           )}
         </p>
-        <ul class="font-mono text-sm space-y-2">
+        <ul class="font-mono text-sm space-y-2 mb-8">
           <li>
             <a href="https://elixiremfoco.com" target="_blank" rel="noopener">elixir em foco</a>
             <span class="text-gray-light">{gettext("the podcast")}</span>
@@ -180,24 +180,13 @@ defmodule ZoeyrinhaWeb.LandingHTML do
             <span class="text-gray-light">{gettext("for the good conversations")}</span>
           </li>
         </ul>
+        <.support />
       </section>
     </main>
     """
   end
 
   defp zoey_code, do: @zoey_code
-
-  attr :label, :string, required: true
-  slot :inner_block, required: true
-
-  defp into(assigns) do
-    ~H"""
-    <div>
-      <p class="text-foreground font-medium">{@label}</p>
-      <p class="text-gray-light">{render_slot(@inner_block)}</p>
-    </div>
-    """
-  end
 
   attr :name, :string, required: true
   attr :href, :string, required: true
