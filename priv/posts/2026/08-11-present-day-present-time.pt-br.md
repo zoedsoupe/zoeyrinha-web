@@ -8,6 +8,8 @@ tags: ~w(meta ai elixir),
 
 _Present day... present time. Hahaha._
 
+> [frases que tem som...](https://www.youtube.com/watch?v=NfjsLmya1PI)
+
 Tem uma coisa que eu venho evitando escrever em voz alta, então vou escrever
 aqui: ultimamente, escrever código na mão me parece contraprodutivo. Não no
 sentido de "não vale a pena aprender", mas num sentido mais incômodo: eu sento
@@ -116,16 +118,16 @@ Tem uma ironia nessa história toda que eu não posso omitir: eu não sou uma
 observadora preocupada olhando de fora. Eu sou uma das pessoas que constroem
 essas ferramentas.
 
-Eu trabalhei na Dashbit com o Valim, ajudando a shippar o
+Eu trabalhei na Dashbit, ajudando a shippar o
 [Tidewave](https://github.com/tidewave-ai/tidewave_js), incluindo a parte JS e
 outras features da ferramenta. O Tidewave é, literalmente, um coding agent que
 vive dentro da sua aplicação e a entende de verdade, do banco à UI. É uma das
 ferramentas que fazem a vozinha da minha cabeça dizer "quatro minutos". Eu
 escrevi parte dela.
 
-Antes disso, trabalhei com o George Guimarães na CloudWalk montando o
-[jIM](https://jim.com), um agente financeiro de IA em Elixir que funcionava
-como proxy das features da InfinitePay. O jIM tinha uma RAG interna vetorizada
+Antes disso, trabalhei na CloudWalk montando o
+[JIM](https://jim.com), um agente financeiro de IA em Elixir que funcionava
+como proxy das features da InfinitePay. O JIM tinha uma RAG interna vetorizada
 em Elixir, com embeddings rodando dentro do BEAM via Bumblebee, sem texto
 interno saindo da infraestrutura, e se comunicava com os outros times via MCP.
 Fui eu quem conversou com os times e instruiu a integração, e dessa brincadeira

@@ -8,6 +8,8 @@ tags: ~w(meta ai elixir),
 
 _Present day... present time. Hahaha._
 
+> [sentences with sound...](https://www.youtube.com/watch?v=NfjsLmya1PI)
+
 There's something I've been avoiding saying out loud, so I'll write it here:
 lately, writing code by hand feels counterproductive to me. Not in the "it's
 not worth learning" sense, but in a more uncomfortable one: I sit down to
