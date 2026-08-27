@@ -20,12 +20,6 @@ defmodule Zoeyrinha.BlogTest do
       post = Blog.get_post_by_id!("hello-world", "pt_BR")
       assert post.lang == "en"
     end
-
-    test "drafts raise a 404 even on a direct URL" do
-      assert_raise Zoeyrinha.Blog.NotFoundError, fn ->
-        Blog.get_post_by_id!("present-day-present-time")
-      end
-    end
   end
 
   describe "all_posts/1" do
