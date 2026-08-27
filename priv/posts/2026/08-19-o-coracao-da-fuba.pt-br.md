@@ -3,7 +3,7 @@ title: "o coração da fubá",
 description: "post 2 da série fuba web: antes de qualquer telinha, a coelhinha precisa existir. mix new, structs, pattern matching, funções.",
 tags: ~w(elixir web tutorial),
 series: "fuba-web",
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu4bl7k5n24",
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu4bl7k5n24",
 }
 ---
 

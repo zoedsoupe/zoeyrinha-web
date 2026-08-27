@@ -3,7 +3,7 @@ title: "a página morta",
 description: "post 4 da série fuba web: a telinha bonita, finalmente. arquivos estáticos, plug.static e a descoberta de que botão bonito não faz nada sozinho.",
 tags: ~w(elixir web tutorial),
 series: "fuba-web",
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu4blbxel2k",
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu4blbxel2k",
 }
 ---
 

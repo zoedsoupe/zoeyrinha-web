@@ -23,6 +23,13 @@ defmodule ZoeyrinhaWeb.BlogHTML do
               <time class="font-mono text-sm text-gray-light">
                 {Calendar.strftime(post.date, "%Y-%m-%d")}
               </time>
+              <span
+                :if={post.lang != @locale}
+                class="font-mono text-xs text-gray ml-2"
+                title={gettext("not yet translated to your language")}
+              >
+                [{if post.lang == "en", do: "en", else: "pt-br"}]
+              </span>
               <h2 class="text-2xl font-bold text-pink group-hover:text-pink-soft transition-colors mt-1">
                 {post.title}
               </h2>

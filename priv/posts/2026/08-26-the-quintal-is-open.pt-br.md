@@ -30,7 +30,7 @@ O quintal tem vocabulário próprio, porque nomear as coisas com carinho faz par
   última visita.
 
 Se você é brasileiro, duas dessas palavras devem ter dado déjà vu agora.
-*Recado* e *depoimento* vieram direto do Orkut, de propósito: aquele era o
+_Recado_ e _depoimento_ vieram direto do Orkut, de propósito: aquele era o
 último lugar grande da internet onde a gentileza tinha vocabulário próprio. A
 diferença é que aqui depoimento é carta de amor com controle de entrega: quem
 recebe decide se abre o envelope na sala.
@@ -109,6 +109,7 @@ lugar comum na internet onde possa simplesmente existir e escrever.
 Na moderação, por enquanto, é uma pessoa só (eu): cada denúncia é lida com
 calma, por gente, sem robô e sem resposta automática. E mesmo quando um recado
 é ocultado de um canto, o record de quem escreveu segue intacto no próprio PDS
+
 - as palavras pertencem a quem escreveu, sempre.
 
 ## alpha, e daí?

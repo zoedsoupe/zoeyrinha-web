@@ -47,8 +47,8 @@ untranslated:
 - **visitas** - quiet notifications: who stopped by your canto since your last
   visit.
 
-If you are Brazilian, two of those words just gave you déjà vu. *Recado* and
-*depoimento* come straight from Orkut - the social network that raised a
+If you are Brazilian, two of those words just gave you déjà vu. _Recado_ and
+_depoimento_ come straight from Orkut - the social network that raised a
 generation of us - on purpose: it was the last big place on the internet where
 kindness had its own vocabulary. The difference here is that a depoimento is a
 love letter with delivery control: the recipient decides whether to open the

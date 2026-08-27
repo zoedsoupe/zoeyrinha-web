@@ -13,7 +13,12 @@ defmodule ZoeyrinhaWeb.BlogController do
         {post.id, post.series && hd(Blog.series_for(post, conn.assigns.locale).posts).id}
       end)
 
-    render(conn, :index, posts: posts, series_first: series_first, page_title: "blog")
+    render(conn, :index,
+      posts: posts,
+      series_first: series_first,
+      locale: conn.assigns.locale,
+      page_title: "blog"
+    )
   end
 
   def show(conn, %{"id" => id}) do
