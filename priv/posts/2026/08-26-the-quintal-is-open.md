@@ -2,6 +2,7 @@
 title: "the quintal is open",
 description: "Introducing quintal: a collective blogging platform on atproto, no algorithm, no metrics, one axolotl mascot. The small internet I always wanted to live in.",
 tags: ~w(elixir atproto oss),
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mu3rh5uyoh2k",
 }
 ---
 

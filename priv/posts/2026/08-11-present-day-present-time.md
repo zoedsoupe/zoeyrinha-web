@@ -2,6 +2,7 @@
 title: "present day, present time",
 description: "On not being able to write code by hand anymore, cognitive debt, giftedness, and what Serial Experiments Lain, Ghost in the Shell, Donna Haraway and Pierre Lévy have to do with it.",
 tags: ~w(meta ai elixir),
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mu3rh5smt427",
 }
 ---
 
