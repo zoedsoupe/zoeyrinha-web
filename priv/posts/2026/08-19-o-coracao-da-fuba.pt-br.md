@@ -7,7 +7,7 @@ series: "fuba-web",
 }
 ---
 
-Terminado o [manifesto](https://zoedsoupe.zeetech.io/posts/amor-como-faz-telinha-bonita), a pergunta seguinte da jhujuba veio rápido: "tá, e por onde eu começo?". E a resposta não é HTML e nem servidor. Antes de aparecer pra alguém, a Fubá precisa existir: ter medidores, reagir a cuidado, ficar chatinha. Hoje a gente escreve ela inteira sem encostar em internet, nem HTML.
+Pois bem, terminado o [manifesto](https://zoedsoupe.zeetech.io/posts/amor-como-faz-telinha-bonita), a pergunta seguinte da jhujuba veio rápido: "tá, e por onde eu começo?". E a resposta não é HTML e nem servidor. Antes de aparecer pra alguém, a Fubá precisa existir: ter medidores, reagir a cuidado, ficar chatinha. Hoje a gente escreve ela inteira sem encostar em internet, nem HTML.
 
 ## a regra de ouro
 
@@ -43,7 +43,7 @@ end
 
 Uma struct é um mapa com nome, campos fixos e valores padrão: `%Coelhinha{}` nasce com os quatro medidores em `3`, uma coelhinha nova, regulada, neutra. Daqui a pouco você vai ver o poder disso: fazer casamento de padrão em `%Coelhinha{}` na entrada de uma função garante que só coelhinha entra nela.
 
-O `@type t` embaixo não muda nada na hora de rodar. É um tipo de documentação para outras pessoas - ou você do futuro - se lembrar das "regras" da coelinha, que nesse caso são medidores que vão de 0 a 5, nunca mais, nunca menos.
+O `@type t` embaixo não muda nada na hora de rodar. É tipo documentação pra outras pessoas - ou você do futuro - lembrar das "regras" da coelinha, que nesse caso são medidores que vão de 0 a 5, nunca mais, nunca menos.
 
 Com isso, já pode brincar no terminal:
 
@@ -55,7 +55,7 @@ iex> %Fuba.Coelhinha{}
 
 ## cuidando dela (sem encostar nela)
 
-Recap rápido da imutabilidade: ninguém "muda" a coelhinha. As funções recebem uma e devolvem **outra**. `%{c | biscoito: 5}` não edita `c`, cria uma cópia com o campo novo, e a original segue intacta. Parece desperdício; na prática é o que te dá segurança de alterar dados sem corrompê-los.
+Recap rápido da imutabilidade: ninguém "muda" a coelhinha. As funções recebem uma e devolvem **outra**. `%{c | biscoito: 5}` não edita `c`, cria uma cópia com o campo novo, e a original segue intacta. Parece desperdício, né? Na prática é o que te dá segurança de alterar dados sem corromper nada.
 
 A primeira ação de cuidado:
 
@@ -75,7 +75,7 @@ defmodule Fuba.Cuidado do
 end
 ```
 
-Três coisas aí. O `@moduledoc` é a regra de ouro da seção anterior escrita no topo do arquivo, pra ninguém esquecer. O `%Coelhinha{} = c` na cláusula é o casamento de padrão: qualquer coisa que não seja uma coelhinha nem entra. E o `@spec` é como o `@type` do módulo da Fubá, só que para funções, que a gente definiu na struct - "recebe Coelhinha, devolve Coelhinha". De novo: documentação. Você vai ver um em cima de cada função daqui pra frente.
+Três coisas aí. O `@moduledoc` é a regra de ouro da seção anterior escrita no topo do arquivo, pra ninguém esquecer. O `%Coelhinha{} = c` na cláusula é o casamento de padrão: qualquer coisa que não seja uma coelhinha nem entra. E o `@spec` é como o `@type` do módulo da Fubá, só que para funções, que a gente definiu na struct - "recebe Coelhinha, devolve Coelhinha". De novo: documentação. Você vai ver um em cima de cada função daqui pra frente!
 
 Falta o `limita/1`, que mora no fim do módulo:
 
@@ -87,7 +87,7 @@ end
 
 É ele que segura a regra dos medidores: nunca passa de 5, nunca desce de 0. O pipe joga o número no `max/2` e depois no `min/2`, nessa ordem.
 
-Agora é com você. Escreve as outras três ações antes de passar pro próximo passo: `dar_cafe/1` (cafeína +2), `fazer_cafune/1` (carinho +2) e `dar_espaco/1` - essa última mexe em **dois** medidores: energia +2, carinho −1. Espaço recarrega, mas afasta um tiquinho. Tenta aí.
+Agora é com você. Escreve as outras três ações antes de passar pro próximo passo: `dar_cafe/1` (cafeína +2), `fazer_cafune/1` (carinho +2) e `dar_espaco/1` - essa última mexe em **dois** medidores: energia +2, carinho −1. Espaço recarrega, mas afasta um tiquinho. Tenta aí, eu espero.
 
 ...
 
@@ -108,7 +108,7 @@ end
 
 ## calculando o humor
 
-O humor da Fubá é **calculado** a partir medidores, nunca armazenado. Podia ser um campo na struct, e aí moraria uma armadilha: dois lugares guardando a mesma verdade, e um deles mentindo cedo ou tarde. Calculado na hora, ele nunca mente.
+O humor da Fubá é **calculado** a partir medidores, nunca armazenado. Podia ser um campo na struct, e aí moraria uma armadilha, minha nossa: dois lugares guardando a mesma verdade, e um deles mentindo cedo ou tarde. Calculado na hora, ele nunca mente.
 
 ```elixir
 @type humor :: :feliz | :chatinha | :desregulada | :go_queen
@@ -152,7 +152,7 @@ def aplicar(%Coelhinha{} = c, acao) do
 end
 ```
 
-Desregulada, ela não aceita biscoito, café nem cafuné: a função devolve ela **inalterada**. Só espaço atravessa.. Um dia a "tela bonitinha" vai chamar `aplicar/2`, mas quem decide é sempre esse módulo. Telinha nenhuma passa por cima da coelhinha.
+Desregulada, ela não aceita biscoito, café nem cafuné: a função devolve ela **inalterada**. Só espaço atravessa.. Um dia a "tela bonitinha" vai chamar `aplicar/2`, mas quem decide é sempre esse módulo. Telinha nenhuma passa por cima da coelhinha!
 
 ## carinhas
 
@@ -163,6 +163,7 @@ Desregulada, ela não aceita biscoito, café nem cafuné: a função devolve ela
 defmodule Fuba.Humor do
   alias Fuba.Cuidado
 
+  # sim, carinha é regra de negócio :P
   @spec carinha(Cuidado.humor() | atom()) :: String.t()
   def carinha(:feliz), do: "( ᵔ ᴥ ᵔ )"
   def carinha(:chatinha), do: "( ￣^￣)"
@@ -227,3 +228,5 @@ iex> Cuidado.humor(%Coelhinha{biscoito: 5, cafeina: 5, carinho: 5, energia: 5})
 Verde nos dois? Fechou.
 
 A Fubá existe. Você conversa com ela no terminal, dá biscoito, vê o humor mudar. Só que ninguém além de você vê qualquer coisa - ela mora trancada num terminal. No próximo post a gente dá voz a ela: HTTP, e o primeiro servidor que você escreve na vida.
+
+É isso o post 💜

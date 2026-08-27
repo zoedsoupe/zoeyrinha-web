@@ -9,15 +9,15 @@ series: "fuba-web",
 
 A Fubá [já existe](https://zoedsoupe.zeetech.io/posts/o-coracao-da-fuba): tem medidores, humor, regra emocional. Só que ela mora trancada no seu `iex` - ninguém além de você consegue falar com ela. A jhujuba foi direta: "tá, mas e aí, o que é um servidor?".
 
-Boa pergunta. Todo mundo repete "servidor" como se fosse uma caixa mágica num datacenter, então vamos devagar: primeiro o que a palavra significa, depois o protocolo da conversa, e só então o código - que cabe em onze linhas.
+Boa pergunta. Pois bem: todo mundo repete "servidor" como se fosse uma caixa mágica num datacenter, então vamos devagar - primeiro o que a palavra significa, depois o protocolo da conversa, e só então o código, que cabe em onze linhas.
 
 ## o que é um servidor, afinal
 
-Tira o mistério: um servidor é um computador que fica ligado, esperando alguém pedir alguma coisa. Só isso. Seu terminal espera você digitar; um servidor web espera uma **requisição** chegar pela rede (internet). Quando chega, ele processa e devolve uma **resposta**. Pede, responde. Pede, responde. O dia inteiro.
+Tira o mistério: um servidor é um computador que fica ligado, esperando alguém pedir alguma coisa. Só isso. Seu terminal espera você digitar; um servidor web espera uma **requisição** chegar pela rede (internet). Quando chega, ele processa e devolve uma **resposta**. Pede, responde. Pede, responde. O dia inteiro!
 
 Quem pede é o **cliente**. Pode ser o navegador, pode ser o app do banco no seu celular, pode ser outro servidor. A gente vai usar o `curl`, que é um cliente de linha de comando - perfeito pra ver a conversa sem o navegador escondendo nada embaixo de uma interface bonita.
 
-E o "fica ligado esperando" acontece numa **porta**. Pensa no computador como um prédio: o endereço (`localhost`, o seu próprio) leva até o prédio, e a porta leva até o apartamento certo. O nosso vai morar na `4000`, tradição do mundo Elixir. Quando você acessa `localhost:4000`, tá dizendo "prédio localhost, apartamento 4000" - e tem que ter alguém lá dentro ouvindo, senão ninguém atende.
+E o "fica ligado esperando" acontece numa **porta**. Pensa no computador como um prédio: o endereço (`localhost`, o seu próprio) leva até o prédio, e a porta leva até o apartamento certo. O nosso vai morar na `4000`, tradição do mundo Elixir. Quando você acessa `localhost:4000`, tá dizendo "prédio localhost, apartamento 4000", tipo isso - e tem que ter alguém lá dentro ouvindo, senão ninguém atende!
 
 ## http, a gramática da conversa
 
@@ -40,11 +40,11 @@ content-type: text/plain; charset=utf-8
 a Fubá tá te ouvindo
 ```
 
-Sem mágica nenhuma. Texto indo, texto voltando. O navegador faz isso por você o dia todo - a diferença é que hoje você vai escrever o lado que responde.
+Sem mágica nenhuma. Texto indo, texto voltando. O navegador faz isso por você o dia todo - a diferença é que hoje você vai escrever o lado que responde!
 
 ## a primeira dependência
 
-Escrever o lado que responde _do zero_ significaria escrever centenas de linhas de código, basicamente "escovar bit" - uma série inteira de posts só sobre isso, e não é aqui que mora o aprendizado de hoje. Então a gente adota a primeira dependência (a tal da "biblioteca" que falo o tempo todo) do projeto:
+Escrever o lado que responde _do zero_ significaria escrever centenas de linhas de código, minha nossa, basicamente "escovar bit" - uma série inteira de posts só sobre isso, e não é aqui que mora o aprendizado de hoje. Então a gente adota a primeira dependência (a tal da "biblioteca" que falo o tempo todo) do projeto:
 
 ```elixir
 # mix.exs
@@ -57,7 +57,7 @@ end
 
 O **Bandit** é uma biblioteca escrita em Elixir: ele cuida de toda a parte "chata", da gramática HTTP, e chama o seu código quando uma requisição chega mastigada. Rode `mix deps.get` e o `mix` baixa o Bandit e grava no `mix.lock` as versões exatas de tudo - é esse aqrquivo que garante que amanhã (ou na máquina de outra pessoa) vai baixar exatamente o mesmo código.
 
-A nota de responsabilidade: dependência é código de outra pessoa rodando no seu projeto, então cada uma entra com motivo. O motivo dessa é literalmente o título do post - HTTP na unha, mas sem reinventar a roda.
+A nota de responsabilidade: dependência é código de outra pessoa rodando no seu projeto, então cada uma entra com motivo. O motivo dessa é literalmente o título do post - HTTP na unha, mas sem reinventar a roda, né.
 
 ## um plug
 
@@ -82,7 +82,7 @@ Olha o que acontece aí. Quando uma requisição chega, o Bandit monta uma struc
 
 E a `conn` é imutável como tudo em Elixir: `put_resp_content_type/2` não "muda" a conexão, devolve outra com o cabeçalho a mais. Por isso o pipe - a `conn` vai entrando em cada função e saindo mais completa, igual a coelhinha do post passado entrando nas ações de cuidado.
 
-Duas coisas pra reparar. A primeira: o módulo mora em `lib/fuba_web/`, não em `lib/fuba/`. Convenção proposital - tudo que fala com a internet fica em `FubaWeb`, e o `Fuba` do post passado segue sem saber que internet existe. A segunda: o Plug responde sempre a mesma frase e ignora método, caminho, tudo. Tá certo que ele não usa a coelhinha ainda? Tá. Um passo de cada vez...
+Duas coisas pra reparar. A primeira: o módulo mora em `lib/fuba_web/`, não em `lib/fuba/`. Convenção proposital - tudo que fala com a internet fica em `FubaWeb`, e o `Fuba` do post passado segue sem saber que internet existe. A segunda: o Plug responde sempre a mesma frase e ignora método, caminho, tudo. Tá certo que ele não usa a coelhinha ainda? Tá. Um passo de cada vez, né...
 
 ## subindo na "árvore"
 
@@ -100,7 +100,7 @@ def start(_type, _args) do
 end
 ```
 
-Esse arquivo é basicamente uma listinha de bibliotecas ou itens que precisam ser inicializados quando o seu código for executado. Quando a Fubá roda, o Elixir também sobe o Bandit junto, apontando pro nosso Plug na porta 4000. E se o Bandit morrer - deu error, bug, qualquer coisa - a estratégia `:one_for_one` diz "levanta ele de novo". Esse é o porquê do `--sup` do post passado: a gente não escreveu um `if` de tratamento de erro e o servidor já nasce à prova de queda.
+Esse arquivo é basicamente uma listinha de bibliotecas ou itens que precisam ser inicializados quando o seu código for executado. Quando a Fubá roda, o Elixir também sobe o Bandit junto, apontando pro nosso Plug na porta 4000. E se o Bandit morrer - deu error, bug, qualquer coisa - a estratégia `:one_for_one` diz "levanta ele de novo". Esse é o porquê do `--sup` do post passado: a gente não escreveu um `if` de tratamento de erro e o servidor já nasce à prova de queda!
 
 ## dando voz
 
@@ -123,7 +123,7 @@ content-type: text/plain; charset=utf-8
 a Fubá tá te ouvindo
 ```
 
-Aí está. O programa que você escreveu ouviu um pedido pela rede e respondeu. Tenta também `curl -i localhost:4000/biscoito` - mesma resposta, porque o Plug ignora o caminho. E abre `http://localhost:4000` no navegador: a mesma conversa! O navegador é só um cliente HTTP que sabe desenhar.
+Aí está! O programa que você escreveu ouviu um pedido pela rede e respondeu. Tenta também `curl -i localhost:4000/biscoito` - mesma resposta, porque o Plug ignora o caminho. E abre `http://localhost:4000` no navegador: a mesma conversa! O navegador é só um cliente HTTP que sabe desenhar.
 
 Brincadeiras pra concertar, se quiser: muda a frase e recompila (`recompile()` dentro do `iex`), troca o `200` por `418` e vê o `curl` te contar que você virou uma chaleira, apaga o `put_resp_content_type` e vê o que muda no cabeçalho. Quebrar essas coisas é o jeito mais divertido de aprender.
 
@@ -136,3 +136,5 @@ Três critérios:
 3. Você consegue dizer, em voz alta, quem pediu, quem respondeu, em que porta, e qual parte do código sua foi chamada.
 
 Fechou? A Fubá agora tem voz, mesmo que ela só saiba dizer uma frase e ignore qualquer pedido. No próximo post ela ganha rosto: a página HTML e CSS servidos de verdade - a telinha bonita, finalmente, ainda que parada, sem reagir.
+
+É isso o post 💜

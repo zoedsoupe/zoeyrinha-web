@@ -41,9 +41,9 @@ post, recebe a árvore de respostas inteira. O blog guarda o URI da thread no
 frontmatter do post, uma task `mix blog.announce` publica o anúncio e escreve
 o URI de volta no markdown, e a página busca e cacheia as respostas na hora
 de renderizar. Elegante, modestia à parte, e umas duzentas linhas contando
-o cache.
+o cache!
 
-E aí eu rodei.
+Pois bem, rodei.
 
 ## comendo a própria comida
 
@@ -53,14 +53,15 @@ construir algo de verdade é sentar no restaurante e fazer um pedido. A
 primeira coisa que eu aprendi, como cliente da minha própria cozinha, é que o
 fogão não acendia.
 
-**Bug um: ninguém conseguia fazer uma única requisição.** Toda chamada
-explodia dentro de `:ssl.connect` antes de um byte sair da BEAM. O adaptador
-HTTP passava o timeout de conexão pra camada de baixo incondicionalmente, e
-quando quem chama não tem opinião sobre timeout, essa opinião chegava como
-`nil`, e o módulo SSL do Erlang não tem cláusula pra "sem opinião". A suíte
-de testes estava verde, claro. O adaptador é a casca mais externa, a parte
-que os testes substituem. É exatamente o tipo de bug que só existe na
-fronteira, o que é poético, e guarda esse pensamento.
+**Bug um: ninguém conseguia fazer uma única requisição.** Minha nossa. Toda
+chamada explodia dentro de `:ssl.connect` antes de um byte sair da BEAM. O
+adaptador HTTP passava o timeout de conexão pra camada de baixo
+incondicionalmente, e quando quem chama não tem opinião sobre timeout, essa
+opinião chegava como `nil`, e o módulo SSL do Erlang não tem cláusula pra
+"sem opinião". A suíte de testes estava verde, claro. Como não estaria? O
+adaptador é a casca mais externa, a parte que os testes substituem. É
+exatamente o tipo de bug que só existe na fronteira, o que é poético, e
+guarda esse pensamento.
 
 **Bug dois: uma placa só pra cidade inteira.** O SDK lia a URL base do
 ambiente da aplicação, uma chave global pra toda requisição. Só que leitura
@@ -68,7 +69,7 @@ anônima mora no `public.api.bsky.app` e login mora no seu PDS, e uma placa
 global só aponta pra um lado. No momento em que eu configurei pra ler
 threads, o login quebrou. A correção foi derrubar a placa: agora cada
 chamada carrega as próprias direções, e a sessão lembra a qual servidor ela
-pertence. Configuração global mutável atacando de novo, e fui eu que
+pertence. Configuração global mutável atacando de novo, né, e fui eu que
 escrevi!
 
 **Bug três, meu favorito: placas tectônicas.** O `Bsky.post` da camada alta e
@@ -111,7 +112,7 @@ pede uma rodada de design em vez de remendo, e agora o tracker conta isso.
 
 Todo mundo diz pra provar da própria comida, e o conselho costuma ser sobre
 qualidade num sentido abstrato. O que eu não esperava era _onde_ os bugs
-estavam escondidos. Não nas partes espertas. As partes espertas tinham
+estavam escondidos. Sabe onde não estavam? Nas partes espertas. Essas tinham
 teste. Os bugs moravam exatamente onde uma usuária nova ia trombar com eles
 nos primeiros cinco minutos: a primeira requisição, o primeiro login, o
 primeiro post. O capacho tava em chamas e a sala de estar, impecável.
@@ -121,3 +122,5 @@ E a seção de comentários no fim desta página é a prova de que agora funcion
 aqui. Seja gentil; eu consigo esconder respostas do conforto da minha própria
 conta, que é exatamente a quantidade de moderação que eu tava disposta a
 operar!
+
+É isso o post 💜

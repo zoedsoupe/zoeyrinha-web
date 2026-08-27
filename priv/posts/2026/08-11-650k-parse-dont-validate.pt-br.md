@@ -20,16 +20,16 @@ schema, e depois malli, em Clojure. O Elixir parecia estar sentindo falta
 desse amigo, então eu escrevi um. Se o próprio Ecto um dia crescer algo nessa
 direção, também é vitória.
 
-Acho que é o momento certo pra escrever sobre a ideia por trás de peri, porque
-a ideia não é minha. Ela vem do artigo de 2019 da Alexis King,
+Pois bem, acho que é o momento certo pra escrever sobre a ideia por trás de
+peri, porque a ideia não é minha. Ela vem do artigo de 2019 da Alexis King,
 [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 (_"faça parsing, não validação"_), que são os melhores onze parágrafos já
 escritos sobre integridade de dados. Se você só tiver tempo de ler uma coisa
 hoje, leia ele, não este post.
 
-### O que é peri?
+### o que é peri?
 
-Pra quem chegou aqui sem contexto: peri é uma biblioteca pequena de Elixir pra
+Pra quem chegou aqui de paraquedas: peri é uma bibliotecazinha de Elixir pra
 descrever o formato que seus dados deveriam ter, e então conferir dados reais
 contra esse formato. A linguagem de schemas é dado puro de Elixir: mapas,
 tuplas, keyword lists e átomos. Sem sintaxe nova pra aprender. E schemas são
@@ -40,14 +40,15 @@ transforma entrada não confiável, como parâmetros HTTP ou um payload de JSON,
 em dados nos quais o resto da aplicação pode confiar, ou num erro que você pode
 mostrar pra um humano. Não depende de nada e não liga se você usa Ecto, Phoenix
 ou nenhum dos dois. O resto deste post é sobre _por que_ essa etapa de conferir
-o formato importa.
+o formato importa!
 
-### A ideia
+### a ideia
 
-A distinção, em Elixir. Isto é validação:
+Bora pra distinção, em Elixir. Isto aqui é validação:
 
 ```elixir
 def usuario_valido?(params) do
+  # checou... e jogou fora tudo o que aprendeu
   is_binary(params["email"]) and is_integer(params["age"])
 end
 ```
@@ -56,9 +57,9 @@ Ela checa o dado e depois joga fora tudo o que aprendeu. Retorna `true`, e
 `true` não carrega prova nenhuma. Todas as funções depois dela recebem o mesmo
 mapa cru e têm duas opções: checar de novo, ou confiar. Checar de novo é lógica
 duplicada espalhada pelo código. Confiar através de fronteiras de módulos é
-como `nil` vai parar no seu banco de dados. Já vimos esse filme!
+como o `nil` vai parar no seu banco de dados. Já vimos esse filme!
 
-Isto é parsing:
+Isto aqui é parsing:
 
 ```elixir
 def parse_usuario(params) do
@@ -80,12 +81,12 @@ security_): **shotgun parsing** (_parsing de espingarda_, e o nome é ótimo), o
 antipadrão onde as checagens ficam espalhadas pelo código de processamento como
 chumbo, cada uma disparando só quando a execução chega nela. O programa não
 consegue rejeitar entrada inválida logo de cara, então quando uma checagem
-falha você talvez já tenha mandado o e-mail, cobrado o cartão, escrito no banco.
-A solução é estratificar o programa em duas fases: parsing na fronteira,
-execução depois, em cima de dados já provados. Empurre o peso da prova pra cima
-o máximo que der!
+falha, minha nossa, você talvez já tenha mandado o e-mail, cobrado o cartão,
+escrito no banco. A solução é estratificar o programa em duas fases: parsing na
+fronteira, execução depois, em cima de dados já provados. Empurre o peso da
+prova pra cima o máximo que der!
 
-### Mas Elixir tem tipos agora?
+### mas Elixir tem tipos agora?
 
 Quando eu escrevi sobre isso [lá em 2024](https://dev.to/zoedsoupe/parse-dont-validate-embracing-data-integrity-in-elixir-5c94)
 (esse artigo está, bem, velho), o argumento era mais simples: Haskell garante
@@ -115,10 +116,10 @@ código sem tipos ou do mesmo projeto são assumidas como `dynamic()`. Os avisos
 são _best-effort_ por design. E o `dynamic()` sempre fica na raiz do tipo:
 `{:ok, dynamic()}` é reescrito como `dynamic({:ok, term()})`, porque não dá pra
 ser gradual sobre metade de uma estrutura. Em outras palavras: o sistema de
-tipos raciocina lindamente sobre o `%User{}` fluindo pela sua regra de negócio,
-mas o JSON que acabou de chegar pela rede é `dynamic()` na raiz, e alguém
-precisa fazer esse estreitamento, uma única vez, num único lugar, em tempo de
-execução. Esse alguém é um parser.
+tipos raciocina que é uma beleza sobre o `%User{}` fluindo pela sua regra de
+negócio, mas o JSON que acabou de chegar pela rede é `dynamic()` na raiz, e
+alguém precisa fazer esse estreitamento, uma única vez, num único lugar, em
+tempo de execução. Esse alguém é um parser.
 
 O roadmap aponta na mesma direção: structs tipados são o próximo passo,
 assinaturas escritas pelo usuário vêm depois, e o artigo do José Valim
@@ -130,7 +131,7 @@ não pelo nome dele) e revisões. Lê ele e repara quanto dele é sobre a mesma
 obsessão: qual o formato do dado em cada ponto por onde ele flui, e quem pode
 prometer o quê. Mesmo num futuro de Elixir completamente tipado, o parsing de
 fronteira não desaparece. Ele é o momento em que `dynamic()` vira um tipo em
-que o compilador pode confiar.
+que o compilador pode confiar, tipo isso.
 
 ### peri é essa fronteira
 
@@ -163,3 +164,5 @@ comigo sobre semântica de coerção (vocês estavam certos), ou só silenciosam
 adicionou `{:peri, ...}` num `mix.exs` por aí. Faça parsing na fronteira, dê
 pattern match na prova, e vá validar alguma coisa. Ops, vá _parsear_ alguma
 coisa!
+
+é isso o post 💜
