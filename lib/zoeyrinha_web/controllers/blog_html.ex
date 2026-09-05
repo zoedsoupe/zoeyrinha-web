@@ -11,6 +11,24 @@ defmodule ZoeyrinhaWeb.BlogHTML do
           <p class="text-gray-light mt-4">
             {gettext("Notes on Elixir, distributed systems, and whatever else I am chewing on.")}
           </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href="/rss.xml"
+              title={gettext("rss feed")}
+              class="inline-flex items-center gap-2 border border-selection rounded px-3 py-1.5 font-mono text-sm text-gray-light hover:text-pink hover:border-pink transition-colors"
+            >
+              <span class="text-pink">$</span> curl -s zoedsoupe.zeetech.io/rss.xml | less
+            </a>
+            <button
+              type="button"
+              data-share-path="/rss.xml"
+              class="font-mono text-xs text-pink hover:text-pink-soft transition-colors cursor-pointer"
+            >
+              <span data-share-label>{gettext("copy feed url")}</span>
+              <span data-share-copied hidden>{gettext("copied!")}</span>
+            </button>
+          </div>
         </header>
 
         <div :if={@posts == []} class="text-gray-light font-mono">

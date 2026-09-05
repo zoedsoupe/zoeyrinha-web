@@ -224,6 +224,9 @@ defmodule ZoeyrinhaWeb.Components do
       >
         email
       </a>
+      <a href="/rss.xml" class="text-gray-light hover:text-pink transition-colors">
+        rss
+      </a>
     </div>
     """
   end

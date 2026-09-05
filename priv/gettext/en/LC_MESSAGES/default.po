@@ -292,3 +292,13 @@ msgstr ""
 #, elixir-autogen, elixir-format
 msgid "loading comments"
 msgstr ""
+
+#: lib/zoeyrinha_web/controllers/blog_html.ex
+#, elixir-autogen, elixir-format
+msgid "copy feed url"
+msgstr ""
+
+#: lib/zoeyrinha_web/controllers/blog_html.ex
+#, elixir-autogen, elixir-format
+msgid "rss feed"
+msgstr ""
