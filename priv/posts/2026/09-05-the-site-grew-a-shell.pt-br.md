@@ -2,6 +2,7 @@
 title: "o site virou shell",
 description: "changelog do meu cantinho: mdex no lugar do earmark, comentários do bluesky assíncronos, adeus npm e um 404 que falha como terminal de verdade.",
 tags: ~w(meta elixir),
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murtwskd6o2v",
 }
 ---
 

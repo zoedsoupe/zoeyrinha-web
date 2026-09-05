@@ -2,6 +2,7 @@
 title: "the site grew a shell",
 description: "Small changelog from my corner of the internet: mdex instead of earmark, async Bluesky comments, no more npm, and a 404 that fails like a proper terminal.",
 tags: ~w(meta elixir),
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murtwskd6o2v",
 }
 ---
 
