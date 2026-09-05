@@ -2,6 +2,7 @@
 title: "a bala de prata não existe (de novo)",
 description: "reflexões da SCTI UENF 2026: subir no palco pra falar de RAG enquanto eu reduzo meu próprio uso de LLM, o hype como projeto comercial, e por que arquitetura de software continua sendo o coração de qualquer sistema em produção.",
 tags: ~w(elixir beam sistemas-distribuidos ia scti meta),
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murx6anz272y",
 }
 ---
 

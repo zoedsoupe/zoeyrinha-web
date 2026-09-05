@@ -4,6 +4,7 @@ description: "post 7 da série fuba web: adeus, piscada. websocket num parágraf
 tags: ~w(elixir web tutorial),
 series: "fuba-web",
 series_index: 6,
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murx6aoqvk2k",
 }
 ---
 

@@ -2,6 +2,7 @@
 title: "there's no silver bullet (again)",
 description: "reflections from SCTI UENF 2026: giving a RAG talk while cutting my own LLM usage, the hype as a commercial project, and why software architecture is still the heart of any production system.",
 tags: ~w(elixir beam distributed-systems ai scti meta),
+  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murx6anz272y",
 }
 ---
 
