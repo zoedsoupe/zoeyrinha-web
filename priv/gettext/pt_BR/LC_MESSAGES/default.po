@@ -282,3 +282,13 @@ msgstr ""
 #, elixir-autogen, elixir-format
 msgid "share"
 msgstr "compartilhar"
+
+#: lib/zoeyrinha_web/live/comments_live.ex:53
+#, elixir-autogen, elixir-format
+msgid "retry"
+msgstr "tentar de novo"
+
+#: lib/zoeyrinha_web/live/comments_live.ex:46
+#, elixir-autogen, elixir-format
+msgid "loading comments"
+msgstr "carregando comentários"
