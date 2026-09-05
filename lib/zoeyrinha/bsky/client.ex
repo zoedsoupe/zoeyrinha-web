@@ -1,5 +1,5 @@
 defmodule Zoeyrinha.Bsky.Client do
-  @moduledoc "Seam over the Bluesky API. Real impl: Zoeyrinha.Bsky.ProtoRune; tests use Zoeyrinha.Bsky.FakeClient."
+  @moduledoc "Seam over the Bluesky API. Real impl: Zoeyrinha.Bsky.HTTP; tests use Zoeyrinha.Bsky.FakeClient."
 
   @callback login(identifier :: String.t(), password :: String.t()) ::
               {:ok, session :: map()} | {:error, term()}
@@ -24,5 +24,5 @@ defmodule Zoeyrinha.Bsky.Client do
   def get_thread(at_uri), do: impl().get_thread(at_uri)
 
   # Read per call so test overrides take effect without recompilation.
-  defp impl, do: Application.get_env(:zoeyrinha, :bsky_client, Zoeyrinha.Bsky.ProtoRune)
+  defp impl, do: Application.get_env(:zoeyrinha, :bsky_client, Zoeyrinha.Bsky.HTTP)
 end
