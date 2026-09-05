@@ -182,6 +182,7 @@ defmodule ZoeyrinhaWeb.Components do
         <%!-- finger(1): the original social lookup. the links below are the stdout --%>
         <p class="font-mono text-xs text-gray">
           <span class="text-pink">$</span> finger zoey@bsky.app
+          <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
         </p>
         <.social_links />
         <p class="font-mono text-xs text-gray">

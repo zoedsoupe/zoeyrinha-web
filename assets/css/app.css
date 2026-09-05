@@ -492,3 +492,48 @@ pre.highlight::-webkit-scrollbar-track {
     max-width: none;
   }
 }
+
+/* Blinking terminal cursor, used after the shell-command easter eggs */
+.cursor-blink {
+  animation: cursor-blink 1.06s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Konami code reward: a few seconds of maximum glitch */
+.glitch-storm .glitch-text {
+  animation: glitch-storm 0.15s steps(2) infinite;
+}
+
+@keyframes glitch-storm {
+  0% {
+    text-shadow:
+      3px 0 var(--color-glitch-red),
+      -3px 0 var(--color-glitch-blue);
+  }
+  50% {
+    text-shadow:
+      -3px 0 var(--color-glitch-red),
+      3px 0 var(--color-glitch-blue);
+  }
+}
+
+/* Keyboard navigation: visible focus ring in the site's pink */
+a:focus-visible,
+button:focus-visible,
+/* Keyboard navigation focus ring lives in @layer base above */
+
+/* Users who ask for less motion get none of the decorative animation */
+@media (prefers-reduced-motion: reduce) {
+  .glitch-text,
+  .animate-pulse,
+  .cursor-blink,
+  .glitch-storm .glitch-text,
+  body::after {
+    animation: none !important;
+  }
+}

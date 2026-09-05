@@ -302,3 +302,13 @@ msgstr ""
 #, elixir-autogen, elixir-format
 msgid "rss feed"
 msgstr ""
+
+#: lib/zoeyrinha_web/components/layouts/root.html.heex
+#, elixir-autogen, elixir-format
+msgid "copy"
+msgstr ""
+
+#: lib/zoeyrinha_web/components/layouts/root.html.heex
+#, elixir-autogen, elixir-format
+msgid "skip to content"
+msgstr ""

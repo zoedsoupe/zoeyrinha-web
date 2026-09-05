@@ -90,6 +90,8 @@ defmodule ZoeyrinhaWeb.CommentsLive do
             :if={@comment.author_avatar}
             src={@comment.author_avatar}
             alt=""
+            loading="lazy"
+            decoding="async"
             class="h-6 w-6 rounded-full"
           />
           <span class="text-foreground">{@comment.author_display_name || @comment.author_handle}</span>

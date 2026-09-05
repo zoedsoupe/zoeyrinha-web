@@ -34,6 +34,49 @@ document.querySelectorAll("[data-share-path]").forEach((btn) => {
   });
 });
 
+// Copy button on code blocks. Labels come from the body data attributes so
+// they follow the page locale.
+const copyLabel = document.body.dataset.copyLabel || "copy";
+const copiedLabel = document.body.dataset.copiedLabel || "copied!";
+
+document.querySelectorAll(".prose pre").forEach((pre) => {
+  pre.classList.add("group", "relative");
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = copyLabel;
+  btn.className =
+    "absolute top-2 right-2 font-mono text-xs text-gray hover:text-pink transition-colors cursor-pointer sm:opacity-0 sm:group-hover:opacity-100";
+
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(pre.querySelector("code").innerText);
+    btn.textContent = copiedLabel;
+    setTimeout(() => (btn.textContent = copyLabel), 2000);
+  });
+
+  pre.appendChild(btn);
+});
+
+// Konami code: a few seconds of maximum glitch. Skipped entirely for users
+// who prefer reduced motion.
+const KONAMI = [
+  "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+  "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a",
+];
+let konamiProgress = 0;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+document.addEventListener("keydown", (e) => {
+  konamiProgress = e.key === KONAMI[konamiProgress] ? konamiProgress + 1 : 0;
+
+  if (konamiProgress === KONAMI.length) {
+    konamiProgress = 0;
+    if (reducedMotion.matches) return;
+    document.body.classList.add("glitch-storm");
+    setTimeout(() => document.body.classList.remove("glitch-storm"), 3000);
+  }
+});
+
 // LiveSocket: only pages embedding a LiveView (post comments) pay for a
 // websocket. Everything else is plain static HTML.
 let csrfToken = document

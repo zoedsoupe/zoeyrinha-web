@@ -12,6 +12,7 @@ defmodule ZoeyrinhaWeb.CVHTML do
             <%!-- the page below is the stdout --%>
             <p class="mt-4 inline-flex items-center gap-2 border border-selection rounded px-3 py-1.5 font-mono text-sm text-gray-light">
               <span class="text-pink">$</span> whoami
+              <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
             </p>
             <div>
               <button

@@ -43,6 +43,9 @@
       .err { color: var(--gray); }
       .shell a { color: var(--pink); text-decoration: none; }
       .shell a:hover { text-decoration: underline; }
+      .cursor-blink { animation: cursor-blink 1.06s steps(1) infinite; color: var(--pink); }
+      @keyframes cursor-blink { 50% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .cursor-blink { animation: none; } }
     </style>
   </head>
   <body>
@@ -51,7 +54,10 @@
       <div class="shell">
         <p><span class="prompt">$</span> ls /this-page</p>
         <p class="err">ls: cannot access '/this-page': No such file or directory</p>
-        <p><span class="prompt">$</span> <a href="/">cd ~</a></p>
+        <p>
+          <span class="prompt">$</span> <a href="/">cd ~</a>
+          <span class="cursor-blink" aria-hidden="true">▊</span>
+        </p>
       </div>
     </main>
   </body>
