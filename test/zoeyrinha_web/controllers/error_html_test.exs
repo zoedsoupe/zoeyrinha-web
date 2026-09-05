@@ -7,7 +7,7 @@ defmodule ZoeyrinhaWeb.ErrorHTMLTest do
   test "renders 404.html" do
     html = render_to_string(ZoeyrinhaWeb.ErrorHTML, "404", "html", [])
     assert html =~ "<h1>404</h1>"
-    assert html =~ "this page doesn't exist"
+    assert html =~ "No such file or directory"
   end
 
   test "renders 500.html" do
