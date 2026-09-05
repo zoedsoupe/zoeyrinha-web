@@ -9,7 +9,7 @@ defmodule ZoeyrinhaWeb.Healthcheck do
 
   def call(%Plug.Conn{request_path: "/health"} = conn, _opts) do
     conn
-    |> send_resp(200, Jason.encode!(check_health()))
+    |> send_resp(200, JSON.encode!(check_health()))
     |> put_resp_header("content-type", "application/json")
     |> halt()
   end

@@ -47,21 +47,17 @@ defmodule Zoeyrinha.MixProject do
       {:lucide_icons, "~> 2.0.12"},
       {:phoenix_live_view, "~> 1.0"},
       {:gettext, "~> 1.0"},
-      {:nimble_publisher, "~> 1.1"},
+      {:nimble_publisher, "~> 2.0"},
       {:mdex, "~> 0.13.5"},
       # syntax highlighting lexers for nimble_publisher code fences;
-      # needed in every env (ex_doc only pulls them in dev/prod)
       {:makeup_elixir, "~> 1.0"},
       {:makeup_erlang, "~> 1.0"},
       {:makeup_syntect, "~> 0.1"},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
-      {:jason, "~> 1.2"},
       {:bandit, "~> 1.5"},
-      {:ex_doc, ">= 0.0.0", runtime: false, only: :dev},
-      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.3", only: [:dev], runtime: false}
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 
