@@ -2,7 +2,7 @@
 title: "o quintal tá aberto",
 description: "apresentando o quintal: uma plataforma coletiva de blogs sobre atproto, sem algoritmo, sem métricas e com um axolote de mascote. a internet pequena que eu sempre quis morar.",
 tags: ~w(elixir atproto oss),
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mu3rh5uyoh2k",
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mu3rh5uyoh2k",
 }
 ---
 

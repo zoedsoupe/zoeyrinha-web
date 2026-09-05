@@ -229,7 +229,12 @@
   body::before {
     background:
       linear-gradient(transparent 50%, rgba(0, 0, 0, 0.22) 0),
-      linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.015), rgba(0, 0, 255, 0.04));
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.04),
+        rgba(0, 255, 0, 0.015),
+        rgba(0, 0, 255, 0.04)
+      );
     background-size:
       100% 2px,
       3px 100%;
@@ -242,27 +247,69 @@
 }
 
 @keyframes crt-flicker {
-  0% { opacity: 0.08; }
-  5% { opacity: 0.1; }
-  10% { opacity: 0.07; }
-  15% { opacity: 0.27; }
-  20% { opacity: 0.05; }
-  25% { opacity: 0.25; }
-  30% { opacity: 0.2; }
-  35% { opacity: 0.2; }
-  40% { opacity: 0.08; }
-  45% { opacity: 0.25; }
-  50% { opacity: 0.29; }
-  55% { opacity: 0.03; }
-  60% { opacity: 0.06; }
-  65% { opacity: 0.22; }
-  70% { opacity: 0.16; }
-  75% { opacity: 0.11; }
-  80% { opacity: 0.21; }
-  85% { opacity: 0.21; }
-  90% { opacity: 0.21; }
-  95% { opacity: 0.11; }
-  100% { opacity: 0.07; }
+  0% {
+    opacity: 0.08;
+  }
+  5% {
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 0.07;
+  }
+  15% {
+    opacity: 0.27;
+  }
+  20% {
+    opacity: 0.05;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  30% {
+    opacity: 0.2;
+  }
+  35% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.08;
+  }
+  45% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.29;
+  }
+  55% {
+    opacity: 0.03;
+  }
+  60% {
+    opacity: 0.06;
+  }
+  65% {
+    opacity: 0.22;
+  }
+  70% {
+    opacity: 0.16;
+  }
+  75% {
+    opacity: 0.11;
+  }
+  80% {
+    opacity: 0.21;
+  }
+  85% {
+    opacity: 0.21;
+  }
+  90% {
+    opacity: 0.21;
+  }
+  95% {
+    opacity: 0.11;
+  }
+  100% {
+    opacity: 0.07;
+  }
 }
 
 /* Markdown post bodies (hand-rolled, no typography plugin) */

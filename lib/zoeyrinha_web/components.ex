@@ -181,8 +181,8 @@ defmodule ZoeyrinhaWeb.Components do
       <div class="mx-auto max-w-2xl px-5 flex flex-col items-start gap-3">
         <%!-- finger(1): the original social lookup. the links below are the stdout --%>
         <p class="font-mono text-xs text-gray">
-          <span class="text-pink">$</span> finger zoey@bsky.app
-          <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
+          <span class="text-pink">$</span>
+          finger zoey@bsky.app <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
         </p>
         <.social_links />
         <p class="font-mono text-xs text-gray">

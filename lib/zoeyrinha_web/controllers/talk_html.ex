@@ -13,8 +13,8 @@ defmodule ZoeyrinhaWeb.TalkHTML do
           </p>
           <%!-- wall(1): write to ALL users. the list below is the stdout --%>
           <p class="mt-6 inline-flex items-center gap-2 border border-selection rounded px-3 py-1.5 font-mono text-sm text-gray-light">
-            <span class="text-pink">$</span> wall ./talks.txt
-            <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
+            <span class="text-pink">$</span>
+            wall ./talks.txt <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
           </p>
         </header>
 

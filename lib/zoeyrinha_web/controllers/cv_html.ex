@@ -11,8 +11,8 @@ defmodule ZoeyrinhaWeb.CVHTML do
             <h1 class="text-4xl md:text-5xl font-bold text-pink glitch-text">cv</h1>
             <%!-- the page below is the stdout --%>
             <p class="mt-4 inline-flex items-center gap-2 border border-selection rounded px-3 py-1.5 font-mono text-sm text-gray-light">
-              <span class="text-pink">$</span> whoami
-              <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
+              <span class="text-pink">$</span>
+              whoami <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
             </p>
             <div>
               <button

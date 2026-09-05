@@ -24,7 +24,9 @@ document.querySelectorAll("[data-share-path]").forEach((btn) => {
   const copied = btn.querySelector("[data-share-copied]");
 
   btn.addEventListener("click", () => {
-    navigator.clipboard.writeText(window.location.origin + btn.dataset.sharePath);
+    navigator.clipboard.writeText(
+      window.location.origin + btn.dataset.sharePath,
+    );
     label.hidden = true;
     copied.hidden = false;
     setTimeout(() => {
@@ -60,8 +62,16 @@ document.querySelectorAll(".prose pre").forEach((pre) => {
 // Konami code: a few seconds of maximum glitch. Skipped entirely for users
 // who prefer reduced motion.
 const KONAMI = [
-  "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
-  "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a",
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a",
 ];
 let konamiProgress = 0;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

@@ -18,7 +18,8 @@ defmodule ZoeyrinhaWeb.BlogHTML do
               title={gettext("rss feed")}
               class="inline-flex items-center gap-2 border border-selection rounded px-3 py-1.5 font-mono text-sm text-gray-light hover:text-pink hover:border-pink transition-colors"
             >
-              <span class="text-pink">$</span> curl -s zoedsoupe.zeetech.io/rss.xml | less
+              <span class="text-pink">$</span>
+              curl -s zoedsoupe.zeetech.io/rss.xml | less
               <span class="cursor-blink text-pink" aria-hidden="true">▊</span>
             </a>
             <button
