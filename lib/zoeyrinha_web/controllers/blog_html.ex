@@ -44,6 +44,17 @@ defmodule ZoeyrinhaWeb.BlogHTML do
                 {gettext("series")}: {post.series} -&gt;
               </a>
               <.badge :for={tag <- post.tags}>{tag}</.badge>
+              <button
+                type="button"
+                x-data="{ copied: false }"
+                @click={
+                  "navigator.clipboard.writeText(window.location.origin + '/posts/#{post.id}'); copied = true; setTimeout(() => copied = false, 2000)"
+                }
+                class="font-mono text-xs text-pink hover:text-pink-soft transition-colors cursor-pointer"
+              >
+                <span x-show="!copied">{gettext("share")}</span>
+                <span x-show="copied" x-cloak>{gettext("copied!")}</span>
+              </button>
               <span class="font-mono text-xs text-gray ml-auto">
                 {reading_time(post.body)} {gettext("min read")}
               </span>
@@ -68,6 +79,18 @@ defmodule ZoeyrinhaWeb.BlogHTML do
             <time>{Calendar.strftime(@post.date, "%Y-%m-%d")}</time>
             <span class="text-gray">/</span>
             <span>{reading_time(@post.body)} {gettext("min read")}</span>
+            <span class="text-gray">/</span>
+            <button
+              type="button"
+              x-data="{ copied: false }"
+              @click={
+                "navigator.clipboard.writeText(window.location.origin + '/posts/#{@post.id}'); copied = true; setTimeout(() => copied = false, 2000)"
+              }
+              class="text-pink hover:text-pink-soft transition-colors cursor-pointer"
+            >
+              <span x-show="!copied">{gettext("share")}</span>
+              <span x-show="copied" x-cloak>{gettext("copied!")}</span>
+            </button>
           </div>
           <div class="flex flex-wrap gap-2 mt-4">
             <.badge :for={tag <- @post.tags}>{tag}</.badge>
