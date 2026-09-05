@@ -11,6 +11,10 @@ defmodule ZoeyrinhaWeb.TalkHTML do
           <p class="text-gray-light mt-4">
             {gettext("Talks, workshops and podcast appearances.")}
           </p>
+          <%!-- wall(1): write to ALL users. the list below is the stdout --%>
+          <p class="mt-6 inline-flex items-center gap-2 border border-selection rounded px-3 py-1.5 font-mono text-sm text-gray-light">
+            <span class="text-pink">$</span> wall ./talks.txt
+          </p>
         </header>
 
         <div :if={@talks == []} class="text-gray-light font-mono">

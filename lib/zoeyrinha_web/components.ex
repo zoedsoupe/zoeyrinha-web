@@ -177,8 +177,12 @@ defmodule ZoeyrinhaWeb.Components do
 
   def footer(assigns) do
     ~H"""
-    <footer class={["border-t border-selection mt-12 py-8", @class]}>
-      <div class="mx-auto max-w-2xl px-5 flex flex-col items-start gap-4">
+    <footer class={["border-t border-selection mt-10 py-6 sm:py-8", @class]}>
+      <div class="mx-auto max-w-2xl px-5 flex flex-col items-start gap-3">
+        <%!-- finger(1): the original social lookup. the links below are the stdout --%>
+        <p class="font-mono text-xs text-gray">
+          <span class="text-pink">$</span> finger zoey@bsky.app
+        </p>
         <.social_links />
         <p class="font-mono text-xs text-gray">
           &copy; {DateTime.utc_now().year} zoey de souza pessanha / zeetech

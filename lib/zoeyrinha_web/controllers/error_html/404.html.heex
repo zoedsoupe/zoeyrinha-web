@@ -33,20 +33,26 @@
           2px 0 color-mix(in srgb, var(--glitch-red) 60%, transparent),
           -2px 0 color-mix(in srgb, var(--glitch-blue) 60%, transparent);
       }
-      p { color: var(--gray); margin: 1.5rem 0 2.5rem; }
-      a {
-        color: var(--pink); text-decoration: none;
+      .shell {
+        display: inline-block; text-align: left;
+        margin: 1.5rem 0 0; line-height: 2;
         border: 1px solid var(--border); border-radius: 0.375rem;
-        padding: 0.625rem 1.25rem; display: inline-block;
+        padding: 0.75rem 1.25rem;
       }
-      a:hover { border-color: var(--pink); }
+      .prompt { color: var(--pink); }
+      .err { color: var(--gray); }
+      .shell a { color: var(--pink); text-decoration: none; }
+      .shell a:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
     <main>
       <h1>404</h1>
-      <p>this page doesn't exist. it probably never did.</p>
-      <a href="/">cd ~</a>
+      <div class="shell">
+        <p><span class="prompt">$</span> ls /this-page</p>
+        <p class="err">ls: cannot access '/this-page': No such file or directory</p>
+        <p><span class="prompt">$</span> <a href="/">cd ~</a></p>
+      </div>
     </main>
   </body>
 </html>
