@@ -10,6 +10,7 @@ defmodule Zoeyrinha.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
+      listeners: [Phoenix.CodeReloader],
       releases: [
         zoeyrinha: [
           strip_beams: true,
@@ -41,22 +42,21 @@ defmodule Zoeyrinha.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.7.14"},
+      {:phoenix, "~> 1.8"},
       {:phoenix_html, "~> 4.1"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:lucide_icons, "~> 2.0.12"},
-      {:phoenix_live_view, "~> 1.0"},
+      {:phoenix_live_reload, "~> 1.7", only: :dev},
+      {:phoenix_live_view, "~> 1.2"},
       {:gettext, "~> 1.0"},
       {:nimble_publisher, "~> 2.0"},
-      {:mdex, "~> 0.13.5"},
+      {:mdex_native, "~> 0.2"},
       # syntax highlighting lexers for nimble_publisher code fences;
       {:makeup_elixir, "~> 1.0"},
       {:makeup_erlang, "~> 1.0"},
       {:makeup_syntect, "~> 0.1"},
-      {:floki, ">= 0.30.0", only: :test},
-      {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
-      {:bandit, "~> 1.5"},
+      {:bandit, "~> 1.12"},
+      {:lazy_html, ">= 0.1.0", only: :test},
+      {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.5", runtime: Mix.env() == :dev},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end

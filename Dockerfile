@@ -11,7 +11,7 @@ FROM ${BUILDER_IMAGE} as builder
 WORKDIR /app
 
 RUN apk update --no-cache
-RUN apk add --no-cache build-base gcc curl git wget nodejs npm
+RUN apk add --no-cache build-base gcc curl git wget
 
 # install hex + rebar
 RUN mix local.hex --force && \
@@ -36,10 +36,6 @@ COPY lib lib
 
 # Compile the release
 RUN mix compile
-
-# install npm dependencies
-COPY assets/package.json assets/package-lock.json ./assets/
-RUN npm ci --prefix assets --prefer-offline --no-audit --progress=false --loglevel=error
 
 # compile assets
 COPY assets assets

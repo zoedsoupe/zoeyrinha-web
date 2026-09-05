@@ -47,7 +47,7 @@
     </script>
   </head>
   <body class="antialiased pb-20 sm:pb-0">
-    <.navigation />
+    <.navigation locale={@locale} />
     {@inner_content}
     <.footer />
     <.bottom_nav current_path={@conn.request_path} />

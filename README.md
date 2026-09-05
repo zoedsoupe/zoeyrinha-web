@@ -43,7 +43,7 @@ Com Nix:
 
 ```sh
 nix develop
-mix deps.get && npm i --prefix assets
+mix deps.get
 iex -S mix phx.server
 ```
 

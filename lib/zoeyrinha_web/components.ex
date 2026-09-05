@@ -27,6 +27,7 @@ defmodule ZoeyrinhaWeb.Components do
 
   @doc "Top navigation with a language switcher."
   attr :class, :string, default: ""
+  attr :locale, :string, required: true
 
   def navigation(assigns) do
     ~H"""
@@ -58,20 +59,27 @@ defmodule ZoeyrinhaWeb.Components do
           </div>
         </div>
 
-        <%!-- Language switcher --%>
-        <div x-data="languageSwitcher()" class="flex items-center gap-1 font-mono text-sm">
+        <%!-- Language switcher: active locale rendered server-side; JS only
+             sets the cookie and reloads (see app.js). --%>
+        <div id="locale-switcher" class="flex items-center gap-1 font-mono text-sm">
           <button
-            @click="switchLocale('en')"
-            x-bind:class="{'text-pink': locale === 'en', 'text-gray': locale !== 'en'}"
-            class="cursor-pointer hover:text-pink transition-colors px-1"
+            type="button"
+            data-locale="en"
+            class={[
+              "cursor-pointer hover:text-pink transition-colors px-1",
+              if(@locale == "en", do: "text-pink", else: "text-gray")
+            ]}
           >
             en
           </button>
           <span class="text-gray">/</span>
           <button
-            @click="switchLocale('pt_BR')"
-            x-bind:class="{'text-pink': locale === 'pt_BR', 'text-gray': locale !== 'pt_BR'}"
-            class="cursor-pointer hover:text-pink transition-colors px-1"
+            type="button"
+            data-locale="pt_BR"
+            class={[
+              "cursor-pointer hover:text-pink transition-colors px-1",
+              if(@locale == "pt_BR", do: "text-pink", else: "text-gray")
+            ]}
           >
             pt
           </button>
@@ -90,27 +98,17 @@ defmodule ZoeyrinhaWeb.Components do
     ~H"""
     <nav class="sm:hidden fixed bottom-0 inset-x-0 z-50 border-t border-selection bg-background">
       <div class="flex justify-around items-stretch font-mono text-xs pb-[env(safe-area-inset-bottom)]">
-        <.bottom_nav_link href="/" icon="home" label={gettext("home")} current_path={@current_path} />
-        <.bottom_nav_link
-          href="/posts"
-          icon="book-open"
-          label={gettext("blog")}
-          current_path={@current_path}
-        />
-        <.bottom_nav_link
-          href="/talks"
-          icon="mic"
-          label={gettext("talks")}
-          current_path={@current_path}
-        />
-        <.bottom_nav_link href="/cv" icon="file-text" label="cv" current_path={@current_path} />
+        <.bottom_nav_link href="/" label={gettext("home")} current_path={@current_path} />
+        <.bottom_nav_link href="/posts" label={gettext("blog")} current_path={@current_path} />
+        <.bottom_nav_link href="/talks" label={gettext("talks")} current_path={@current_path} />
+        <.bottom_nav_link href="/cv" label="cv" current_path={@current_path} />
         <a
           href="https://zeetech.io"
           target="_blank"
           rel="noopener"
-          class="flex flex-col items-center gap-1 py-2 px-4 text-gray-light"
+          class="py-2 px-4 text-gray-light"
         >
-          <Lucideicons.external_link class="w-5 h-5" /> zeetech
+          zeetech
         </a>
       </div>
     </nav>
@@ -118,7 +116,6 @@ defmodule ZoeyrinhaWeb.Components do
   end
 
   attr :href, :string, required: true
-  attr :icon, :string, required: true
   attr :label, :string, required: true
   attr :current_path, :string, required: true
 
@@ -135,20 +132,10 @@ defmodule ZoeyrinhaWeb.Components do
       href={@href}
       aria-current={@active && "page"}
       class={[
-        "flex flex-col items-center gap-1 py-2 px-4",
+        "py-2 px-4",
         if(@active, do: "text-pink", else: "text-gray-light")
       ]}
     >
-      <%= case @icon do %>
-        <% "home" -> %>
-          <Lucideicons.home class="w-5 h-5" />
-        <% "book-open" -> %>
-          <Lucideicons.book_open class="w-5 h-5" />
-        <% "file-text" -> %>
-          <Lucideicons.file_text class="w-5 h-5" />
-        <% "mic" -> %>
-          <Lucideicons.mic class="w-5 h-5" />
-      <% end %>
       {@label}
     </a>
     """
@@ -168,17 +155,17 @@ defmodule ZoeyrinhaWeb.Components do
           href="https://github.com/sponsors/zoedsoupe"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-2 text-gray-light hover:text-pink transition-colors"
+          class="text-gray-light hover:text-pink transition-colors"
         >
-          <Lucideicons.heart class="w-4 h-4" /> github sponsors
+          github sponsors
         </a>
         <a
           href="https://buymeacoffee.com/zoedsoupe"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-2 text-gray-light hover:text-pink transition-colors"
+          class="text-gray-light hover:text-pink transition-colors"
         >
-          <Lucideicons.coffee class="w-4 h-4" /> buy me a coffee
+          buy me a coffee
         </a>
       </div>
     </aside>
@@ -201,45 +188,41 @@ defmodule ZoeyrinhaWeb.Components do
     """
   end
 
-  @doc "Social links rendered with Lucide icons."
+  @doc "Social links as plain text. Lucide dropped brand icons; monospace links fit the terminal aesthetic better anyway."
   attr :class, :string, default: ""
 
   def social_links(assigns) do
     ~H"""
-    <div class={["flex items-center gap-5", @class]}>
+    <div class={["flex items-center gap-5 font-mono text-sm", @class]}>
       <a
         href="https://github.com/zoedsoupe"
         target="_blank"
         rel="noopener"
         class="text-gray-light hover:text-pink transition-colors"
-        aria-label="GitHub"
       >
-        <Lucideicons.github class="w-5 h-5" />
+        github
       </a>
       <a
         href="https://linkedin.com/in/zoedsoupe"
         target="_blank"
         rel="noopener"
         class="text-gray-light hover:text-pink transition-colors"
-        aria-label="LinkedIn"
       >
-        <Lucideicons.linkedin class="w-5 h-5" />
+        linkedin
       </a>
       <a
         href="https://bsky.app/profile/zoedsoupe.zeetech.io"
         target="_blank"
         rel="noopener"
         class="text-gray-light hover:text-pink transition-colors"
-        aria-label="Bluesky"
       >
-        <Lucideicons.cloud class="w-5 h-5" />
+        bsky
       </a>
       <a
         href="mailto:zoey.spessanha@zeetech.io"
         class="text-gray-light hover:text-pink transition-colors"
-        aria-label="Email"
       >
-        <Lucideicons.mail class="w-5 h-5" />
+        email
       </a>
     </div>
     """
