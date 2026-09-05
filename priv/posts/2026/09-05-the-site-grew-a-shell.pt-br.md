@@ -2,7 +2,7 @@
 title: "o site virou shell",
 description: "changelog do meu cantinho: mdex no lugar do earmark, comentários do bluesky assíncronos, adeus npm e um 404 que falha como terminal de verdade.",
 tags: ~w(meta elixir),
-  bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murtwskd6o2v",
+bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3murtwskd6o2v",
 }
 ---
 
@@ -10,7 +10,7 @@ post de faxina! passei umas sessões fuçando esse site (esse aqui que você tá
 
 ## menos dependência, mais graxa
 
-duas trocas primeiro. saiu o earmark, entrou o [mdex](https://github.com/leandrocp/mdex) - o earmark tava com uma CVE aberta e o mdex renderiza via comrak (NIF em Rust), então os posts compilam mais rápido e a CVE foi embora junto. depois deletei o `assets/package.json` inteiro: Alpine, Lucide e o próprio npm, tudo fora. o site é um terminal com paleta Dracula, nunca precisou de framework JS. os ícones viraram links de texto, a pitada de interatividade virou ~80 linhas de vanilla JS e a imagem Docker emagreceu junto.
+duas trocas primeiro. saiu o earmark, entrou o [mdex](https://github.com/leandrocp/mdex) - o earmark tava com uma CVE aberta e o mdex renderiza via comrak (NIF em Rust), então os posts compilam mais rápido e a CVE foi embora junto. depois deletei o `assets/package.json` inteiro: Alpine, Lucide e o próprio npm, tudo fora. o site é um terminal com paleta [nyxvamp - meu proprio tema](https://github.com/nyxvamp-theme), nunca precisou de framework JS. os ícones viraram links de texto, a pitada de interatividade virou ~80 linhas de vanilla JS e a imagem Docker emagreceu junto.
 
 ## comentários da atmosfera, assíncronos
 
