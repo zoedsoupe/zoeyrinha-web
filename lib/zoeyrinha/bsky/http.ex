@@ -3,7 +3,7 @@ defmodule Zoeyrinha.Bsky.HTTP do
   Zoeyrinha.Bsky.Client over :httpc and OTP's built-in JSON.
 
   Replaces the proto_rune dependency: the blog needs exactly three XRPC
-  calls — an unauthenticated getPostThread against the public AppView, and
+  calls - an unauthenticated getPostThread against the public AppView, and
   createSession + createRecord for `mix blog.announce`. getPostThread
   responses are decoded and their keys snaked/atomized so
   Zoeyrinha.Blog.Comments.parse_thread/1 keeps working unchanged.

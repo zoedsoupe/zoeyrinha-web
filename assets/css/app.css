@@ -54,14 +54,19 @@
    stable so components need no churn; code blocks stay dark veil in both. */
 @theme {
   /* Surfaces (dark = veil) */
-  --color-background: #181825; /* one step below veil bg */
-  --color-foreground: #d9e0ee; /* veil fg */
-  --color-cursorline: #232334; /* elevated surface */
-  --color-selection: #2e2e3e; /* veil cursorline, borders */
+  --color-background: #181825;
+  /* one step below veil bg */
+  --color-foreground: #d9e0ee;
+  /* veil fg */
+  --color-cursorline: #232334;
+  /* elevated surface */
+  --color-selection: #2e2e3e;
+  /* veil cursorline, borders */
 
   /* Accent = veil keyword pink */
   --color-pink: #f5c2e7;
-  --color-pink-soft: #f28fad; /* deeper pink on hover */
+  --color-pink-soft: #f28fad;
+  /* deeper pink on hover */
 
   /* Rare secondary = veil yellow */
   --color-blue: #e5c890;
@@ -164,61 +169,73 @@
   }
 }
 
-/* Scrollbar: terminal style — square, thin, guttered track. */
+/* Scrollbar: terminal style - square, thin, guttered track. */
 :root {
   scrollbar-width: thin;
   scrollbar-color: var(--color-selection) var(--color-background);
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: var(--color-background);
   border-left: 1px solid var(--color-selection);
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-selection);
   border: 2px solid var(--color-background);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-pink);
 }
+
 ::-webkit-scrollbar-thumb:active {
   background-color: var(--color-pink-soft);
 }
+
 ::-webkit-scrollbar-corner {
   background-color: var(--color-background);
 }
 
 @layer utilities {
+
   /* constant subtle chromatic-aberration drift on titles/logo (page signature).
      constant because mobile has no hover; hover just speeds the drift up */
   .glitch-text {
     animation: glitch-drift 2.8s steps(1, end) infinite;
   }
+
   .glitch-text:hover {
     animation-duration: 0.8s;
   }
 }
 
 @keyframes glitch-drift {
+
   0%,
   100% {
     text-shadow:
       1px 0 color-mix(in srgb, var(--color-glitch-red) 35%, transparent),
       -1px 0 color-mix(in srgb, var(--color-glitch-blue) 35%, transparent);
   }
+
   30% {
     text-shadow:
       1.5px 0 color-mix(in srgb, var(--color-glitch-red) 45%, transparent),
       -0.5px 0 color-mix(in srgb, var(--color-glitch-blue) 45%, transparent);
   }
+
   60% {
     text-shadow:
       0.5px 0 color-mix(in srgb, var(--color-glitch-red) 30%, transparent),
       -1.5px 0 color-mix(in srgb, var(--color-glitch-blue) 30%, transparent);
   }
+
   80% {
     text-shadow:
       1px 0 color-mix(in srgb, var(--color-glitch-red) 50%, transparent),
@@ -228,8 +245,9 @@
 
 /* CRT overlay, adapted from vereis.com's archived blog: static scanlines +
    softened tube flicker (their opacity range scaled ~x0.3, max ~3% dimming).
-   dark scheme only — black scanlines over the light bg read as grime, not CRT */
+   dark scheme only - black scanlines over the light bg read as grime, not CRT */
 @media (prefers-color-scheme: dark) {
+
   body::before,
   body::after {
     content: " ";
@@ -238,19 +256,19 @@
     z-index: 9999;
     pointer-events: none;
   }
+
   body::before {
     background:
       linear-gradient(transparent 50%, rgba(0, 0, 0, 0.22) 0),
-      linear-gradient(
-        90deg,
+      linear-gradient(90deg,
         rgba(255, 0, 0, 0.04),
         rgba(0, 255, 0, 0.015),
-        rgba(0, 0, 255, 0.04)
-      );
+        rgba(0, 0, 255, 0.04));
     background-size:
       100% 2px,
       3px 100%;
   }
+
   body::after {
     background: rgba(10, 10, 16, 0.1);
     opacity: 0;
@@ -262,63 +280,83 @@
   0% {
     opacity: 0.08;
   }
+
   5% {
     opacity: 0.1;
   }
+
   10% {
     opacity: 0.07;
   }
+
   15% {
     opacity: 0.27;
   }
+
   20% {
     opacity: 0.05;
   }
+
   25% {
     opacity: 0.25;
   }
+
   30% {
     opacity: 0.2;
   }
+
   35% {
     opacity: 0.2;
   }
+
   40% {
     opacity: 0.08;
   }
+
   45% {
     opacity: 0.25;
   }
+
   50% {
     opacity: 0.29;
   }
+
   55% {
     opacity: 0.03;
   }
+
   60% {
     opacity: 0.06;
   }
+
   65% {
     opacity: 0.22;
   }
+
   70% {
     opacity: 0.16;
   }
+
   75% {
     opacity: 0.11;
   }
+
   80% {
     opacity: 0.21;
   }
+
   85% {
     opacity: 0.21;
   }
+
   90% {
     opacity: 0.21;
   }
+
   95% {
     opacity: 0.11;
   }
+
   100% {
     opacity: 0.07;
   }
@@ -329,23 +367,28 @@
   color: color-mix(in srgb, var(--color-foreground) 92%, transparent);
   max-width: 68ch;
 }
-.prose > * + * {
+
+.prose>*+* {
   margin-top: 1.25rem;
 }
+
 .prose h2,
 .prose h3,
 .prose h4 {
   margin-top: 2.5rem;
 }
+
 .prose a {
   color: var(--color-pink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
 .prose strong {
   color: var(--color-foreground);
   font-weight: 500;
 }
+
 .prose code {
   font-family: var(--font-family-mono);
   background: var(--color-cursorline);
@@ -355,10 +398,13 @@
   font-size: 0.9em;
   overflow-wrap: anywhere;
 }
+
 .prose pre {
   font-family: var(--font-family-mono);
-  background: #1e1e2e; /* nyxvamp-veil background */
-  color: #d9e0ee; /* nyxvamp-veil foreground */
+  background: #1e1e2e;
+  /* nyxvamp-veil background */
+  color: #d9e0ee;
+  /* nyxvamp-veil foreground */
   border: 1px solid #2e2e3e;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -366,41 +412,51 @@
   scrollbar-width: thin;
   scrollbar-color: #45455e transparent;
 }
+
 .prose pre::-webkit-scrollbar {
   height: 6px;
 }
+
 .prose pre::-webkit-scrollbar-thumb {
   background: #45455e;
 }
+
 .prose pre::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .prose pre code {
   background: none;
   border: none;
   padding: 0;
 }
+
 .prose blockquote {
   border-left: 3px solid var(--color-pink);
   padding-left: 1rem;
   color: var(--color-gray-light);
   font-style: italic;
 }
+
 .prose ul {
   list-style: disc;
   padding-left: 1.5rem;
 }
+
 .prose ol {
   list-style: decimal;
   padding-left: 1.5rem;
 }
-.prose li + li {
+
+.prose li+li {
   margin-top: 0.4rem;
 }
+
 .prose img {
   max-width: 100%;
   border-radius: 0.5rem;
 }
+
 .prose hr {
   border: none;
   border-top: 1px solid var(--color-selection);
@@ -420,12 +476,15 @@ pre.highlight {
   scrollbar-width: thin;
   scrollbar-color: #45455e transparent;
 }
+
 pre.highlight::-webkit-scrollbar {
   height: 6px;
 }
+
 pre.highlight::-webkit-scrollbar-thumb {
   background: #45455e;
 }
+
 pre.highlight::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -439,28 +498,38 @@ pre.highlight::-webkit-scrollbar-track {
 .makeup .cs {
   color: #6e6a86;
   font-style: italic;
-} /* comments */
+}
+
+/* comments */
 .makeup .k,
 .makeup .kd,
 .makeup .kn,
 .makeup .kp,
 .makeup .kr {
   color: #f5c2e7;
-} /* keywords */
+}
+
+/* keywords */
 .makeup .kc,
 .makeup .no {
   color: #f28fad;
-} /* constants, booleans, nil */
+}
+
+/* constants, booleans, nil */
 .makeup .kt,
 .makeup .nc,
 .makeup .nn {
   color: #c9cbff;
-} /* types, modules, namespaces */
+}
+
+/* types, modules, namespaces */
 .makeup .nf,
 .makeup .nb,
 .makeup .fm {
   color: #96cdfb;
-} /* functions */
+}
+
+/* functions */
 .makeup .s,
 .makeup .s1,
 .makeup .s2,
@@ -469,14 +538,20 @@ pre.highlight::-webkit-scrollbar-track {
 .makeup .sh,
 .makeup .sx {
   color: #abe9b3;
-} /* strings */
+}
+
+/* strings */
 .makeup .si,
 .makeup .se {
   color: #f28fad;
-} /* interpolation, escapes */
+}
+
+/* interpolation, escapes */
 .makeup .ss {
   color: #f28fad;
-} /* atoms / symbols */
+}
+
+/* atoms / symbols */
 .makeup .m,
 .makeup .mi,
 .makeup .mf,
@@ -484,33 +559,44 @@ pre.highlight::-webkit-scrollbar-track {
 .makeup .mo,
 .makeup .il {
   color: #f8bd96;
-} /* numbers */
+}
+
+/* numbers */
 .makeup .na,
 .makeup .py {
   color: #f5c2e7;
-} /* attributes (@moduledoc, keys) */
+}
+
+/* attributes (@moduledoc, keys) */
 .makeup .o,
 .makeup .ow,
 .makeup .p,
 .makeup .pi {
   color: #d9e0ee;
-} /* operators, punctuation */
+}
+
+/* operators, punctuation */
 .makeup .n,
 .makeup .nv,
 .makeup .vc,
 .makeup .vg,
 .makeup .vi {
   color: #d9e0ee;
-} /* names, variables */
+}
+
+/* names, variables */
 .makeup .gh {
   color: #f5c2e7;
-} /* headings inside code */
+}
+
+/* headings inside code */
 
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
     animation: none !important;
   }
+
   /* flicker overlay rests at opacity 0 (gone); static scanlines stay, they're motionless */
 }
 
@@ -572,6 +658,7 @@ pre.highlight::-webkit-scrollbar-track {
       3px 0 var(--color-glitch-red),
       -3px 0 var(--color-glitch-blue);
   }
+
   50% {
     text-shadow:
       -3px 0 var(--color-glitch-red),
@@ -586,6 +673,7 @@ button:focus-visible,
 
 /* Users who ask for less motion get none of the decorative animation */
 @media (prefers-reduced-motion: reduce) {
+
   .glitch-text,
   .animate-pulse,
   .cursor-blink,
