@@ -184,12 +184,89 @@
 }
 
 @layer utilities {
-  /* subtle chromatic-aberration glitch for titles/logo on hover (page signature) */
-  .glitch-text:hover {
-    text-shadow:
-      1px 0 color-mix(in srgb, var(--color-glitch-red) 40%, transparent),
-      -1px 0 color-mix(in srgb, var(--color-glitch-blue) 40%, transparent);
+  /* constant subtle chromatic-aberration drift on titles/logo (page signature).
+     constant because mobile has no hover; hover just speeds the drift up */
+  .glitch-text {
+    animation: glitch-drift 2.8s steps(1, end) infinite;
   }
+  .glitch-text:hover {
+    animation-duration: 0.8s;
+  }
+}
+
+@keyframes glitch-drift {
+  0%,
+  100% {
+    text-shadow:
+      1px 0 color-mix(in srgb, var(--color-glitch-red) 35%, transparent),
+      -1px 0 color-mix(in srgb, var(--color-glitch-blue) 35%, transparent);
+  }
+  30% {
+    text-shadow:
+      1.5px 0 color-mix(in srgb, var(--color-glitch-red) 45%, transparent),
+      -0.5px 0 color-mix(in srgb, var(--color-glitch-blue) 45%, transparent);
+  }
+  60% {
+    text-shadow:
+      0.5px 0 color-mix(in srgb, var(--color-glitch-red) 30%, transparent),
+      -1.5px 0 color-mix(in srgb, var(--color-glitch-blue) 30%, transparent);
+  }
+  80% {
+    text-shadow:
+      1px 0 color-mix(in srgb, var(--color-glitch-red) 50%, transparent),
+      -1px 0 color-mix(in srgb, var(--color-glitch-blue) 50%, transparent);
+  }
+}
+
+/* CRT overlay, adapted from vereis.com's archived blog: static scanlines +
+   softened tube flicker (their opacity range scaled ~x0.3, max ~3% dimming).
+   dark scheme only — black scanlines over the light bg read as grime, not CRT */
+@media (prefers-color-scheme: dark) {
+  body::before,
+  body::after {
+    content: " ";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  body::before {
+    background:
+      linear-gradient(transparent 50%, rgba(0, 0, 0, 0.22) 0),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.015), rgba(0, 0, 255, 0.04));
+    background-size:
+      100% 2px,
+      3px 100%;
+  }
+  body::after {
+    background: rgba(10, 10, 16, 0.1);
+    opacity: 0;
+    animation: crt-flicker 0.15s infinite;
+  }
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.08; }
+  5% { opacity: 0.1; }
+  10% { opacity: 0.07; }
+  15% { opacity: 0.27; }
+  20% { opacity: 0.05; }
+  25% { opacity: 0.25; }
+  30% { opacity: 0.2; }
+  35% { opacity: 0.2; }
+  40% { opacity: 0.08; }
+  45% { opacity: 0.25; }
+  50% { opacity: 0.29; }
+  55% { opacity: 0.03; }
+  60% { opacity: 0.06; }
+  65% { opacity: 0.22; }
+  70% { opacity: 0.16; }
+  75% { opacity: 0.11; }
+  80% { opacity: 0.21; }
+  85% { opacity: 0.21; }
+  90% { opacity: 0.21; }
+  95% { opacity: 0.11; }
+  100% { opacity: 0.07; }
 }
 
 /* Markdown post bodies (hand-rolled, no typography plugin) */
@@ -381,9 +458,7 @@ pre.highlight::-webkit-scrollbar-track {
     transition: none !important;
     animation: none !important;
   }
-  .glitch-text:hover {
-    text-shadow: none;
-  }
+  /* flicker overlay rests at opacity 0 (gone); static scanlines stay, they're motionless */
 }
 
 /* Print: force light palette on white (browsers skip dark backgrounds by
@@ -404,6 +479,11 @@ pre.highlight::-webkit-scrollbar-track {
 
   nav,
   .no-print {
+    display: none !important;
+  }
+
+  body::before,
+  body::after {
     display: none !important;
   }
 
