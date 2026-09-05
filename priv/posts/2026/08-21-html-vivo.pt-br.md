@@ -163,4 +163,4 @@ Três critérios:
 2. Mudar a coelhinha no `iex` com `Fuba.Guarda.atualizar/1` muda a página no próximo F5 - testa zerar a cafeína e depois dar café.
 3. Você consegue explicar, em voz alta, o caminho: pedido chega → roteador → espiar a caixinha → render preenche os buracos → HTML sai.
 
-Fechou? A Fubá agora tem rosto _e_ o rosto é dela de verdade. Só falta ele reagir ao clique do botão - e é pra isso que servem formulários. É isso o post 💜
+Fechou? A Fubá agora tem rosto _e_ o rosto é dela de verdade. Só falta ele reagir ao clique do botão - e é pra isso que servem formulários. E como sempre: o código completo do post tá na branch [post-5](https://github.com/zoedsoupe/fuba/tree/post-5) do repositório. É isso o post 💜

@@ -85,6 +85,8 @@ E a `conn` é imutável como tudo em Elixir: `put_resp_content_type/2` não "mud
 
 Duas coisas pra reparar. A primeira: o módulo mora em `lib/fuba_web/`, não em `lib/fuba/`. Convenção proposital - tudo que fala com a internet fica em `FubaWeb`, e o `Fuba` do post passado segue sem saber que internet existe. A segunda: o Plug responde sempre a mesma frase e ignora método, caminho, tudo. Tá certo que ele não usa a coelhinha ainda? Tá. Um passo de cada vez, né...
 
+Aliás, o código completo desse post - plug, application, mix.exs - tá na branch [post-3](https://github.com/zoedsoupe/fuba/tree/post-3) do repositório. Travou? Compara o seu com o meu.
+
 ## subindo na "árvore"
 
 Falta alguém ligar isso. Lembra do supervisor vazio que o `--sup` deixou? No arquivo `lib/fuba/application.ex`? Chegou a vez de usar ele:

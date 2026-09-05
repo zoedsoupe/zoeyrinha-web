@@ -14,7 +14,7 @@ Pois bem, terminado o [manifesto](https://zoedsoupe.zeetech.io/posts/amor-como-f
 
 Todo programa desta série tem duas partes. A regra principal: a colelinha precisa sempre funcionar, sem saber o que é internet, HTML, banco de dados ou terminal. E a parte que conecta ela ao mundo: servidor, página, banco, rede.
 
-Ah, e um aviso de navegação que vale pra série inteira: o código completo de cada post mora no repositório [zoedsoupe/fuba](https://github.com/zoedsoupe/fuba). Travou? Compara o seu com o meu.
+Ah, e um aviso de navegação que vale pra série inteira: o código completo de cada post mora no repositório [zoedsoupe/fuba](https://github.com/zoedsoupe/fuba), e cada post tem a sua branch - a desse aqui é a [post-2](https://github.com/zoedsoupe/fuba/tree/post-2). Travou? Compara o seu com o meu.
 
 ## mix new fuba
 
@@ -205,7 +205,7 @@ O `describe` agrupa testes da mesma função - organização, quando criarmos ma
 - desregulada **aceitando** `:espaco` (energia em 1 vai a 3)
 - `limita/1` não passando de 5 nem descendo de 0.
 
-Escreve eles antes de me dar razão - depois confere os seus com os do [repositório](https://github.com/zoedsoupe/fuba/tree/main/test).
+Escreve eles antes de me dar razão - depois confere os seus com os do [repositório](https://github.com/zoedsoupe/fuba/tree/post-2/test).
 
 ## fechou?
 
