@@ -18,7 +18,11 @@ defmodule ZoeyrinhaWeb.TalkHTML do
         </div>
 
         <ul class="space-y-8">
-          <li :for={talk <- @talks} class="border-b border-selection pb-8">
+          <li
+            :for={talk <- @talks}
+            id={"talk-#{slugify(talk.title)}"}
+            class="border-b border-selection pb-8"
+          >
             <div class="flex gap-5">
               <div class="min-w-0">
                 <time class="font-mono text-sm text-gray-light">
@@ -61,6 +65,17 @@ defmodule ZoeyrinhaWeb.TalkHTML do
                     video
                   </a>
                 </div>
+                <button
+                  type="button"
+                  x-data="{ copied: false }"
+                  @click={
+                    "navigator.clipboard.writeText(window.location.origin + '/talks#talk-#{slugify(talk.title)}'); copied = true; setTimeout(() => copied = false, 2000)"
+                  }
+                  class="font-mono text-sm text-pink hover:text-pink-soft transition-colors cursor-pointer"
+                >
+                  <span x-show="!copied">{gettext("share")}</span>
+                  <span x-show="copied" x-cloak>{gettext("copied!")}</span>
+                </button>
               </div>
               <img
                 :if={talk.image}
@@ -74,5 +89,12 @@ defmodule ZoeyrinhaWeb.TalkHTML do
       </div>
     </main>
     """
+  end
+
+  defp slugify(title) do
+    title
+    |> String.downcase()
+    |> String.replace(~r/[^a-z0-9]+/, "-")
+    |> String.trim("-")
   end
 end
