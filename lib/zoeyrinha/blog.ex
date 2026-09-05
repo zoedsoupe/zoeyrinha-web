@@ -22,6 +22,7 @@ defmodule Zoeyrinha.Blog do
     build: Post,
     from: Application.app_dir(:zoeyrinha, "priv/posts/**/*.md"),
     as: :posts,
+    html_converter: Zoeyrinha.Blog.MDExConverter,
     highlighters: [:makeup_elixir, :makeup_erlang, :makeup_syntect]
 
   @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
