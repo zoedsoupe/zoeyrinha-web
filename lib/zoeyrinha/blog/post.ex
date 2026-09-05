@@ -12,6 +12,7 @@ defmodule Zoeyrinha.Blog.Post do
     :bsky_thread,
     :image,
     :series,
+    :series_index,
     draft: false,
     lang: "en"
   ]

@@ -54,10 +54,9 @@ defmodule Zoeyrinha.Blog do
       |> Enum.reject(& &1.draft)
       |> Enum.filter(&(&1.series == name))
       |> localize(locale)
-      # ponytail: same-day parts ordered by slug; split dates if order matters
       |> Enum.sort(fn a, b ->
         case Date.compare(a.date, b.date) do
-          :eq -> a.id <= b.id
+          :eq -> a.series_index <= b.series_index
           ord -> ord == :lt
         end
       end)

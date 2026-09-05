@@ -3,6 +3,7 @@ title: "os botões acordam",
 description: "post 6 da série fuba web: os botões cuidam de verdade. formulário, POST, um redirect 303 e a página que pisca.",
 tags: ~w(elixir web tutorial),
 series: "fuba-web",
+series_index: 5,
 bsky_thread: "at://did:plc:4rt5dyqvarrbolr7qmfcbcsm/app.bsky.feed.post/3mtu2n7vhy72f",
 }
 ---
