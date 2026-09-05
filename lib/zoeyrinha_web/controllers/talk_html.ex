@@ -83,7 +83,7 @@ defmodule ZoeyrinhaWeb.TalkHTML do
                 :if={talk.image}
                 src={talk.image}
                 alt=""
-                class="w-36 h-36 sm:w-42 sm:h-42 object-cover rounded border border-selection shrink-0"
+                class="w-36 h-36 sm:w-42 sm:h-42 object-cover rounded-full border border-selection shrink-0"
               />
             </div>
           </li>
