@@ -140,6 +140,10 @@ export RELEASE_DISTRIBUTION="none"
 export RELEASE_COOKIE="zoeyrinha-web"
 EOF
       done
+
+      # env.sh.eex may compute RELEASE_NODE from $(hostname), which is not on
+      # the service PATH; distribution is off, so pin any node to loopback.
+      sed -i 's/\$(hostname)/127.0.0.1/g' "$out"/releases/*/env.sh
     '';
 
     meta = {

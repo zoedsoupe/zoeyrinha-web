@@ -47,8 +47,8 @@ defmodule Mix.Tasks.Blog.New do
       # write the post
       git add -A && git commit -m "feat(blog): add my post" && git push
 
-  The push triggers the Fly deploy; the announce workflow then posts to
-  Bluesky and commits the thread URI back into the frontmatter.
+  The push triggers ci; the announce workflow then posts to Bluesky and commits
+  the thread URI back into the frontmatter.
   """
 
   use Mix.Task

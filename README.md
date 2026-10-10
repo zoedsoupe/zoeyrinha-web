@@ -1,8 +1,9 @@
 # zoeyrinha-web
 
 O código-fonte do meu blog. Arquivos markdown compilados em tempo de build pelo
-NimblePublisher, servidos por Phoenix, deploy no Fly.io. Nenhum banco de dados
-foi ferido na produção deste site, porque não existe nenhum.
+NimblePublisher, servidos por Phoenix. Roda sem container, como um serviço
+systemd no meu homelab NixOS. Nenhum banco de dados foi ferido na produção
+deste site, porque não existe nenhum.
 
 ## o que tem aqui
 
@@ -34,8 +35,8 @@ como você se chama desde que ele compile.
   O blog é, tecnicamente, um artefato de build.
 - **Tailwind CSS**: o visual gótico-funcional.
 - **Bandit**: o servidor HTTP.
-- **Nix flake**: o ambiente de dev, pra quem gosta de reprodutibilidade de
-  verdade.
+- **Nix flake**: o ambiente de dev e o build de produção. `packages.default`
+  compila o release a partir da fonte, e o host só consome esse pacote.
 
 ## rodando local
 

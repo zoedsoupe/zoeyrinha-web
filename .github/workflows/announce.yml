@@ -3,9 +3,10 @@ name: announce
 on:
   # Manual trigger from the Actions tab.
   workflow_dispatch:
-  # Announce after a successful deploy on main, so the announced URL is live.
+  # Announce after ci passes on main. ci runs on the GitHub repo, which is what
+  # the mirror and the homelab host both track.
   workflow_run:
-    workflows: ["Fly Deploy"]
+    workflows: ["ci"]
     types: [completed]
     branches: [main]
 
