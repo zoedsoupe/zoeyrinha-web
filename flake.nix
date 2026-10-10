@@ -27,6 +27,9 @@
           inherit system;
           config.allowUnfree = true;
         };
+
+        packages.default = pkgs.callPackage ./nix/package.nix {};
+
         devShells.default = with pkgs;
           mkShell {
             name = "zoeyrinha";
