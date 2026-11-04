@@ -1,46 +1,48 @@
 {
-  description = "Personal blog and portfolio for zoedsoupe";
+  description = "Personal blog and portfolio for me";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    systems.url = "github:nix-systems/default";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05-small";
+    beam-overlay.url = "github:zeeetech/beam-overlay";
   };
 
   outputs = {
-    flake-parts,
-    systems,
+    self,
+    nixpkgs,
+    beam-overlay,
     ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = import systems;
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: let
-        inherit (pkgs.beam.interpreters) erlang_28;
-        inherit (pkgs.beam) packagesWith;
-        beam = packagesWith erlang_28;
-      in {
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-
-        packages.default = pkgs.callPackage ./nix/package.nix {};
-
-        devShells.default = with pkgs;
-          mkShell {
-            name = "zoeyrinha";
-            packages = with pkgs;
-              [beam.elixir_1_20 nodejs]
-              ++ lib.optional stdenv.isLinux [inotify-tools]
-              ++ lib.optional stdenv.isDarwin [
-                darwin.apple_sdk.frameworks.CoreServices
-                darwin.apple_sdk.frameworks.CoreFoundation
-              ];
-          };
-      };
+  }: let
+    system = "aarch64-darwin";
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = [beam-overlay.overlays.default];
     };
+    toolchain = pkgs.beam-overlay.mkToolchain {
+      elixir.version = "1.20.5";
+      erlang-otp.version = "29.1.2";
+    };
+  in {
+    nixosModules = {
+      zoeyrinha-web = {
+        imports = [
+          beam-overlay.nixosModules.beam-containers
+          ./nix/module.nix
+        ];
+      };
+      default = self.nixosModules.zoeyrinha-web;
+    };
+
+    checks = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"] (system: let
+      linuxPkgs = import nixpkgs {inherit system;};
+    in {
+      nixos-module = import ./nix/module-check.nix {
+        pkgs = linuxPkgs;
+        module = self.nixosModules.zoeyrinha-web;
+      };
+    });
+
+    devShells.${system}.default = pkgs.mkShell {
+      packages = [toolchain];
+    };
+  };
 }

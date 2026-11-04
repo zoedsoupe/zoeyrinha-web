@@ -1,9 +1,9 @@
 # zoeyrinha-web
 
 O código-fonte do meu blog. Arquivos markdown compilados em tempo de build pelo
-NimblePublisher, servidos por Phoenix. Roda sem container, como um serviço
-systemd no meu homelab NixOS. Nenhum banco de dados foi ferido na produção
-deste site, porque não existe nenhum.
+NimblePublisher, servidos por Phoenix. Roda como um container Docker no meu
+homelab NixOS. Nenhum banco de dados foi ferido na produção deste site, porque
+não existe nenhum.
 
 ## o que tem aqui
 
@@ -35,8 +35,8 @@ como você se chama desde que ele compile.
   O blog é, tecnicamente, um artefato de build.
 - **Tailwind CSS**: o visual gótico-funcional.
 - **Bandit**: o servidor HTTP.
-- **Nix flake**: o ambiente de dev e o build de produção. `packages.default`
-  compila o release a partir da fonte, e o host só consome esse pacote.
+- **Nix flake**: o ambiente de dev e o módulo NixOS. O `Dockerfile` compila o
+  release, e tags `v*` publicam a imagem no GHCR.
 
 ## rodando local
 
@@ -50,6 +50,27 @@ iex -S mix phx.server
 
 Sem Nix, instale Elixir, Erlang e Node na mão e reze pra versão bater com o
 `.tool-versions`. Depois abra `http://localhost:4000`.
+
+## NixOS
+
+```nix
+{
+  imports = [inputs.zoeyrinha-web.nixosModules.default];
+
+  services.beam.containers.zoeyrinha-web = {
+    enable = true;
+    image = "ghcr.io/zoedsoupe/zoeyrinha-web:0.1.0";
+    uid = 993;
+    gid = 993;
+    port = 4010;
+    environmentFiles = ["/etc/phoenix/blog.env"];
+  };
+
+  services.zoeyrinha-web.hostname = "zoedsoupe.zeetech.io";
+}
+```
+
+O environment file precisa definir `SECRET_KEY_BASE`.
 
 ## estrutura
 
