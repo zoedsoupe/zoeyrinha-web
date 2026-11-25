@@ -36,7 +36,7 @@ como você se chama desde que ele compile.
 - **Tailwind CSS**: o visual gótico-funcional.
 - **Bandit**: o servidor HTTP.
 - **Nix flake**: o ambiente de dev e o módulo NixOS. O `Dockerfile` compila o
-  release, e tags `v*` publicam a imagem no GHCR.
+  release, e o release-please publica a imagem no GHCR.
 
 ## rodando local
 
