@@ -33,7 +33,7 @@ defmodule Zoeyrinha.CV do
   ]
 
   defp load(path, locale, mtime) do
-    html = path |> File.read!() |> MDExNative.Comrak.markdown_to_html(@comrak_options)
+    html = path |> File.read!() |> MDExNative.Comrak.markdown_to_html!(@comrak_options)
     :persistent_term.put({__MODULE__, locale}, {mtime, html})
     html
   end
